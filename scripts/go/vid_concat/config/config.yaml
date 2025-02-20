@@ -1,0 +1,7 @@
+input:
+  video1FilePath: "01.mp4"
+  video2FilePath: "02.mp4"
+  audioDirPath: "."
+
+result:
+  outputVideoFilePath: "output.mp4"
