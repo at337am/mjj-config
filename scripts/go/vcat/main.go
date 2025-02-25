@@ -75,9 +75,17 @@ func main() {
 	// 设置命令行参数
 	video1Flag := flag.String("v1", "01.mp4", "指定第一个视频文件路径")
 	video2Flag := flag.String("v2", "02.mp4", "指定第二个视频文件路径")
-	audioFlag := flag.String("a", "01.mp3", "指定音频文件路径")
-	outputFlag := flag.String("o", "output.mp4", "指定输出文件路径")
+	audioFlag := flag.String("a", "01.aac", "[可选] 指定音频文件路径，若不存在，将输出无声视频")
+	outputFlag := flag.String("o", "output.mp4", "[可选] 指定输出文件路径")
 	flag.Parse()
+
+	// 如果未提供命令行参数，打印正确的用法
+	if len(os.Args) == 1 {
+		fmt.Println("使用方法: ")
+		fmt.Println("  vcat -v1 <视频1> -v2 <视频2> [-a <音频>] [-o <输出文件>]")
+		flag.Usage()
+		os.Exit(1)
+	}
 
 	video1 := *video1Flag
 	video2 := *video2Flag
@@ -88,7 +96,7 @@ func main() {
 	if _, err := os.Stat(video1); os.IsNotExist(err) {
 		log.Fatalf("视频文件1 %s 不存在", video1)
 	}
-	
+
 	if _, err := os.Stat(video2); os.IsNotExist(err) {
 		log.Fatalf("视频文件2 %s 不存在", video2)
 	}
