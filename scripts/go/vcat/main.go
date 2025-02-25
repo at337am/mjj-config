@@ -1,47 +1,16 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strconv"
 	"strings"
-	"vid_concat/config"
 )
-
-// 常见音频格式
-var audioExtensions = map[string]bool{
-	".mp3":  true,
-	".wav":  true,
-	".aac":  true,
-	".flac": true,
-	".ogg":  true,
-	".m4a":  true,
-	".wma":  true,
-	".opus": true,
-	".aiff": true,
-	".alac": true,
-}
-
-// findFirstAudioFile 遍历目录，寻找第一个匹配的音频文件
-func findFirstAudioFile(dir string) (string, error) {
-	files, err := os.ReadDir(dir)
-	if err != nil {
-		return "", err
-	}
-	for _, file := range files {
-		if file.IsDir() {
-			continue
-		}
-		ext := strings.ToLower(filepath.Ext(file.Name()))
-		if audioExtensions[ext] {
-			return filepath.Join(dir, file.Name()), nil
-		}
-	}
-	return "", fmt.Errorf("未找到音频文件")
-}
 
 // removeAudio 去除视频音轨，调用命令：ffmpeg -y -i inputVideo -c copy -an outputVideo
 func removeAudio(inputVideo, outputVideo string) error {
@@ -103,24 +72,31 @@ func addAudio(video, audio, outputVideo string) error {
 }
 
 func main() {
+	// 设置命令行参数
+	video1Flag := flag.String("v1", "01.mp4", "指定第一个视频文件路径")
+	video2Flag := flag.String("v2", "02.mp4", "指定第二个视频文件路径")
+	audioFlag := flag.String("a", "01.mp3", "指定音频文件路径")
+	outputFlag := flag.String("o", "output.mp4", "指定输出文件路径")
+	flag.Parse()
 
-	config.InitConfig()
+	video1 := *video1Flag
+	video2 := *video2Flag
+	audioPath := *audioFlag
+	outputVideo := *outputFlag
 
-	video1 := config.GetVideo1FilePath()
-	video2 := config.GetVideo2FilePath()
-	outputVideo := config.GetOutputVideoFilePath()
+	// 检查视频文件是否存在
+	if _, err := os.Stat(video1); os.IsNotExist(err) {
+		log.Fatalf("视频文件1 %s 不存在", video1)
+	}
+	
+	if _, err := os.Stat(video2); os.IsNotExist(err) {
+		log.Fatalf("视频文件2 %s 不存在", video2)
+	}
 
-	// 获取音频文件夹路径
-	audioPath := config.GetAudioDirPath()
-
-	// 寻找第一个音频文件
-	foundAudio, err := findFirstAudioFile(audioPath)
-	if err != nil {
-		fmt.Println("未找到音频文件，将输出无声视频。")
+	// 检查指定的音频文件是否存在
+	if _, err := os.Stat(audioPath); os.IsNotExist(err) {
+		fmt.Printf("指定的音频文件 %s 不存在，将输出无声视频。\n", audioPath)
 		audioPath = ""
-	} else {
-		fmt.Printf("找到音频文件: %s\n", foundAudio)
-		audioPath = foundAudio
 	}
 
 	// 确保 tmp 目录存在
@@ -151,23 +127,22 @@ func main() {
 	if err != nil {
 		log.Fatalf("获取视频2时长失败：%v", err)
 	}
-	audioDuration, err := getVideoDuration(audioPath)
-	// 当音频文件不存在时，忽略获取时长错误
-	if err != nil {
-		fmt.Println("音频文件不存在，将输出无声视频")
-		audioDuration = 0
+
+	var audioDuration float64 = 0
+	// 当音频文件存在时，获取音频时长
+	if audioPath != "" {
+		audioDuration, err = getVideoDuration(audioPath)
+		if err != nil {
+			fmt.Printf("获取音频文件时长失败：%v，将输出无声视频\n", err)
+			audioPath = ""
+			audioDuration = 0
+		}
 	}
+
 	fmt.Printf("视频1时长：%.2f秒，视频2时长：%.2f秒，音频时长：%.2f秒\n", duration1, duration2, audioDuration)
 
 	// 计算目标时长：取视频时长最大值和音频时长中的较大者
-	maxVideoDuration := duration1
-	if duration2 > maxVideoDuration {
-		maxVideoDuration = duration2
-	}
-	targetDuration := maxVideoDuration
-	if audioDuration > targetDuration {
-		targetDuration = audioDuration
-	}
+	targetDuration := math.Max(math.Max(duration1, duration2), audioDuration)
 	fmt.Printf("目标时长：%.2f秒\n", targetDuration)
 
 	// 循环视频直至达到目标时长
@@ -201,7 +176,7 @@ func main() {
 	}
 
 	// 添加背景音乐或输出无声视频
-	if _, err := os.Stat(audioPath); os.IsNotExist(err) {
+	if audioPath == "" {
 		fmt.Println("音频文件不存在，输出无声视频...")
 		// 无音频时直接将拼接后的视频作为最终输出
 		if err := os.Rename(concatOutput, outputVideo); err != nil {
