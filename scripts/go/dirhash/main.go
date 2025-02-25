@@ -44,18 +44,18 @@ func calculateFileHash(filePath string) (string, error) {
 
 // compareFiles 比较两个文件的内容是否相同
 func compareFiles(file1Path, file2Path string) (areSame bool, hash1 string, hash2 string, err error) {
-    hash1, err = calculateFileHash(file1Path)
-    if err != nil {
-        return false, "", "", err
-    }
+	hash1, err = calculateFileHash(file1Path)
+	if err != nil {
+		return false, "", "", err
+	}
 
-    hash2, err = calculateFileHash(file2Path)
-    if err != nil {
-        return false, "", "", err
-    }
+	hash2, err = calculateFileHash(file2Path)
+	if err != nil {
+		return false, "", "", err
+	}
 
-    areSame = (hash1 == hash2)
-    return areSame, hash1, hash2, nil
+	areSame = (hash1 == hash2)
+	return areSame, hash1, hash2, nil
 }
 
 // countFilesInDirectory 递归统计目录中的文件数量
@@ -157,7 +157,6 @@ func recursiveCompareDirectories(dir1Path, dir2Path string) (*ComparisonResult, 
 		}
 		mergeFileList(&result.OnlyInSecondDir, subdirName, filesInSubdir)
 	}
-
 
 	return result, nil
 }
@@ -327,14 +326,30 @@ func getFileInfo(path string) (os.FileInfo, error) {
 	return info, nil
 }
 
+// customUsage 自定义 -h 帮助信息
+func customUsage() {
+	fmt.Printf(`dirhash - 用于比较两个文件或目录的哈希值，以检查它们是否完全一致
+
+用法:
+  dirhash <路径1> <路径2>
+
+示例:
+  1. 比较两个文件是否一致：
+     dirhash 01.txt 02.txt
+  
+  2. 递归比较两个目录是否一致：
+     dirhash dir1 dir2
+`)
+}
+
 func main() {
+	flag.Usage = customUsage
 
 	flag.Parse()
 	args := flag.Args()
 
 	if len(args) != 2 {
-		fmt.Println("使用方法: ")
-		fmt.Println("  dirhash <路径1> <路径2>")
+		fmt.Println("错误: 请提供两个有效的路径")
 		os.Exit(1)
 	}
 

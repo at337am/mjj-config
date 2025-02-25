@@ -71,19 +71,38 @@ func addAudio(video, audio, outputVideo string) error {
 	return cmd.Run()
 }
 
+func customUsage() {
+	fmt.Printf(`vcat - 横向拼接两个视频，并可选择性地添加音频轨道
+
+用法:
+  vcat -v1 <视频1> -v2 <视频2> [-a <音频>] [-o <输出文件>]
+
+选项:
+  -v1 <视频1>       第一个视频文件路径
+  -v2 <视频2>       第二个视频文件路径
+  -a <音频>         [可选] 音频文件路径（若未指定，将输出无声视频）
+  -o <输出文件>     [可选] 输出文件路径（默认: output.mp4）
+
+示例:
+  vcat -v1 01.mp4 -v2 02.mp4
+  vcat -v1 01.mp4 -v2 02.mp4 -a 01.acc -o result.mp4
+`)
+}
+
 func main() {
+	flag.Usage = customUsage
+
 	// 设置命令行参数
-	video1Flag := flag.String("v1", "01.mp4", "指定第一个视频文件路径")
-	video2Flag := flag.String("v2", "02.mp4", "指定第二个视频文件路径")
-	audioFlag := flag.String("a", "01.aac", "[可选] 指定音频文件路径，若不存在，将输出无声视频")
-	outputFlag := flag.String("o", "output.mp4", "[可选] 指定输出文件路径")
+	video1Flag := flag.String("v1", "", "指定第一个视频文件路径")
+	video2Flag := flag.String("v2", "", "指定第二个视频文件路径")
+	audioFlag := flag.String("a", "", "指定音频文件路径，若不存在，将输出无声视频")
+	outputFlag := flag.String("o", "output.mp4", "指定输出文件路径")
 	flag.Parse()
 
 	// 如果未提供命令行参数，打印正确的用法
 	if len(os.Args) == 1 {
-		fmt.Println("使用方法: ")
+		fmt.Println("请使用以下命令格式:")
 		fmt.Println("  vcat -v1 <视频1> -v2 <视频2> [-a <音频>] [-o <输出文件>]")
-		flag.Usage()
 		os.Exit(1)
 	}
 
