@@ -328,18 +328,19 @@ func getFileInfo(path string) (os.FileInfo, error) {
 }
 
 func main() {
-	// Parse command line arguments
+
 	flag.Parse()
 	args := flag.Args()
 
 	if len(args) != 2 {
-		fmt.Println("Usage: program <path1> <path2>")
+		fmt.Println("使用方法: ")
+		fmt.Println("  dirhash <路径1> <路径2>")
 		os.Exit(1)
 	}
 
 	path1, path2 := args[0], args[1]
 
-	// Validate paths
+	// 验证路径为目录还是文件
 	isDir, isFile, err := validatePaths(path1, path2)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
