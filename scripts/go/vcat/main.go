@@ -85,7 +85,7 @@ func customUsage() {
 
 示例:
   vcat -v1 01.mp4 -v2 02.mp4
-  vcat -v1 01.mp4 -v2 02.mp4 -a 01.acc -o result.mp4
+  vcat -v1 01.mp4 -v2 02.mp4 -a 01.aac -o result.mp4
 `)
 }
 
