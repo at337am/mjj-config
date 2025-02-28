@@ -91,10 +91,10 @@ func main() {
 
 	// 批量重命名文件
 	for i, file := range files {
-		// 生成新文件名: YYMMDD_HHMMSS_序号.原扩展名
-		newName := fmt.Sprintf("%s_%03d%s",
-			file.ModTime.Format("060102_150405"),
+		// 生成新文件名: 序号_YYMMDD_HHMMSS.原扩展名
+		newName := fmt.Sprintf("%03d_%s%s",
 			i+1,
+			file.ModTime.Format("060102_150405"),
 			file.Ext)
 
 		newPath := filepath.Join(*dirPath, newName)
