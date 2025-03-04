@@ -39,7 +39,7 @@ def process_directory(directory):
     
     rename_mp4_extension(directory)  # 扩展名转换
     delete_mov_files(directory)  # 删除 MOV 文件
-    rename_single_digit_mp4_files(directory)  # 处理单个数字文件名
+    # rename_single_digit_mp4_files(directory)  # 处理单个数字文件名
     print("✅ 处理完成！")
 
 if __name__ == "__main__":
