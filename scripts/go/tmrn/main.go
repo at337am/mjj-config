@@ -89,18 +89,39 @@ func main() {
 		return files[i].ModTime.Before(files[j].ModTime)
 	})
 
+	// 创建一个跟踪已使用文件名的映射
+	usedNames := make(map[string]bool)
+
 	// 批量重命名文件
 	for i, file := range files {
-
-		newName := fmt.Sprintf("%02d%s", i+1, file.Ext)
-
-		// 生成新文件名: 序号_YYMMDD_HHMMSS.原扩展名
-		// newName := fmt.Sprintf("%02d_%s%s",
-		// 	i+1,
-		// 	file.ModTime.Format("060102_150405"),
-		// 	file.Ext)
-
+		baseNewName := fmt.Sprintf("%02d%s", i+1, file.Ext)
+		newName := baseNewName
 		newPath := filepath.Join(*dirPath, newName)
+		
+		// 检查文件名是否已存在，如果存在则添加递增的后缀
+		counter := 1
+		for {
+			// 检查该文件是否是我们自己要重命名的源文件 - 如果是，则可以继续重命名
+			if filepath.Base(file.Path) == newName {
+				break
+			}
+			
+			// 检查新的文件名是否已经存在或已经被本次操作使用过
+			_, fileExists := os.Stat(newPath)
+			if (fileExists == nil || usedNames[newName]) && filepath.Base(file.Path) != newName {
+				// 生成新的文件名，添加后缀
+				baseName := fmt.Sprintf("%02d_%d", i+1, counter)
+				newName = baseName + file.Ext
+				newPath = filepath.Join(*dirPath, newName)
+				counter++
+			} else {
+				// 文件名不存在，可以使用
+				break
+			}
+		}
+		
+		// 标记该文件名已被使用
+		usedNames[newName] = true
 
 		// 执行重命名
 		err := os.Rename(file.Path, newPath)
