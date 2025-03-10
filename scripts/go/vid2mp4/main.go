@@ -14,7 +14,7 @@ import (
 // processDirectory 遍历指定目录及其子目录，自动转换所有 .mov 文件
 func processDirectory(directory string) {
 
-	fmt.Printf("--- 将 %s 路径下所有的 MOV 视频转换为 MP4 格式 ---", directory)
+	fmt.Printf("--- 将 %s 路径下所有的 MOV 视频转换为 MP4 格式 ---\n", directory)
 
 	if info, err := os.Stat(directory); os.IsNotExist(err) || !info.IsDir() {
 		fmt.Printf("❌ 目录 '%s' 不存在。\n", directory)
