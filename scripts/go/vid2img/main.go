@@ -10,7 +10,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Println("用法: go run script.go <视频文件路径>")
+		fmt.Println("💡 用法: go run script.go <视频文件路径>")
 		return
 	}
 
@@ -18,14 +18,14 @@ func main() {
 
 	// 检查视频文件是否存在
 	if _, err := os.Stat(videoPath); os.IsNotExist(err) {
-		fmt.Printf("错误: 视频文件 '%s' 不存在\n", videoPath)
+		fmt.Printf("❌ 视频文件 '%s' 不存在\n", videoPath)
 		return
 	}
 
 	// 创建输出目录，以视频文件名命名，并添加 "_frames" 后缀
 	outputDir := strings.TrimSuffix(filepath.Base(videoPath), filepath.Ext(videoPath)) + "_frames"
 	if err := os.MkdirAll(outputDir, os.ModePerm); err != nil {
-		fmt.Printf("创建输出目录 '%s' 失败: %v\n", outputDir, err)
+		fmt.Printf("❌ 创建输出目录 '%s' 失败: %v\n", outputDir, err)
 		return
 	}
 
@@ -42,10 +42,10 @@ func main() {
 	// 执行 ffmpeg 命令并捕获输出
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Printf("执行 ffmpeg 命令失败: %v\n", err)
+		fmt.Printf("❌ 执行 ffmpeg 命令失败: %v\n", err)
 		fmt.Println("ffmpeg 输出:\n", string(output)) // 打印 ffmpeg 的错误信息
 		return
 	}
 
-	fmt.Printf("视频 '%s' 的帧提取完成，PNG 图片保存在目录 '%s' 中\n", videoPath, outputDir)
+	fmt.Printf("✅ 视频 '%s' 的帧提取完成，PNG 图片保存在目录 '%s' 中\n", videoPath, outputDir)
 }
