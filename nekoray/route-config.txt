@@ -1,0 +1,10 @@
+# 代理
+geosite:google
+geosite:telegram
+weekly.tw93.fun
+x-hiring.hehehai.cn
+
+# 直连
+geosite:cn
+i.qzoiedu.com
+lbqaq.top
