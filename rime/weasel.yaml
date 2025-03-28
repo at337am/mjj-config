@@ -48,9 +48,9 @@ style:
   # 全局字体
   # 格式：字体1:起始码位:结束码位:字重:字形,字体2……，字体会依次 fallback
   # 详细设定请参考 <https://github.com/rime/weasel/wiki/字體設定>
-  font_face: "Consolas, Segoe UI Emoji, Microsoft YaHei, SF Pro, Noto Color Emoji" # custom 候选词字体
-  label_font_face: "Segoe UI"              # custom 标签字体, 就是指序号
-  comment_font_face: "Microsoft YaHei"     # 注释字体
+  font_face: "Noto Color Emoji, Noto Sans, Noto Sans SC, Microsoft YaHei"    # custom 候选词字体: Emoji, 英文/数字, 中文
+  label_font_face: "Noto Sans"             # custom 标签字体, 就是指序号
+  comment_font_face: "Noto Sans SC"        # 注释字体
   font_point: 13                           # custom 全局字体字号
   label_font_point: 13                     # custom 标签字体字号，不设定 fallback 到 font_point
   comment_font_point: 13                   # 注释字体字号，不设定 fallback 到 font_point
@@ -80,8 +80,8 @@ style:
   click_to_capture: false                  # 鼠标点击候选项，创建截图：true；false
 
   layout:
-    baseline: 0                            # 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
-    linespacing: 0                         # 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
+    baseline: 110                            # 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
+    linespacing: 140                         # 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
     align_type: bottom                     # 标签、候选文字、注解文字之间的相对对齐方式：top ; center ; bottom
     max_height: 600                        # 候选框最大高度，文本竖排模式下如高度超此尺寸则换列显示候选，设置为 0 不启用此功能
     max_width: 0                           # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
