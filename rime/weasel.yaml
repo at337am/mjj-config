@@ -80,8 +80,8 @@ style:
   click_to_capture: false                  # 鼠标点击候选项，创建截图：true；false
 
   layout:
-    baseline: 110                            # 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
-    linespacing: 140                         # 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
+    baseline: 110                          # custom 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
+    linespacing: 140                       # custom 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
     align_type: bottom                     # 标签、候选文字、注解文字之间的相对对齐方式：top ; center ; bottom
     max_height: 600                        # 候选框最大高度，文本竖排模式下如高度超此尺寸则换列显示候选，设置为 0 不启用此功能
     max_width: 0                           # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
@@ -120,10 +120,18 @@ preset_color_schemes:
     author: linyz
     text_color: 0x424242                      # custom 没选中的字体颜色
     back_color: 0xFFFFFF                      # custom 背景颜色
-    border_color: 0xE5E4E2                    # custom 边框颜色
-    hilited_candidate_back_color: 0x75B100    # 选中的候选框背景颜色, 注意这是 BGR 格式, bak: 0x75B100
+    border_color: 0xE0B8FF                   # custom 边框颜色
+    hilited_candidate_back_color: 0xA97FEC    # 选中的候选框背景颜色, 注意这是 BGR 格式
     hilited_candidate_text_color: 0xFFFFFF    # 选中的候选词颜色
     comment_text_color: 0x999999              # 注释颜色
+
+# bak:
+# link: https://colorhunt.co/palette/ffedfaffb8e0ec7fa9be5985
+    # border_color: 0xE0B8FF
+    # hilited_candidate_back_color: 0xA97FEC
+
+    # border_color: 0xA97FEC
+    # hilited_candidate_back_color: 0x8559BE
 
   # 以下是一个配色方案示例
   nord:                                      # 在 `style/color_schema` 指定的配色方案值
