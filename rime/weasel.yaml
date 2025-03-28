@@ -48,10 +48,10 @@ style:
   # 全局字体
   # 格式：字体1:起始码位:结束码位:字重:字形,字体2……，字体会依次 fallback
   # 详细设定请参考 <https://github.com/rime/weasel/wiki/字體設定>
-  font_face: "Segoe UI Emoji, Microsoft YaHei, SF Pro, Noto Color Emoji" # custom 候选词字体
+  font_face: "Consolas, Segoe UI Emoji, Microsoft YaHei, SF Pro, Noto Color Emoji" # custom 候选词字体
   label_font_face: "Segoe UI"              # custom 标签字体, 就是指序号
   comment_font_face: "Microsoft YaHei"     # 注释字体
-  font_point: 14                           # custom 全局字体字号
+  font_point: 13                           # custom 全局字体字号
   label_font_point: 13                     # custom 标签字体字号，不设定 fallback 到 font_point
   comment_font_point: 13                   # 注释字体字号，不设定 fallback 到 font_point
 
@@ -88,19 +88,19 @@ style:
     min_height: 0                          # 候选框最小高度
     min_width: 10                          # 候选框最小宽度
     border_width: 2                        # custom 边框宽度；又名 border
-    margin_x: 12                           # custom 主体元素和候选框的左右边距；为负值时，不显示候选框
-    margin_y: 8                            # custom 主体元素的上下边距；为负值时，不显示候选框
+    margin_x: 9                            # custom 主体元素和候选框的左右边距；为负值时，不显示候选框
+    margin_y: 5                            # custom 主体元素的上下边距；为负值时，不显示候选框
     spacing: 12                            # inline_preedit 为 false 时，编码区域和候选区域的间距
     candidate_spacing: 12                  # 候选项之间的间距
     hilite_spacing: 4                      # 候选项和相应标签的间距
     # hilite_padding: 4                    # 高亮区域和内部文字的间距，影响高亮区域大小
-    hilite_padding_x: 8                    # custom 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
-    hilite_padding_y: 4                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
+    hilite_padding_x: 7                    # custom 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
+    hilite_padding_y: 3                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
     shadow_radius: 0                       # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
     shadow_offset_x: 4                     # 阴影左右偏移距离
     shadow_offset_y: 4                     # 阴影上下偏移距离
-    corner_radius: 4                       # custom 候选窗口圆角半径
-    round_corner: 4                        # custom 候选背景色块圆角半径，又名 hilited_corner_radius
+    corner_radius: 0                       # custom 候选窗口圆角半径
+    round_corner: 0                        # custom 候选背景色块圆角半径，又名 hilited_corner_radius
     # type: vertical                       # 布局设置，效果和 style 下的设置相同：
                                            # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
 # [End of <style>]
