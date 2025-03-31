@@ -21,3 +21,4 @@
     pom = push origin main
     aw = !git add . && git wip
     awp = !git add . && git wip && git pom
+    res = restore
