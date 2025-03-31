@@ -13,8 +13,8 @@
     last = log -1 HEAD
     count = rev-list --count HEAD
     wip = commit -m "WIP"
-    rhh = reset --hard
-    rhs = reset --soft
+    rh = reset --hard
+    rs = reset --soft
     save = stash save
     saves = stash list
     apply = stash apply
