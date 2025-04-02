@@ -8,3 +8,6 @@ x-hiring.hehehai.cn
 geosite:cn
 i.qzoiedu.com
 lbqaq.top
+exception.site
+www.nbxfj.gov.cn
+securelogin.com.cn
