@@ -17,3 +17,5 @@ alias s-restart='sudo systemctl restart'
 alias s-stop='sudo systemctl stop'
 alias s-start='sudo systemctl start'
 alias s-enable='sudo systemctl enable'
+alias realrm='/bin/rm'
+
