@@ -90,13 +90,13 @@ style:
     min_width: 10                          # 候选框最小宽度
     border_width: 1                        # custom 边框宽度；又名 border
     margin_x: 14                            # custom 主体元素和候选框的左右边距；为负值时，不显示候选框
-    margin_y: 11                            # custom 主体元素的上下边距；为负值时，不显示候选框
+    margin_y: 10                            # custom 主体元素的上下边距；为负值时，不显示候选框
     spacing: 12                            # inline_preedit 为 false 时，编码区域和候选区域的间距
     candidate_spacing: 12                  # 候选项之间的间距
     hilite_spacing: 4                      # 候选项和相应标签的间距
     # hilite_padding: 4                    # 高亮区域和内部文字的间距，影响高亮区域大小
     hilite_padding_x: 7                    # custom 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
-    hilite_padding_y: 4                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
+    hilite_padding_y: 3                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
     shadow_radius: 0                       # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
     shadow_offset_x: 4                     # 阴影左右偏移距离
     shadow_offset_y: 4                     # 阴影上下偏移距离
