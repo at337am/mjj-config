@@ -79,59 +79,81 @@ style:
   paging_on_scroll: true                   # 在候选窗口上滑动滚轮的行为：true（翻页）；false （选中下一个候选）
   click_to_capture: false                  # 鼠标点击候选项，创建截图：true；false
 
+# beta2:
   layout:
-    baseline: 110                          # custom 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
-    linespacing: 140                       # custom 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
+    baseline: 115                          # custom 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
+    linespacing: 145                       # custom 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
     align_type: bottom                     # 标签、候选文字、注解文字之间的相对对齐方式：top ; center ; bottom
     max_height: 600                        # 候选框最大高度，文本竖排模式下如高度超此尺寸则换列显示候选，设置为 0 不启用此功能
     max_width: 0                           # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
     min_height: 0                          # 候选框最小高度
     min_width: 10                          # 候选框最小宽度
-    border_width: 2                        # custom 边框宽度；又名 border
-    margin_x: 9                            # custom 主体元素和候选框的左右边距；为负值时，不显示候选框
-    margin_y: 5                            # custom 主体元素的上下边距；为负值时，不显示候选框
+    border_width: 1                        # custom 边框宽度；又名 border
+    margin_x: 14                            # custom 主体元素和候选框的左右边距；为负值时，不显示候选框
+    margin_y: 11                            # custom 主体元素的上下边距；为负值时，不显示候选框
     spacing: 12                            # inline_preedit 为 false 时，编码区域和候选区域的间距
     candidate_spacing: 12                  # 候选项之间的间距
     hilite_spacing: 4                      # 候选项和相应标签的间距
     # hilite_padding: 4                    # 高亮区域和内部文字的间距，影响高亮区域大小
     hilite_padding_x: 7                    # custom 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
-    hilite_padding_y: 3                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
+    hilite_padding_y: 4                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
     shadow_radius: 0                       # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
     shadow_offset_x: 4                     # 阴影左右偏移距离
     shadow_offset_y: 4                     # 阴影上下偏移距离
-    corner_radius: 0                       # custom 候选窗口圆角半径
-    round_corner: 0                        # custom 候选背景色块圆角半径，又名 hilited_corner_radius
+    corner_radius: 16                       # custom 候选窗口圆角半径
+    round_corner: 10                        # custom 候选背景色块圆角半径，又名 hilited_corner_radius
     # type: vertical                       # 布局设置，效果和 style 下的设置相同：
                                            # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
-# [End of <style>]
-
-# [preset_color_schemes]
-# 配色设定
-# 在小狼毫用户目录新建 preview 文件夹，将自定义皮肤的截图重命名为 color_scheme_<name>.png 放入此文件夹，可以在「输入法设定」中看到自定义皮肤效果
-
-# 小狼毫配色在线设计：
-# [RIME 西米](https://fxliang.github.io/RimeSeeMe/)
-# [小狼毫配色详解](https://github.com/rime/weasel/wiki/定制小狼毫配色)
-
 preset_color_schemes:
   # custom linyz 配色方案
   shimmer:
     name: 'shimmer'
     author: linyz
-    text_color: 0x424242                      # custom 没选中的字体颜色
-    back_color: 0xFFFFFF                      # custom 背景颜色
-    border_color: 0xE0B8FF                   # custom 边框颜色
-    hilited_candidate_back_color: 0xA97FEC    # 选中的候选框背景颜色, 注意这是 BGR 格式
+    text_color: 0xFFFFFF                      # custom 没选中的字体颜色
+    back_color: 0x353535                      # custom 背景颜色
+    border_color: 0x555555                    # custom 边框颜色
+    hilited_candidate_back_color: 0x696969    # 选中的候选框背景颜色, 注意这是 BGR 格式
     hilited_candidate_text_color: 0xFFFFFF    # 选中的候选词颜色
     comment_text_color: 0x999999              # 注释颜色
 
-# bak:
-# link: https://colorhunt.co/palette/ffedfaffb8e0ec7fa9be5985
-    # border_color: 0xE0B8FF
-    # hilited_candidate_back_color: 0xA97FEC
 
-    # border_color: 0xA97FEC
-    # hilited_candidate_back_color: 0x8559BE
+# beta1_bak:
+#   layout:
+#     baseline: 110                          # custom 字号百分比，与 linespacing 一同设置可解决字体跳动问题，设置为 0 为禁用
+#     linespacing: 140                       # custom 字号百分比，参考 <https://github.com/rime/weasel/pull/1177>
+#     align_type: bottom                     # 标签、候选文字、注解文字之间的相对对齐方式：top ; center ; bottom
+#     max_height: 600                        # 候选框最大高度，文本竖排模式下如高度超此尺寸则换列显示候选，设置为 0 不启用此功能
+#     max_width: 0                           # 候选框最大宽度，horizontal 布局如宽超此尺寸则换行显示候选，设置为 0 不启用此功能
+#     min_height: 0                          # 候选框最小高度
+#     min_width: 10                          # 候选框最小宽度
+#     border_width: 2                        # custom 边框宽度；又名 border
+#     margin_x: 9                            # custom 主体元素和候选框的左右边距；为负值时，不显示候选框
+#     margin_y: 5                            # custom 主体元素的上下边距；为负值时，不显示候选框
+#     spacing: 12                            # inline_preedit 为 false 时，编码区域和候选区域的间距
+#     candidate_spacing: 12                  # 候选项之间的间距
+#     hilite_spacing: 4                      # 候选项和相应标签的间距
+#     # hilite_padding: 4                    # 高亮区域和内部文字的间距，影响高亮区域大小
+#     hilite_padding_x: 7                    # custom 高亮区域和内部文字的左右间距，如无特殊指定则依 hilite_padding 设置
+#     hilite_padding_y: 3                    # custom 高亮区域和内部文字的上下间距，如无特殊指定则依 hilite_padding 设置
+#     shadow_radius: 0                       # 阴影区域半径，为 0 不显示阴影；需要同时在配色方案中指定非透明的阴影颜色
+#     shadow_offset_x: 4                     # 阴影左右偏移距离
+#     shadow_offset_y: 4                     # 阴影上下偏移距离
+#     corner_radius: 0                       # custom 候选窗口圆角半径
+#     round_corner: 0                        # custom 候选背景色块圆角半径，又名 hilited_corner_radius
+#     # type: vertical                       # 布局设置，效果和 style 下的设置相同：
+#                                            # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
+# preset_color_schemes:
+#   # custom linyz 配色方案
+#   shimmer:
+#     name: 'shimmer'
+#     author: linyz
+#     text_color: 0x424242                      # custom 没选中的字体颜色
+#     back_color: 0xFFFFFF                      # custom 背景颜色
+#     border_color: 0xE0B8FF                   # custom 边框颜色
+#     hilited_candidate_back_color: 0xA97FEC    # 选中的候选框背景颜色, 注意这是 BGR 格式
+#     hilited_candidate_text_color: 0xFFFFFF    # 选中的候选词颜色
+#     comment_text_color: 0x999999              # 注释颜色
+
 
   # 以下是一个配色方案示例
   nord:                                      # 在 `style/color_schema` 指定的配色方案值
