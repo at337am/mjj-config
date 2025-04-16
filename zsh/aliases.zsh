@@ -6,6 +6,7 @@ alias del-trash='/bin/rm -rfv /data/.trash/*'
 alias px='http_proxy=http://127.0.0.1:2080 https_proxy=http://127.0.0.1:2080'
 alias ryc='rsync -avh --progress --ignore-existing'
 alias run_nekoray='/usr/local/nekoray/run_nekoray.sh'
+alias uvdev='source /opt/venvs/dev/bin/activate'
 
 # docker
 alias dstopall='sudo docker stop $(sudo docker ps -q)'
