@@ -112,7 +112,7 @@ rm() {
   # 检查调用 rm 时是否提供了参数（文件名）
   if [ $# -eq 0 ]; then
     echo "rm: 缺少操作对象" >&2
-    echo "请尝试执行 'rm --help' 来获取更多信息。" >&2
+    echo "用法: rm <filename>" >&2
     return 1 # 返回失败状态码
   fi
 
