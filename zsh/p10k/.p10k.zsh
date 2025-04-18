@@ -105,10 +105,19 @@
 
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
+
   # Context format when not root: user@host. The whole thing grey.
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
+
+  # custom, 只显示 hostname
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$magenta}%m%f"
+
+  # 使用不同的颜色显示 username@hostanem
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$red}%n%f%F{$magenta}@%m%f"
+
   # Don't show context unless root or in SSH.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
+  # custom, 将 DEFAULT (普通用户，非 SSH) 和 SUDO 状态下的 context 内容设置为空字符串, 即不显示 username@hostname
+  # typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
 
   # Show previous command duration only if it's >= 5s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=5
@@ -120,7 +129,8 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$grey
+  # custom, Git 分支名称的颜色
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$yellow
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
