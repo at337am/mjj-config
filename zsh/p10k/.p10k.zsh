@@ -39,12 +39,14 @@
 
   # Prompt colors.
   local grey='242'
-  local red='#FF5C57'
-  local yellow='#F3F99D'
-  local blue='#57C7FF'
-  local magenta='#FF6AC1'
+  local yellow='#FFF0BD'
+  local blue='#CDC1FF'
   local cyan='#9AEDFE'
   local white='#F1F1F0'
+  local hostname_color='#81E7AF'
+  local branch_color='#FFCCEA'
+  local ok_color='#F7CFD8'
+  local error_color='#FF8282'
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -81,10 +83,10 @@
   # in Pure that makes prompt drift down whenever you use the Alt-C binding from fzf or similar.
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-  # Magenta prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$magenta
-  # Red prompt symbol if the last command failed.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$red
+  # custom, 提示小箭头 > ok 的颜色
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$ok_color
+  # custom, 提示小箭头 > error 的颜色
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$error_color
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -110,10 +112,10 @@
   # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
 
   # custom, 只显示 hostname
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$magenta}%m%f"
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$hostname_color}%m%f"
 
   # 使用不同的颜色显示 username@hostanem
-  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$red}%n%f%F{$magenta}@%m%f"
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$blue}%n%f%F{$cyan}@%m%f"
 
   # Don't show context unless root or in SSH.
   # custom, 将 DEFAULT (普通用户，非 SSH) 和 SUDO 状态下的 context 内容设置为空字符串, 即不显示 username@hostname
@@ -125,12 +127,12 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
-  # Yellow previous command duration.
+  # custom, 命令持续时间颜色. 超过5秒才会显示
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
   # custom, Git 分支名称的颜色
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$yellow
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$branch_color
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
