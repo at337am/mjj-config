@@ -38,16 +38,13 @@
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
   # Prompt colors.
-  local grey='242'
-  local yellow='#FFF0BD'
-  local cyan='#9AEDFE'
-  local white='#F1F1F0'
-  # 对应 ln -s
-  local blue='#C4D9FF'
-  # 对应 script file
-  local green='#BBD8A3'
-  # 对应 git status
-  local pink='#E69DB8'
+  local grey='#229799'
+  local yellow='#E9F5BE'
+  local purple='#E69DB8'
+  local white='#FDFAF6'
+  local orange='#F1BA88'
+  local green='#81E7AF'
+  local blue='#A8CBE2'
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -87,7 +84,7 @@
   # custom, 提示小箭头 > ok 的配色
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$green
   # custom, 提示小箭头 > error 的配色
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$pink
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$blue
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -104,7 +101,7 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
   # custom, 当前路径配色
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$orange
 
   # Context format when root: user@host. The first part white, the rest grey.
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
@@ -116,7 +113,7 @@
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%m%f"
 
   # 使用不同的配色显示 username@hostanem
-  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%n%f%F{$pink}@%m%f"
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%n%f%F{$blue}@%m%f"
 
   # Don't show context unless root or in SSH.
   # custom, 将 DEFAULT (普通用户，非 SSH) 和 SUDO 状态下的 context 内容设置为空字符串, 即不显示 username@hostname
@@ -133,7 +130,7 @@
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
   # custom, Git 分支名称配色
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$pink
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$blue
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
@@ -143,8 +140,8 @@
   # asynchronously when Git state changes.
   typeset -g POWERLEVEL9K_VCS_MAX_SYNC_LATENCY_SECONDS=0
 
-  # Cyan ahead/behind arrows.
-  typeset -g POWERLEVEL9K_VCS_{INCOMING,OUTGOING}_CHANGESFORMAT_FOREGROUND=$cyan
+  # custom, 远程变更箭头的配色
+  typeset -g POWERLEVEL9K_VCS_{INCOMING,OUTGOING}_CHANGESFORMAT_FOREGROUND=$purple
   # Don't show remote branch, current tag or stashes.
   typeset -g POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind)
   # Don't show the branch icon.
