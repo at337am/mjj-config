@@ -40,13 +40,14 @@
   # Prompt colors.
   local grey='242'
   local yellow='#FFF0BD'
-  local blue='#CDC1FF'
   local cyan='#9AEDFE'
   local white='#F1F1F0'
-  local hostname_color='#81E7AF'
-  local branch_color='#FFCCEA'
-  local ok_color='#F7CFD8'
-  local error_color='#FF8282'
+  # 对应 ln -s
+  local blue='#C4D9FF'
+  # 对应 script file
+  local green='#BBD8A3'
+  # 对应 git status
+  local pink='#E69DB8'
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -83,10 +84,10 @@
   # in Pure that makes prompt drift down whenever you use the Alt-C binding from fzf or similar.
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-  # custom, 提示小箭头 > ok 的颜色
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$ok_color
-  # custom, 提示小箭头 > error 的颜色
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$error_color
+  # custom, 提示小箭头 > ok 的配色
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS}_FOREGROUND=$green
+  # custom, 提示小箭头 > error 的配色
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS}_FOREGROUND=$pink
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -102,7 +103,7 @@
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
 
-  # Blue current directory.
+  # custom, 当前路径配色
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$blue
 
   # Context format when root: user@host. The first part white, the rest grey.
@@ -112,10 +113,10 @@
   # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
 
   # custom, 只显示 hostname
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$hostname_color}%m%f"
+  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%m%f"
 
-  # 使用不同的颜色显示 username@hostanem
-  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$blue}%n%f%F{$cyan}@%m%f"
+  # 使用不同的配色显示 username@hostanem
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%n%f%F{$pink}@%m%f"
 
   # Don't show context unless root or in SSH.
   # custom, 将 DEFAULT (普通用户，非 SSH) 和 SUDO 状态下的 context 内容设置为空字符串, 即不显示 username@hostname
@@ -127,12 +128,12 @@
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   # Duration format: 1d 2h 3m 4s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
-  # custom, 命令持续时间颜色. 超过5秒才会显示
+  # custom, 命令持续时间配色, 超过5秒才会显示
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$yellow
 
   # Grey Git prompt. This makes stale prompts indistinguishable from up-to-date ones.
-  # custom, Git 分支名称的颜色
-  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$branch_color
+  # custom, Git 分支名称配色
+  typeset -g POWERLEVEL9K_VCS_FOREGROUND=$pink
 
   # Disable async loading indicator to make directories that aren't Git repositories
   # indistinguishable from large Git repositories without known state.
