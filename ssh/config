@@ -1,0 +1,6 @@
+Host github.com
+    Hostname github.com
+    User git
+    ProxyCommand ncat --proxy-type http --proxy 127.0.0.1:2080 %h %p
+    Port 22
+
