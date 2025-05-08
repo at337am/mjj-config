@@ -12,7 +12,7 @@
         },
         {
             "type": "os",
-            "key": "├─",
+            "key": "├─",
             "keyColor": "blue"
         },
         {
@@ -70,12 +70,12 @@
         },
         {
             "type": "de",
-            "key": "├─",
+            "key": "├─󱢅",
             "keyColor": "magenta"
         },
         {
             "type": "wm",
-            "key": "├─",
+            "key": "├─󰿘",
             "keyColor": "magenta"
         },
         {
