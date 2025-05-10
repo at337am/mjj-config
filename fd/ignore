@@ -21,3 +21,7 @@ go/pkg/
 /afs/
 
 .local/share/fonts/
+/home/mjj/.local/share/icons/
+/home/mjj/.local/share/fonts/
+/usr/share/icons/
+

@@ -20,3 +20,9 @@ keymap('n', '<leader>x', '<cmd>wq<cr>', { desc = "保存并退出", noremap = tr
 
 -- Leader + Q => 强制退出 (:q!)
 keymap('n', '<leader>Q', '<cmd>q!<cr>', { desc = "强制退出", noremap = true, silent = true })
+
+-- 3. 定义快捷键 (Insert 模式)
+
+-- 将 jk 映射为 Esc，用于退出插入模式
+keymap('i', 'jk', '<Esc>', { desc = "退出插入模式 (jk)", noremap = true, silent = true })
+
