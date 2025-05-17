@@ -1,0 +1,102 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": null,
+    "display": {
+        "separator": " "
+    },
+    "modules": [
+        {
+            "type": "command",
+            "key": " ",
+            "outputColor": "yellow",
+            "text": "figlet \"$(source /etc/os-release && echo $NAME)\" -f small",
+            "format": "{result}"
+        },
+        "break",
+        {
+            "type": "title",
+            "key": "󱥰",
+            "format": "{user-name}@{host-name}",
+            "keyColor": "blue"
+        },
+        {
+            "type": "os",
+            "key": "",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "",
+            "keyColor": "blue"
+        },
+        {
+            "type": "uptime",
+            "key": "󱫞",
+            "keyColor": "blue"
+        },
+        "break",
+        {
+            "type": "cpu",
+            "key": "",
+            "keyColor": "green"
+        }, 
+        {
+            "type": "gpu",
+            "key": "",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "",
+            "keyColor": "green"
+        },
+        {
+            "type": "swap",
+            "key": "󰓡",
+            "keyColor": "green"
+
+        },
+        {
+            "type": "disk",
+            "key": "",
+            "keyColor": "green"
+        },
+        "break",
+        {
+            "type": "terminal",
+            "key": "",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": "󱆃",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "de",
+            "key": "󱢅",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "wm",
+            "key": "󰿘",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "battery",
+            "key": "",
+            "keyColor": "magenta"
+        },
+        "break",
+        {
+            "type": "colors",
+            "key": " ",
+            "symbol": "circle"
+        }
+    ]
+}

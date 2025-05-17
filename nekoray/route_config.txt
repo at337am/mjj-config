@@ -1,0 +1,13 @@
+# 代理
+geosite:google
+geosite:telegram
+weekly.tw93.fun
+x-hiring.hehehai.cn
+
+# 直连
+geosite:cn
+i.qzoiedu.com
+lbqaq.top
+exception.site
+www.nbxfj.gov.cn
+securelogin.com.cn
