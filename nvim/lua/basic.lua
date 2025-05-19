@@ -8,7 +8,7 @@ vim.opt.mouse = 'a'             -- 在所有模式下启用鼠标支持
 
 -- [[ 界面与外观 ]]
 vim.opt.number = true           -- 显示行号
-vim.opt.relativenumber = true   -- 显示相对行号 (与 number 结合)
+-- vim.opt.relativenumber = true   -- 显示相对行号 (与 number 结合)
 vim.opt.scrolloff = 8           -- 光标上下保留 8 行可见
 vim.opt.sidescrolloff = 5       -- 光标左右保留 5 列可见
 vim.opt.wrap = false            -- 禁用自动换行
