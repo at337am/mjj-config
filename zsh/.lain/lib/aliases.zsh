@@ -1,6 +1,6 @@
 # misc
 alias cl='reset'
-alias vim='nvim'
+alias v='nvim'
 alias del='/bin/rm'
 alias px='http_proxy=http://127.0.0.1:2080 https_proxy=http://127.0.0.1:2080'
 alias ryc='rsync -avh --progress --ignore-existing'
