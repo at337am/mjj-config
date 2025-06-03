@@ -9,7 +9,7 @@ alias uva='source .venv/bin/activate'
 alias bn='bat -n'
 alias bd='bat -d'
 alias bp='bat -p'
-alias l='eza -la'
+alias l='eza -lab'
 
 # base
 alias _='sudo '
