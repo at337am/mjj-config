@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 设置目标目录
 TARGET_DIR="/opt/soft/XHS-Downloader"

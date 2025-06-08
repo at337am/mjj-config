@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TARGET_DIR="/opt/soft/hello-server"
 LOG_FILE="run.log" # 日志文件名，它将创建在 TARGET_DIR 目录下
