@@ -34,7 +34,7 @@ SAVEHIST=10000                  # 退出 shell 时保存到 HISTFILE 的历史�
 
 setopt extended_history       # 记录时间戳到历史记录中
 setopt append_history         # 在退出时将历史记录追加到文件末尾，而不是覆盖整个文件, bak: inc_append_history
-setopt share_history          # 在多个并发运行的 zsh 会话之间共享历史记录
+# setopt share_history          # 在多个并发运行的 zsh 会话之间共享历史记录
 setopt hist_ignore_dups       # 忽略连续重复的命令
 setopt hist_ignore_space      # 忽略以空格开头的命令
 
