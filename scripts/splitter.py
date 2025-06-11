@@ -35,7 +35,7 @@ def split_file(file_path, parts=2):
             
             print(f"创建文件: {part_file_name}")
 
-def merge_file(file_prefix, parts=2):
+def combine_file(file_prefix, parts=2):
     """
     将分割的文件合并为一个完整的文件
     
@@ -70,7 +70,7 @@ def main():
     # 添加互斥参数组，确保只能选择拆分或合并中的一个
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('-s', '--split', help='拆分文件路径')
-    group.add_argument('-m', '--merge', help='合并文件前缀')
+    group.add_argument('-c', '--combine', help='合并文件前缀')
     
     # 添加部分数量参数
     parser.add_argument('-p', '--parts', type=int, default=2, 
@@ -82,12 +82,12 @@ def main():
     # 根据参数执行拆分或合并操作
     if args.split:
         split_file(args.split, args.parts)
-    elif args.merge:
-        merge_file(args.merge, args.parts)
+    elif args.combine:
+        combine_file(args.combine, args.parts)
 
 if __name__ == '__main__':
     main()
 
 # 使用示例：
 # 拆分文件：python splitter.py -s file.7z
-# 合并文件：python splitter.py -m file.7z -p 2
+# 合并文件：python splitter.py -c file.7z -p 2
