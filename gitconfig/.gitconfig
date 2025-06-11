@@ -13,11 +13,11 @@
     last = log -1 HEAD
     count = rev-list --count HEAD
     wip = commit -m "WIP"
-    rh = reset --hard
-    rs = reset --soft
+    rth = reset --hard
+    rts = reset --soft
     save = stash save
     saves = stash list
     apply = stash apply
     pom = push origin main
     aw = !git add . && git wip
-    rt = restore
+    res = restore
