@@ -15,9 +15,6 @@
     wip = commit -m "WIP"
     rth = reset --hard
     rts = reset --soft
-    save = stash save
-    saves = stash list
-    apply = stash apply
     pom = push origin main
-    aw = !git add . && git wip
+    aw = !git add --all && git commit -m "WIP"
     res = restore
