@@ -37,6 +37,7 @@ setopt append_history         # 在退出时将历史记录追加到文件末尾
 # setopt share_history          # 在多个并发运行的 zsh 会话之间共享历史记录
 setopt hist_ignore_dups       # 忽略连续重复的命令
 setopt hist_ignore_space      # 忽略以空格开头的命令
+setopt no_bang_hist           # 关闭 !! 历史命令展开功能
 
 # ------------
 #  misc
