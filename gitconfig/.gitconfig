@@ -13,7 +13,6 @@
     last = log -1 HEAD
     count = rev-list --count HEAD
     wip = commit -m "WIP"
-    rth = reset --hard
     rts = reset --soft
     pom = push origin main
     aw = !git add --all && git commit -m "WIP"
