@@ -62,7 +62,7 @@ cl_trash() {
   local TRASH_DIR="/data/.trash"
 
   if [ -d "$TRASH_DIR" ] && [ -z "$(find "$TRASH_DIR" -mindepth 1 -print -quit)" ]; then
-    echo "trash is already empty."
+    echo "trash is already empty"
     return 0
   fi
 
