@@ -9,7 +9,7 @@ alias uva='source .venv/bin/activate'
 alias bn='bat -n'
 alias bd='bat -d'
 alias bp='bat -p'
-alias l='eza -lab'
+alias l='eza --long --all --binary --time-style="+%y%m%d %H:%M"'
 
 # base
 alias _='sudo '
