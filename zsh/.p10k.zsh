@@ -103,21 +103,20 @@
   # custom, 当前路径配色
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=$orange
 
-  # Context format when root: user@host. The first part white, the rest grey.
+  # custom, root 用户, 显示效果: user@host, 不同颜色
   typeset -g POWERLEVEL9K_CONTEXT_ROOT_TEMPLATE="%F{$white}%n%f%F{$grey}@%m%f"
 
-  # Context format when not root: user@host. The whole thing grey.
-  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
+  # custom, 除非是 root 和 SSH, 否则都不显示 user@host
+  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
 
-  # custom, 只显示 hostname
-  typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%m%f"
-
-  # 使用不同的配色显示 username@hostanem
+  # custom, 普通用户, 显示效果: user@host, 不同颜色
   # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%n%f%F{$blue}@%m%f"
 
-  # Don't show context unless root or in SSH.
-  # custom, 将 DEFAULT (普通用户，非 SSH) 和 SUDO 状态下的 context 内容设置为空字符串, 即不显示 username@hostname
-  # typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION=
+  # custom, 普通用户, 显示效果: user@host, 统一颜色
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$grey}%n@%m%f"
+
+  # custom, 普通用户, 显示效果: host
+  # typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE="%F{$green}%m%f"
 
   # Show previous command duration only if it's >= 5s.
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=5
