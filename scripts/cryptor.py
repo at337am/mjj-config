@@ -134,7 +134,6 @@ def main():
 
     # 获取密码
     password = getpass("请输入密钥: ")
-    print(f"当前的密钥为: {password}")
 
     # 检查路径是文件还是目录
     if os.path.isdir(target_path):
