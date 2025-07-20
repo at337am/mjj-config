@@ -1,0 +1,19 @@
+# 下载目录
+--paths ~/Downloads/yt_dl
+
+# 代理
+--proxy "http://127.0.0.1:2080"
+
+# 格式优先策略：优先 AVC1 编码，其次按分辨率和容器排序
+--format-sort "vcodec:avc1,res:1080,ext:mp4"
+
+# 下载格式：
+# - 排除 AV1 (av01)
+# - 限制分辨率不超过 1080p
+# - 强制容器为 mp4
+# - 明确优先 AVC1（通过 format-sort 引导排序）
+--format "bestvideo[ext=mp4][vcodec!*=av01][height<=1080]+bestaudio[ext=m4a]/best[ext=mp4][vcodec!*=av01][height<=1080]/best"
+
+# 合并格式后的输出容器
+--merge-output-format mp4
+
