@@ -7,6 +7,8 @@
     co = checkout
     br = branch
     ci = commit
+    cim = commit -m
+    cia = commit --amend
     sw = switch
     st = status
     lg = log --oneline --graph --decorate --all
