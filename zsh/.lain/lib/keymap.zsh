@@ -1,4 +1,4 @@
-# 确保当 ZLE (Zsh 行编辑器) 激活时，终端处于应用程序模式，
+# 确保当 ZLE (Zsh 行编辑器) 激活时, 终端处于应用程序模式, 
 # 因为只有这样 `$terminfo` 中的值才是有效的
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   function zle-line-init() {
@@ -69,3 +69,7 @@ bindkey -M emacs '^[[1;5D' backward-word
 bindkey -M viins '^[[1;5D' backward-word
 bindkey -M vicmd '^[[1;5D' backward-word
 
+# 集成 navi 快捷键 Ctrl + G
+if command -v navi >/dev/null 2>&1; then
+  eval "$(navi widget zsh)"
+fi
