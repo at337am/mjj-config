@@ -5,6 +5,6 @@ git push --force-with-lease
 
 % git, index
 
-# 忽略某个目录的任何修改
+# 忽略某个目录内所有文件的修改
 $dirname:
 git ls-files -z <dirname> | xargs -0 git update-index --skip-worktree
