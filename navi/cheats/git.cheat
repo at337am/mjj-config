@@ -1,0 +1,10 @@
+% git, push
+
+# 强制推送
+git push --force-with-lease
+
+% git, index
+
+# 忽略某个目录的任何修改
+$dirname:
+git ls-files -z <dirname> | xargs -0 git update-index --skip-worktree
