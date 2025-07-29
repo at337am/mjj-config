@@ -1,0 +1,31 @@
+% fedora, dnf
+
+# 显示 dnf 的命令历史记录
+dnf history list
+
+# 仅列出已启用的仓库
+dnf repolist
+
+# 显示出所有仓库
+dnf repolist --all
+
+# 查看命令由哪个软件包提供
+$ cliname:
+dnf provides <cliname>
+
+# 清理缓存
+sudo dnf clean all
+
+# 强制 DNF 从远程仓库中下载并刷新本地的元数据缓存
+sudo dnf makecache
+
+# 删除系统中不再需要的依赖包
+sudo dnf autoremove
+
+% fedora, flatpak
+
+# 卸载 Flatpak App 并删除用户数据 (未指定 App)
+flatpak -y uninstall --delete-data
+
+# 清理残留依赖
+flatpak uninstall --unused

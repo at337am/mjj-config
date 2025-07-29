@@ -1,0 +1,9 @@
+% bak, hash
+
+# 在当前路径下, 递归所有文件, 生成哈希清单 SHA256SUMS
+fd -t f --exclude 'SHA256SUMS' -x sha256sum {} > SHA256SUMS
+
+% bak, split
+
+# 将一个文件拆分为多个分片 (未指定 数量 和 文件名)
+split -d -n [number] [filename] [filename]_part_

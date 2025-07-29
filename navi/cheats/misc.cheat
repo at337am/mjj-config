@@ -1,0 +1,4 @@
+% misc, font
+
+# 显示所有字体名称列表
+fc-list : family | fzf

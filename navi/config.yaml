@@ -1,0 +1,16 @@
+style:
+  tag:
+    color: cyan
+    width_percentage: 30
+    min_width: 15
+  comment:
+    color: green
+    width_percentage: 70
+    min_width: 30
+  snippet:
+    color: white
+    width_percentage: 0
+
+cheats:
+  paths:
+    - ~/workspace/dev/mjj-config/navi/cheats

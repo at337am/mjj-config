@@ -1,0 +1,15 @@
+% zip
+
+# zip 压缩 (未指定 文件名 和 路径)
+zip -r [filename].zip [path]
+
+# zip 解压 (未指定 压缩包 和 输出路径)
+unzip [filename] [-d] [path]
+
+% 7z
+
+# 7z 压缩 (未指定 文件名 和 路径)
+7z a [filename].7z [path]
+
+# 7z 解压 (未指定 压缩包 和 输出路径)
+7z x [filename]
