@@ -1,7 +1,7 @@
 #!/bin/sh
 # KDE Plasma shutdown script to kill specific apps
 
-apps_to_kill="nekoray telegram crow"
+apps_to_kill="nekoray Telegram crow"
 
 for app in $apps_to_kill; do
     pkill -15 "$app"
