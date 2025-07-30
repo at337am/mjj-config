@@ -1,0 +1,10 @@
+default:
+    @just --list
+
+# 转换书签
+conv:
+    @md2pg notes/other/书签.md
+    @mv md2pg_result/书签.html .
+    @rm -rfv md2pg_result
+    @echo "Conversion Successful!"
+
