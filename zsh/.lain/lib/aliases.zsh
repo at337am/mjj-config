@@ -10,10 +10,10 @@ alias bn='bat -n'
 alias bd='bat -d'
 alias bp='bat -p'
 alias l='eza --long --all --binary --time-style="+%y%m%d %H:%M"'
+alias lf='l --only-files'
 
 # base
 alias _='sudo '
-alias -- -='cd -'
 alias 1='cd -1'
 alias 2='cd -2'
 alias 3='cd -3'
