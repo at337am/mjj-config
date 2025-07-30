@@ -3,8 +3,22 @@
 # 强制推送
 git push --force-with-lease
 
-% git, index
+% git, index, no-skip
 
-# 忽略某个目录内所有文件的修改
+# 恢复跟踪! 文件! 任何修改
+$filename:
+git update-index --no-skip-worktree <filename>
+
+# 恢复跟踪! 目录! 所有文件的修改
+$dirname:
+git ls-files -z <dirname> | xargs -0 git update-index --no-skip-worktree
+
+% git, index, skip
+
+# 忽略! 文件! 任何修改
+$filename:
+git update-index --skip-worktree <filename>
+
+# 忽略! 目录! 所有文件的修改
 $dirname:
 git ls-files -z <dirname> | xargs -0 git update-index --skip-worktree
