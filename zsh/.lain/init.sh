@@ -29,8 +29,8 @@ setopt pushdminus             # 开启 'pushd -' = 'cd -'
 # ------------
 
 HISTFILE=$HOME/.zsh_history   # 历史命令文件路径
-HISTSIZE=10000                 # 内存中可保存的历史命令条数（即当前会话中可回溯的命令数）
-SAVEHIST=10000                  # 退出 shell 时保存到 HISTFILE 的历史命令条数
+HISTSIZE=10000                # 内存中可保存的历史命令条数（即当前会话中可回溯的命令数）
+SAVEHIST=10000                # 退出 shell 时保存到 HISTFILE 的历史命令条数
 
 setopt extended_history       # 记录时间戳到历史记录中
 setopt append_history         # 在退出时将历史记录追加到文件末尾，而不是覆盖整个文件, bak: inc_append_history
