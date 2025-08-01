@@ -11,6 +11,7 @@ alias bd='bat -d'
 alias bp='bat -p'
 alias l='eza --long --all --binary --time-style="+%y%m%d %H:%M"'
 alias lf='l --only-files'
+alias lt='l --tree'
 alias fm='dolphin . > /dev/null 2>&1'
 
 # base
