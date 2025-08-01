@@ -103,7 +103,7 @@ mkcd() {
   # 如果未提供目录名称参数, 则提示错误并退出
   if [[ -z "$1" ]]; then
     printf "mkcd: Nothing to create, buddy.\n" >&2
-    printf "Usage: mkcd <dir-name>\n" >&2
+    printf "Usage: mkcd <new-dir>\n" >&2
     return 1
   fi
 
@@ -122,9 +122,15 @@ mkcd() {
 # ------------
 
 # 创建一个新目录, 并将一个或多个指定文件或目录移动到该目录中
-# 若新目录已存在, 则不执行
+# 若新目录已存在, 则不执行, 该函数不允许在 ~ 中运行
 # --- 2 个或以上参数 ---
 mkmv() {
+  # 防止在主目录下运行
+  if [[ "$PWD" == "$HOME" ]]; then
+    printf "Error: Do not run 'mkmv' in your home directory.\n" >&2
+    return 1
+  fi
+
   # 检查传入参数数量是否不少于两个, 若不足则提示错误并退出
   if [[ $# -lt 2 ]]; then
     printf "mkmv: Oops! At least two arguments are required.\n" >&2
