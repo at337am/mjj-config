@@ -2,3 +2,6 @@
 
 # 显示所有字体名称列表
 fc-list : family | fzf
+
+# 刷新字体缓存
+fc-cache -fv
