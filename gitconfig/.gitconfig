@@ -6,12 +6,11 @@
 [alias]
     co = checkout
     br = branch
-    ci = commit
     cim = commit -m
     cia = commit --amend
     sw = switch
-    st = status
-    lg = log --oneline --graph --decorate --all
+    s = status
+    l = log --oneline --graph --decorate --all
     last = log -1 HEAD
     count = rev-list --count HEAD
     wip = commit -m "WIP"
