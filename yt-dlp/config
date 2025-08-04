@@ -17,3 +17,6 @@
 # 合并格式后的输出容器
 --merge-output-format mp4
 
+# 指定 cookie
+--cookies
+~/.config/yt-dlp/cookies.txt
