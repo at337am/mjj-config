@@ -4,20 +4,20 @@ default:
 # 重新配置 obsidian
 obsidian:
     @rm -rfv ~/Documents/notes/.obsidian
-    @tar -zxvf obsidian_config_bak.tar.gz -C ~/Documents/notes
+    @tar -zxvf /data/bak/reset/obsidian_config_bak.tar.gz -C ~/Documents/notes
     @echo "✅ obsidian 重置完成"
 
 # 备份 nekoray
 nekoray-bak:
     @pkill -15 nekoray || echo "nekoray 未运行，跳过终止步骤"
-    @rm -rfv /data/bak/nekoray.tar.gz
-    @tar -zcvf /data/bak/nekoray.tar.gz -C /opt/soft nekoray
+    @rm -rfv /data/bak/reset/nekoray.tar.gz
+    @tar -zcvf /data/bak/reset/nekoray.tar.gz -C /opt/soft nekoray
     @echo "✅ nekoray 备份完成"
 
 # 重新安装 nekoray
 nekoray-in:
     @pkill -15 nekoray || echo "nekoray 未运行，跳过终止步骤"
     @rm -rfv /opt/soft/nekoray
-    @tar -zxvf /data/bak/nekoray.tar.gz -C /opt/soft
-    @echo "✅ nekoray 已重新部署"
+    @tar -zxvf /data/bak/reset/nekoray.tar.gz -C /opt/soft
+    @echo "✅ nekoray 已重新安装"
 
