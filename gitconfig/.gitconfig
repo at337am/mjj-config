@@ -19,3 +19,8 @@
     pom = push origin main
     aw = !git add --all && git commit -m "WIP"
     res = restore
+[core]
+    quotepath = false
+    editor = nvim
+[log]
+    date = iso
