@@ -5,6 +5,7 @@ default:
 conv:
     @md2pg notes/other/书签.md
     @mv md2pg_result/书签.html .
+    @cp 书签.html ~/Downloads
     @rm -rfv md2pg_result
     @echo "Conversion Successful!"
 
