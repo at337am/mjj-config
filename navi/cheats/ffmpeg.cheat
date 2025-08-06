@@ -1,0 +1,4 @@
+% ffmpeg, clip
+
+# 截取单个视频片段
+ffmpeg -ss 00:00:30 -i input.mp4 -t 00:00:10 -c copy clip.mp4
