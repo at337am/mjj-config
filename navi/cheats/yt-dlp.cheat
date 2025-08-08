@@ -5,5 +5,5 @@ px yt-dlp --ignore-config yt-dlp -P . [URL]
 
 % mpv, lofi
 
-# 播放 lofi girl 的 youtube 直播音频
-px mpv --no-video 'https://www.youtube.com/watch?v=jfKfPfyJRdk'
+# 播放 youtube 音频
+px mpv --no-video 'https://youtu.be/jfKfPfyJRdk'
