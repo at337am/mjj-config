@@ -16,7 +16,7 @@
     count = rev-list --count HEAD
     wip = commit -m "WIP"
     rts = reset --soft
-    pom = push origin main
+    ps = push origin main
     aw = !git add --all && git commit -m "WIP"
     res = restore
 [core]
