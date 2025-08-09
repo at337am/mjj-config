@@ -4,21 +4,21 @@
     name = at337am
     email = lueqit@gmail.com
 [alias]
-    aw = !git add --all && git commit -m "WIP"
-    br = branch
-    ci = commit
-    cia = commit --amend
-    cim = commit -m
-    co = checkout
-    count = rev-list --count HEAD
+    st = status
     lg = log --oneline --graph --decorate --all
-    last = log -1 HEAD
+    sw = switch
+    br = branch
+    co = checkout
+    aa = add --all
+    ci = commit
+    cim = commit -m
+    wip = commit -m "WIP"
+    cia = commit --amend
+    aw = !git add --all && git commit -m "WIP"
     ps = push origin main
+    count = rev-list --count HEAD
     res = restore
     rts = reset --soft
-    st = status
-    sw = switch
-    wip = commit -m "WIP"
 [core]
     quotepath = false
     editor = nvim
