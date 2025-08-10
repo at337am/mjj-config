@@ -25,6 +25,7 @@ URLS=(
     "https://apkcombo.com"
     "https://flathub.org"
     "https://bsky.app"
+    "https://discord.com/channels/@me"
     "https://www.reddit.com"
     "https://x.com"
     "https://www.pinterest.com"
