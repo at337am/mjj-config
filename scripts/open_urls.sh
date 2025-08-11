@@ -11,7 +11,6 @@ URLS=(
     "https://up.woozooo.com"
     "https://difftext.com"
     "https://github.com"
-    "https://v2ex.com"
     "https://aistudio.google.com"
     "https://claude.ai"
     "https://www.perplexity.ai"
