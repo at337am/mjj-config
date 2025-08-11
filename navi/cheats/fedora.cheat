@@ -10,7 +10,6 @@ dnf repolist
 dnf repolist --all
 
 # 查看命令由哪个软件包提供
-$ cliname:
 dnf provides <cliname>
 
 # 清理缓存
