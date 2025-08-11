@@ -2,7 +2,7 @@
 --paths ~/Downloads/yt_dl
 
 # 代理
---proxy "http://127.0.0.1:2080"
+# --proxy "http://127.0.0.1:xxxx"
 
 # 格式优先策略：优先 AVC1 编码，其次按分辨率和容器排序
 --format-sort "vcodec:avc1,res:1080,ext:mp4"

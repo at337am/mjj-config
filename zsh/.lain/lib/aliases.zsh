@@ -1,8 +1,12 @@
 # misc
 alias cl='reset'
 alias v='nvim'
-alias del='/bin/rm'
+alias del='/bin/rm -i'
 alias px='http_proxy=http://127.0.0.1:2080 https_proxy=http://127.0.0.1:2080'
+alias flatpak='px flatpak'
+alias mpv='px mpv'
+alias yt-dlp='px yt-dlp'
+alias yt='px yt-dlp'
 alias ryc='rsync -avh --progress'
 alias uvdev='source /opt/venvs/dev/bin/activate'
 alias uva='source .venv/bin/activate'
@@ -14,7 +18,6 @@ alias lf='l --only-files'
 alias lT='l --tree'
 alias lt='l --sort=modified'
 alias fm='dolphin . > /dev/null 2>&1'
-alias yt='yt-dlp'
 
 # base
 alias _='sudo '
