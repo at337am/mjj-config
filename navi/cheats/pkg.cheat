@@ -1,16 +1,21 @@
-% fedora, dnf
+% pkg, rpm
+
+# 查询软件包版本信息 (检查是否已安装)
+rpm -q <AppName>
+
+# 列出所有已安装的 RPM 软件包
+rpm -qa
+
+% pkg, dnf
 
 # 显示 DNF 的命令历史记录
 dnf history list
 
-# 仅列出已启用的仓库
-dnf repolist
-
-# 显示出所有仓库
+# 列出所有仓库
 dnf repolist --all
 
 # 查看命令由哪个软件包提供
-dnf provides <cliname>
+dnf provides <CliName>
 
 # 清理缓存
 sudo dnf clean all
@@ -21,7 +26,10 @@ sudo dnf makecache
 # 删除系统中不再需要的依赖包
 sudo dnf autoremove
 
-% fedora, flatpak
+% pkg, flatpak
+
+# 显示 Flatpak 仓库信息
+flatpak remotes -d
 
 # 卸载 Flatpak App 并删除用户数据 (未指定 App)
 flatpak -y uninstall --delete-data [appname]

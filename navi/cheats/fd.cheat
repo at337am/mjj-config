@@ -1,4 +1,4 @@
-% fd, mv
+% mv, fd
 
 # 批量, 给文件名加上前缀
 fd . -x echo {} [name]_{/}

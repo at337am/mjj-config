@@ -1,0 +1,15 @@
+% magick, image
+
+# 单个图像, 格式转换
+magick [i.jpg] [o.png]
+
+# 单个图像, 调整尺寸 (指定宽度像素, 高度自适应比例缩放)
+magick [i.jpg] -resize [160x] [o.jpg]
+
+# 单个图像, 顺时针旋转 (指定度数)
+magick [i.png] -rotate [90] [o.png]
+
+% magick, image, fd
+
+# 批量, 将路径下所有 PNG 调整尺寸为 80 像素
+fd . -t f -e png -x magick {} -resize 80x {.}_result.png

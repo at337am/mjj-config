@@ -1,6 +1,6 @@
-% bak, hash
+% bak, hash, fd
 
-# 在当前路径下, 递归所有文件, 生成哈希清单 SHA256SUMS
+# 批量, 在当前路径下, 递归所有文件, 生成哈希清单 SHA256SUMS
 fd -t f --exclude 'SHA256SUMS' -x sha256sum {} > SHA256SUMS
 
 % bak, split

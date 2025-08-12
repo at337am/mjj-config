@@ -5,3 +5,8 @@ fc-list : family | fzf
 
 # 刷新字体缓存
 fc-cache -fv
+
+% misc, cowsay
+
+# 生成一句随机格言
+fortune | cowsay

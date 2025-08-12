@@ -1,0 +1,39 @@
+% sys, last
+
+# 显示系统重启历史 (倒序输出)
+last reboot -F | tac
+
+% sys, kernel, rpm
+
+# 列出所有已安装的内核版本
+rpm -q kernel
+
+% sys, kernel, uname
+
+# 显示当前运行的内核版本
+uname -r
+
+% sys, kernel, clean
+
+# 清理旧内核
+cd ~/workspace/dev/mjj-config/scripts && sudo ./clean_old_kernels.sh
+
+% sys, disk, lsblk
+
+# 查看当前挂载情况
+lsblk -f
+
+% sys, disk, fdisk
+
+# 列出所有磁盘及其分区的详细信息
+sudo fdisk -l
+
+% sys, disk, df
+
+# 显示已挂载的文件系统的磁盘空间使用情况
+df -hT
+
+% sys, htop
+
+# 监控指定名称的进程
+htop -p $(pgrep <ProcessName>)
