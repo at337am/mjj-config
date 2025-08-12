@@ -12,4 +12,4 @@ magick [i.png] -rotate [90] [o.png]
 % magick, image, fd
 
 # 批量, 将路径下所有 PNG 调整尺寸为 80 像素
-fd . -t f -e png -x magick {} -resize 80x {.}_result.png
+mkdir -p output && fd . -t f -e [png] -x magick {} -resize [80x] output/{/}

@@ -1,4 +1,7 @@
 % mv, fd
 
 # 批量, 给文件名加上前缀
-fd . -x echo {} [name]_{/}
+fd . -x echo {} xxx_{/}
+
+# 批量, 更改文件名后缀
+fd . -e JPG -x echo {} {.}.jpg
