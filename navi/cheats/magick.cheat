@@ -58,7 +58,7 @@ magick input.jpg \
     -pointsize 24 \
     -fill black \
     -annotate +10+10 "2025 My dear IU" \
-    output.png
+    output_text.png
 
 % magick, images, fd
 
