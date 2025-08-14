@@ -9,7 +9,10 @@ magick [i.jpg] -resize [160x] [o.jpg]
 # 单个图像, 顺时针旋转 (指定度数)
 magick [i.png] -rotate [90] [o.png]
 
+# 单个图像, 高斯模糊
+magick [i.png] -gaussian-blur [0x8] [o.png]
+
 % magick, image, fd
 
-# 批量, 将路径下所有 PNG 调整尺寸为 80 像素
+# 批量, 将路径下所有 PNG 调整尺寸为 80 像素 (输出到新目录)
 mkdir -p output && fd . -t f -e [png] -x magick {} -resize [80x] output/{/}
