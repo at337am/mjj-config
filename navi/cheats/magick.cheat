@@ -1,18 +1,52 @@
 % magick, image
 
-# 单个图像, 格式转换
-magick [i.jpg] [o.png]
+# 格式转换
+magick input.jpg output.png
 
-# 单个图像, 调整尺寸 (指定宽度像素, 高度自适应比例缩放)
-magick [i.jpg] -resize [160x] [o.jpg]
+# 水平翻转
+magick input.jpg -flop output_flop.jpg
 
-# 单个图像, 顺时针旋转 (指定度数)
-magick [i.png] -rotate [90] [o.png]
+# 垂直翻转
+magick input.jpg -flip output_flip.jpg
 
-# 单个图像, 高斯模糊
-magick [i.png] -gaussian-blur [0x8] [o.png]
+# 顺时针旋转 (指定度数)
+magick input.jpg -rotate 90 output_rotate.jpg
 
-% magick, image, fd
+# 高斯模糊 (指定模糊强度)
+magick input.jpg -gaussian-blur 0x5 output_gaussian_blur.jpg
 
-# 批量, 将路径下所有 PNG 调整尺寸为 80 像素 (输出到新目录)
-mkdir -p output && fd . -t f -e [png] -x magick {} -resize [80x] output/{/}
+# 运动模糊 (指定模糊强度和角度)
+magick input.jpg -motion-blur 0x10+45 output_motion_blur.jpg
+
+% magick, image, size
+
+# 调整尺寸 (固定宽度; 高度按比例自适应)
+magick input.jpg -resize 160x output_resize.jpg
+
+# 调整尺寸 (适应内部; 以长边为准缩放)
+magick input.jpg -resize 160x160 output_resize.jpg
+
+% magick, image, crop
+
+# 从左上角裁剪 (指定宽和高)
+magick input.jpg -crop '300x200+0+0' +repage output_crop.jpg
+
+# 居中裁剪 (指定宽和高)
+magick input.jpg -gravity Center -crop '300x200+0+0' +repage output_crop.jpg
+
+# 居中裁剪 (按百分比裁剪出区域)
+magick input.jpg -gravity Center -crop '80%x80%+0+0' +repage output_crop.jpg
+
+# 居中裁剪 (最大正方形)
+magick input.jpg -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage output_square_crop.jpg
+
+# 居中裁剪 (指定宽度; 高度不变)
+magick input.jpg -gravity Center -crop '400x%h+0+0' +repage output_w_crop.jpg
+
+# 居中裁剪 (固定比例 3:4; 高度不变)
+magick input.jpg -gravity Center -crop '%[fx:h*3/4]x%h+0+0' +repage output_3x4_crop.jpg
+
+% magick, images, fd
+
+# 批量调整尺寸 (输出到新目录); 将路径下所有 PNG 的宽度调整为 80 像素
+mkdir -p output && fd . -t f -e png -x magick {} -resize 80x output/{/}

@@ -31,8 +31,8 @@ sudo dnf autoremove
 # 显示 Flatpak 仓库信息
 flatpak remotes -d
 
-# 卸载 Flatpak App 并删除用户数据 (未指定 App)
-flatpak -y uninstall --delete-data [appname]
+# 卸载 Flatpak App 并删除用户数据 (指定 App)
+flatpak -y uninstall --delete-data xxx
 
 # 清理残留依赖
 flatpak uninstall --unused

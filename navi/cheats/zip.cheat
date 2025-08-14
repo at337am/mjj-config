@@ -1,18 +1,18 @@
 % zip
 
 # 压缩 zip
-zip -r [name].zip [path]
+zip -r output.zip input
 
 # 压缩 zip (保留符号链接)
-zip -r -y [name].zip [path]
+zip -r -y output.zip input
 
 # 解压 zip
-unzip [name].zip -d [path]
+unzip input.zip -d output_unzip
 
 % 7z
 
 # 压缩 7z
-7z a [name].7z [path]
+7z a output.7z input
 
 # 解压 7z
-7z x [name].7z
+7z x input.7z
