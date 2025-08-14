@@ -12,6 +12,8 @@ magick input.jpg -flip output_flip.jpg
 # 顺时针旋转 (指定度数)
 magick input.jpg -rotate 90 output_rotate.jpg
 
+% magick, image, blur
+
 # 高斯模糊 (指定模糊强度)
 magick input.jpg -gaussian-blur 0x5 output_gaussian_blur.jpg
 
