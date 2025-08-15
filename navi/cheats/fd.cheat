@@ -1,7 +1,22 @@
 % mv, fd
 
 # 批量; 给文件名加上前缀
-fd . -x echo {} xxx_{/}
+fd --no-ignore \
+    --type f \
+    --exec echo {} xxx_{/}
 
 # 批量; 更改文件名后缀
-fd . -e JPG -x echo {} {.}.jpg
+fd --no-ignore \
+    --extension JPG \
+    --exec echo {} {.}.jpg
+
+% find, fd
+
+# 包含隐藏文件; 不区分大小写 (-Hi)
+fd --hidden --ignore-case
+
+# 包含被忽略的文件 (-I)
+fd --no-ignore
+
+# 遍历深度为 1; 仅文件 (-d 1 -t f)
+fd --max-depth 1 --type f

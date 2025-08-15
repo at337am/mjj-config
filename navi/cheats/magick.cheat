@@ -62,7 +62,11 @@ magick input.jpg \
     -annotate +10+10 "2025 My dear IU" \
     output_text.png
 
-% magick, images, fd
+% magick, images, size, fd
 
 # 批量调整尺寸 (输出到新目录); 将路径下所有 PNG 的宽度调整为 80 像素
-mkdir -p output && fd . -t f -e png -x magick {} -resize 80x output/{/}
+mkdir -p output; \
+    fd --no-ignore \
+    --type f \
+    --extension png \
+    --exec magick {} -resize 80x output/{/}

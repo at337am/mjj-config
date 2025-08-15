@@ -1,0 +1,10 @@
+% grep, rg
+
+# 包含隐藏文件; 不区分大小写 (-i.)
+rg --hidden --ignore-case
+
+# 包含被忽略的文件
+rg --no-ignore
+
+# 只列出匹配的文件名 (-l)
+rg --files-with-matches
