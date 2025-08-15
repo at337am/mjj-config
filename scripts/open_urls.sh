@@ -12,6 +12,7 @@ URLS=(
     "https://difftext.com"
     "https://github.com"
     "https://aistudio.google.com"
+    "https://archive.org"
     "https://claude.ai"
     "https://translate.google.com"
     "https://www.google.com"
@@ -32,7 +33,6 @@ URLS=(
     "https://proton.me"
     "https://bilibili.com"
     "https://music.163.com"
-    "https://xiaohongshu.com"
     "https://weibo.com"
 )
 
