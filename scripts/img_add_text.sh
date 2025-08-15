@@ -21,12 +21,12 @@ point_size=$(echo "scale=0; $image_height * $PERCENTAGE / 1" | bc)
 
 # 5. 指定输出路径
 mkdir -p output_magick/
-output_file="output_magick/$(basename "$input_image")"
+output_file="output_magick/$(basename "${input_image%.*}").png"
 
 # 6. 执行 magick 命令
 magick "$input_image" \
     -gravity SouthEast \
-    -font "Adwaita-Sans-Italic" \
+    -font "Google-Sans-Code-Italic" \
     -pointsize "$point_size" \
     -fill black \
     -annotate +10+10 "2025 My dear IU" \
