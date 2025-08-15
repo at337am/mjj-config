@@ -56,7 +56,7 @@ magick -list font | rg "Font:" | fzf
 # 在图像右下角添加文字
 magick input.jpg \
     -gravity SouthEast \
-    -font "Adwaita-Sans-Italic" \
+    -font "Google-Sans-Code-Italic" \
     -pointsize 24 \
     -fill black \
     -annotate +10+10 "2025 My dear IU" \
