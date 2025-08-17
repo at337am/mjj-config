@@ -21,7 +21,7 @@ fd --no-ignore
 # 遍历深度为 1; 仅文件 (-d 1 -t f)
 fd --max-depth 1 --type f
 
-% find, fd, png
+% find, png, fd
 
 # 查找所有 PNG 图像文件
 fd --hidden \
@@ -30,7 +30,7 @@ fd --hidden \
     --extension png \
     --exec echo {}
 
-% find, fd, jpg
+% find, jpg, fd
 
 # 查找所有 JPG 图像文件
 fd --hidden \

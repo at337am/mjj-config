@@ -1,3 +1,8 @@
+% bak, hash
+
+% 校验哈希清单
+sha256sum -c SHA256SUMS
+
 % bak, hash, fd
 
 # 批量; 在当前路径下, 递归所有文件, 生成哈希清单 SHA256SUMS
