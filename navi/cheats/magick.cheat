@@ -4,49 +4,49 @@
 magick input.jpg output.png
 
 # 水平翻转
-magick input.jpg -flop output_flop.jpg
+magick input.jpg -flop output_flop.png
 
 # 垂直翻转
-magick input.jpg -flip output_flip.jpg
+magick input.jpg -flip output_flip.png
 
 # 顺时针旋转 (指定度数)
-magick input.jpg -rotate 90 output_rotate.jpg
+magick input.jpg -rotate 90 output_rotate.png
 
 % magick, img, blur
 
 # 高斯模糊 (指定模糊强度)
-magick input.jpg -gaussian-blur 0x5 output_gaussian_blur.jpg
+magick input.jpg -gaussian-blur 0x5 output_gaussian_blur.png
 
 # 运动模糊 (指定模糊强度和角度)
-magick input.jpg -motion-blur 0x10+45 output_motion_blur.jpg
+magick input.jpg -motion-blur 0x10+45 output_motion_blur.png
 
 % magick, img, size
 
 # 调整尺寸 (固定宽度; 高度按比例自适应)
-magick input.jpg -resize 160x output_resize.jpg
+magick input.jpg -resize 160x output_resize.png
 
 # 调整尺寸 (适应内部; 以长边为准缩放)
-magick input.jpg -resize 160x160 output_resize.jpg
+magick input.jpg -resize 160x160 output_resize.png
 
 % magick, img, crop
 
 # 从左上角裁剪 (指定宽和高)
-magick input.jpg -crop '300x200+0+0' +repage output_crop.jpg
+magick input.jpg -crop '300x200+0+0' +repage output_crop.png
 
 # 居中裁剪 (指定宽和高)
-magick input.jpg -gravity Center -crop '300x200+0+0' +repage output_crop.jpg
+magick input.jpg -gravity Center -crop '300x200+0+0' +repage output_crop.png
 
 # 居中裁剪 (按百分比裁剪出区域)
-magick input.jpg -gravity Center -crop '80%x80%+0+0' +repage output_crop.jpg
+magick input.jpg -gravity Center -crop '80%x80%+0+0' +repage output_crop.png
 
 # 居中裁剪 (最大正方形)
-magick input.jpg -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage output_square_crop.jpg
+magick input.jpg -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage output_square_crop.png
 
 # 居中裁剪 (指定宽度; 高度不变)
-magick input.jpg -gravity Center -crop '400x%h+0+0' +repage output_w_crop.jpg
+magick input.jpg -gravity Center -crop '400x%h+0+0' +repage output_w_crop.png
 
 # 居中裁剪 (固定比例 3:4; 高度不变)
-magick input.jpg -gravity Center -crop '%[fx:h*3/4]x%h+0+0' +repage output_3x4_crop.jpg
+magick input.jpg -gravity Center -crop '%[fx:h*3/4]x%h+0+0' +repage output_3x4_crop.png
 
 % magick, img, text, fzf
 
