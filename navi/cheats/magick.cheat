@@ -39,14 +39,8 @@ magick input.jpg -gravity Center -crop '300x200+0+0' +repage output_crop.png
 # 居中裁剪 (按百分比裁剪出区域)
 magick input.jpg -gravity Center -crop '80%x80%+0+0' +repage output_crop.png
 
-# 居中裁剪 (最大正方形)
-magick input.jpg -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage output_square_crop.png
-
 # 居中裁剪 (指定宽度; 高度不变)
 magick input.jpg -gravity Center -crop '400x%h+0+0' +repage output_w_crop.png
-
-# 居中裁剪 (固定比例 3:4; 高度不变)
-magick input.jpg -gravity Center -crop '%[fx:h*3/4]x%h+0+0' +repage output_3x4_crop.png
 
 % magick, img, text, fzf
 
