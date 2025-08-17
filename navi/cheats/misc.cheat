@@ -1,11 +1,3 @@
-% misc, font
-
-# 显示所有字体名称列表
-fc-list : family | fzf
-
-# 刷新字体缓存
-fc-cache -fv
-
 % misc, cowsay
 
 # 生成一句随机格言

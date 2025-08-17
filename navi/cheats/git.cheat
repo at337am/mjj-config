@@ -6,19 +6,19 @@ git push --force-with-lease
 % git, index, no-skip
 
 # 恢复跟踪! 文件! 任何修改
-$ filename: fd --max-depth 1 --hidden --type f | fzf
+$ FileName: fd --max-depth 1 --hidden --type f | fzf
 git update-index --no-skip-worktree <FileName>
 
 # 恢复跟踪! 目录! 所有内容修改
-$ dirname: fd --max-depth 1 --hidden --type d | fzf
+$ DirName: fd --max-depth 1 --hidden --type d | fzf
 git ls-files -z <DirName> | xargs -0 git update-index --no-skip-worktree
 
 % git, index, skip
 
 # 忽略! 文件! 任何修改
-$ filename: fd --max-depth 1 --hidden --type f | fzf
+$ FileName: fd --max-depth 1 --hidden --type f | fzf
 git update-index --skip-worktree <FileName>
 
 # 忽略! 目录! 所有内容修改
-$ dirname: fd --max-depth 1 --hidden --type d | fzf
+$ DirName: fd --max-depth 1 --hidden --type d | fzf
 git ls-files -z <DirName> | xargs -0 git update-index --skip-worktree

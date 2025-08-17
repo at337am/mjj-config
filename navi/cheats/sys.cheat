@@ -37,3 +37,13 @@ df -hT
 
 # 监控指定名称的进程
 htop -p $(pgrep <ProcessName>)
+
+% sys, font
+
+# 刷新字体缓存
+fc-cache -fv
+
+% sys, font, fzf
+
+# 查找已安装的字体
+fc-list : family | fzf
