@@ -24,7 +24,8 @@ fd --max-depth 1 --type f
 % find, fd, png
 
 # 查找所有 PNG 图像文件
-fd --no-ignore \
+fd --hidden \
+    --no-ignore \
     --type f \
     --extension png \
     --exec echo {}
@@ -32,7 +33,8 @@ fd --no-ignore \
 % find, fd, jpg
 
 # 查找所有 JPG 图像文件
-fd --no-ignore \
+fd --hidden \
+    --no-ignore \
     --type f \
     --extension jpg \
     --exec echo {}
