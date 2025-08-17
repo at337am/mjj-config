@@ -333,3 +333,12 @@ byebye() {
   # 使用 sudo 权限执行系统关机命令, 立即关闭系统电源
   sudo shutdown -h now
 }
+
+# ------------
+#  mc11
+# ------------
+
+# 将图像裁剪为正方形
+mc11() {
+    magick "$1" -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage "${1%.*}_square.png"
+}
