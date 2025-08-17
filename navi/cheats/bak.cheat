@@ -1,6 +1,6 @@
 % bak, hash
 
-% 校验哈希清单
+# 校验哈希清单
 sha256sum -c SHA256SUMS
 
 % bak, hash, fd
