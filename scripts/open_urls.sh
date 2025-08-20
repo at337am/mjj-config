@@ -11,6 +11,7 @@ URLS=(
     "https://aistudio.google.com"
     "https://alipan.com/drive/file/all"
     "https://apkcombo.com"
+    "https://apkmirror.com"
     "https://archive.org"
     "https://bilibili.com"
     "https://bsky.app"
