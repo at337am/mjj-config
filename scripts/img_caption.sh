@@ -21,7 +21,15 @@ image_height=$(magick identify -format "%h" "$input_image")
 font_color="white"
 
 # 字体样式
-font_style="IBM-Plex-Sans-Italic"
+font_style="Josefin-Sans-Regular"
+
+# 字体样式参考
+# IBM-Plex-Sans-Regular
+# IBM-Plex-Sans-Italic
+# Josefin-Sans-Regular
+# Josefin-Sans-Italic
+# Google-Sans-Code-Regular
+# Google-Sans-Code-Italic
 
 # 字体大小
 font_size=$(echo "$image_height * $PERCENTAGE / 1" | bc)
@@ -47,7 +55,7 @@ magick "$input_image" \
     -font "$font_style" \
     -pointsize "$font_size" \
     -fill "$font_color" \
-    -annotate +$x_offset+$y_offset "Shot on Pixel 3 · Aug 19 PM" \
+    -annotate +$x_offset+$y_offset "Shot on Pixel 3 · Aug 20 PM" \
     "$output_file"
 
 # 最后输出完成信息
