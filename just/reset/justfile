@@ -30,8 +30,8 @@ nekoray-bak:
     @echo "✅ nekoray 备份完成"
 
 # 拉取新的 cookie
-cookie:
-    @rm -rfv /data/bak/reset/cookies.txt
-    @mv ~/Downloads/cookies.txt /data/bak/reset/
-    @chmod 600 /data/bak/reset/cookies.txt
-    @echo "🍪 cookie 拉取成功"
+# cookie:
+#     @rm -rfv /data/bak/reset/cookies.txt
+#     @mv ~/Downloads/cookies.txt /data/bak/reset/
+#     @chmod 600 /data/bak/reset/cookies.txt
+#     @echo "🍪 cookie 拉取成功"

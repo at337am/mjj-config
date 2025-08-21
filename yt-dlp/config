@@ -18,5 +18,4 @@
 --merge-output-format mp4
 
 # 指定 cookie
---cookies
-/data/bak/reset/cookies.txt
+# --cookies /data/bak/reset/cookies.txt
