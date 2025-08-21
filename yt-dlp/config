@@ -19,4 +19,4 @@
 
 # 指定 cookie
 --cookies
-~/.config/yt-dlp/cookies.txt
+/data/bak/reset/cookies.txt
