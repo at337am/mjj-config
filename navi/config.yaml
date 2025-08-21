@@ -13,4 +13,4 @@ style:
 
 cheats:
   paths:
-    - ~/workspace/dev/mjj-config/navi/cheats
+    - ~/.config/navi/cheats
