@@ -1,7 +1,7 @@
 % yt-dlp, iu
 
 # 临时忽略所有配置文件, 适合下载 IU LIVE (未指定 URL)
-yt-dlp --ignore-config --cookies /data/bak/reset/cookies.txt -P . URL
+yt-dlp --ignore-config -P . URL
 
 % mpv, lofi
 
