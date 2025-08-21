@@ -298,7 +298,7 @@ pack() {
 # --- 无参数 ---
 byebye() {
   # 预定义关闭程序的脚本路径
-  local script_path="$HOME/workspace/dev/mjj-config/scripts/kill_apps.sh"
+  local script_path="$HOME/workspace/dev/mjj-config/shutdown/kill_apps.sh"
   # 设定倒计时持续秒数
   local countdown=3
 
