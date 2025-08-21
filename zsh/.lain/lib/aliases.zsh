@@ -1,7 +1,6 @@
 # misc
 alias cl='reset'
 alias v='nvim'
-alias del='/bin/rm -i'
 alias px='http_proxy=http://127.0.0.1:2080 https_proxy=http://127.0.0.1:2080'
 alias flatpak='px flatpak'
 alias mpv='px mpv'
