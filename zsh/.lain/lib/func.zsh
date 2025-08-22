@@ -340,7 +340,7 @@ byebye() {
 
 # 将图像居中裁剪为正方形
 mc11() {
-    magick "$1" -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage "${1%.*}_1x1.png"
+  magick "$1" -gravity Center -crop '%[fx:min(w,h)]x%[fx:min(w,h)]+0+0' +repage "${1%.*}_1x1.png"
 }
 
 # ------------
@@ -349,5 +349,17 @@ mc11() {
 
 # 保持高不变, 将图像居中裁剪为 3:4
 mc34() {
-    magick "$1" -gravity Center -crop '%[fx:h*3/4]x%h+0+0' +repage "${1%.*}_3x4.png"
+  magick "$1" -gravity Center -crop '%[fx:h*3/4]x%h+0+0' +repage "${1%.*}_3x4.png"
+}
+
+# ------------
+#  cnt
+# ------------
+
+# 统计当前路径下, 目录和文件的数量
+# 包含隐藏, 不包含子目录
+cnt() {
+  printf "dirs: %d  files: %d\n" \
+    "$(fd --no-ignore --hidden --type d --max-depth 1 | wc -l)" \
+    "$(fd --no-ignore --hidden --type f --max-depth 1 | wc -l)"
 }
