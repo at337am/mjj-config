@@ -1,14 +1,27 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+success=0
+fail=0
 
 # 遍历当前目录下所有 .apk 后缀的文件
 for apk in *.apk
 do
-  # 检查文件是否存在
+  # 检查是否存在文件
   [ ! -f "$apk" ] && continue
 
-  echo "--> 正在安装: $apk"
-  adb install -r "$apk" && echo "    安装成功" || echo "    安装失败"
-  echo "---------------"
+  echo "--> $apk"
+
+  if adb install -r "$apk"; then
+    echo "    安装成功"
+    success=$((success + 1))
+  else
+    echo "    安装失败"
+    fail=$((fail + 1))
+  fi
+  echo "----------------"
 done
 
-echo "所有 APK 安装任务已完成"
+echo
+echo "--- 执行完毕 ---"
+echo "Succeeded: ${success}"
+echo "Failed: ${fail}"
