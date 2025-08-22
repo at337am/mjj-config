@@ -7,3 +7,8 @@ fortune | cowsay
 
 # 拷贝文件内容到剪贴板
 wl-copy < 1.txt
+
+% misc, watch
+
+# 监控当前目录下的文件变化, 新生成的文件会出现在最下面
+watch -d -n 1 'ls -lhrt'
