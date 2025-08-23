@@ -13,11 +13,6 @@ rpm -q kernel
 # 显示当前运行的内核版本
 uname -r
 
-% sys, kernel, clean
-
-# 清理旧内核
-cd ~/workspace/dev/mjj-config/scripts && sudo ./clean_old_kernels.sh
-
 % sys, disk, lsblk
 
 # 查看当前挂载情况
