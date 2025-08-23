@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 1 ]; then
     printf "参数错误\n" >&2
-    printf "用法: %s <视频文件>\n" "ffmpeg-extract-audio.sh"
+    printf "用法: %s <视频文件>\n" "ffmpeg-extract-audio.sh" >&2
     exit 1
 fi
 
