@@ -47,17 +47,6 @@ magick input.jpg -gravity Center -crop '400x%h+0+0' +repage output_w_crop.png
 # 查找 magick 支持的字体
 magick -list font | rg "Font:" | fzf
 
-% magick, img, text
-
-# 在图像右下角添加文字
-magick input.jpg \
-    -gravity SouthEast \
-    -font "Josefin-Sans-Italic" \
-    -pointsize 24 \
-    -fill black \
-    -annotate +10+10 "2025 My dear IU" \
-    output_text.png
-
 % magick, img, size, fd
 
 # 批量调整尺寸 (输出到新目录); 将路径下所有 PNG 的宽度调整为 80 像素

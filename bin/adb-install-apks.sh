@@ -9,19 +9,17 @@ do
   # 检查是否存在文件
   [ ! -f "$apk" ] && continue
 
-  echo "--> $apk"
-
   if adb install -r "$apk"; then
-    echo "    安装成功"
+    printf "OK -> %s\n" "$apk"
     success=$((success + 1))
   else
-    echo "    安装失败"
+    printf "ERR -> %s\n" "$apk"
     fail=$((fail + 1))
   fi
-  echo "----------------"
+  printf "-------------\n"
 done
 
-echo
-echo "--- 执行完毕 ---"
-echo "Succeeded: ${success}"
-echo "Failed: ${fail}"
+printf "\n"
+printf "--- Total ---\n"
+printf "OK count: %d\n" "$success"
+printf "ERR count: %d\n" "$fail"

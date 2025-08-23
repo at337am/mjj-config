@@ -13,4 +13,3 @@ fi
 
 echo "Removed old kernels"
 exit 0
-
