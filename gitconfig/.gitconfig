@@ -9,7 +9,7 @@
     sw = switch
     br = branch
     co = checkout
-    aa = add --all
+    aa = !git add --all && git status -bs
     ci = commit
     cim = commit -m
     wip = commit -m "WIP"
