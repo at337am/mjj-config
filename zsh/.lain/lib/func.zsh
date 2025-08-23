@@ -1,5 +1,8 @@
-# 定义回收站目录的绝对路径, 用于存放被删除文件的临时位置
+# 回收站目录路径
 TRASH_DIR="/data/.trash"
+
+# 关机时, 关闭程序的脚本路径
+KILL_APPS_SCRIPT="$HOME/workspace/dev/mjj-config/shutdown/kill_apps.sh"
 
 # ------------
 #  rm
@@ -15,11 +18,18 @@ rm() {
     return 1
   fi
 
-  # 创建回收站目录（若不存在）, 并确保其可写
-  mkdir -p "$TRASH_DIR"
-  if [ ! -d "$TRASH_DIR" ] || [ ! -w "$TRASH_DIR" ]; then
-    printf "Error: Uh-oh! Can't access your trash can at '%s'.\n" "$TRASH_DIR" >&2
-    printf "Check if you can write to '%s'.\n" "$(dirname "$TRASH_DIR")" >&2
+  # 如果回收站目录不存在, 则尝试创建它
+  if [[ ! -d "$TRASH_DIR" ]]; then
+    if ! mkdir -p "$TRASH_DIR"; then
+      printf "Error: Failed to create trash directory at '%s'.\n" "$TRASH_DIR" >&2
+      printf "Please check write permissions for the parent directory: '%s'.\n" "$(dirname "$TRASH_DIR")" >&2
+      return 1
+    fi
+  fi
+
+  # 检查回收站目录是否可写
+  if [[ ! -w "$TRASH_DIR" ]]; then
+    printf "Error: Trash directory '%s' is not writable.\n" "$TRASH_DIR" >&2
     return 1
   fi
 
@@ -297,14 +307,12 @@ pack() {
 # 执行关闭程序的脚本后, 启动倒计时并最终关机
 # --- 无参数 ---
 byebye() {
-  # 预定义关闭程序的脚本路径
-  local script_path="$HOME/workspace/dev/mjj-config/shutdown/kill_apps.sh"
   # 设定倒计时持续秒数
   local countdown=3
 
   # 检查关闭程序脚本是否存在, 缺失则报错并退出
-  if [[ ! -f "$script_path" ]]; then
-    printf "Error: Oops! Can't find kill script: %s\n" "$script_path" >&2
+  if [[ ! -f "$KILL_APPS_SCRIPT" ]]; then
+    printf "Error: Oops! Can't find kill script: %s\n" "$KILL_APPS_SCRIPT" >&2
     return 1
   fi
 
@@ -312,7 +320,7 @@ byebye() {
   printf "Time to bid farewell to running apps...\n"
 
   # 执行关闭程序的脚本
-  sh "$script_path"
+  sh "$KILL_APPS_SCRIPT"
 
   # 脚本执行完成后, 通知用户所有程序已关闭
   printf "All clear! Apps have left the building.\n"
