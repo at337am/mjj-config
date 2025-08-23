@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 2 ]; then
     printf "参数错误\n" >&2
-    printf "用法: %s <视频文件> <音频文件>\n" "$0"
+    printf "用法: %s <视频文件> <音频文件>\n" "ffmpeg-replace-audio.sh"
     exit 1
 fi
 
@@ -19,15 +19,13 @@ if [ ! -f "$AUD_PATH" ]; then
     exit 1
 fi
 
-# 文件路径处理
+# 构建输出文件名
 dirname=$(dirname "$VID_PATH")
 basename=$(basename "$VID_PATH")
 filename="${basename%.*}"
 ext="${basename##*.}"
 
-# 构建输出文件名, 例如: my_video_repaudio.mp4
-output_filename="${filename}_repaudio.${ext}"
-output_path="${dirname}/${output_filename}"
+output_path="${dirname}/${filename}_repaudio.${ext}"
 
 # --- 开始执行 ---
 

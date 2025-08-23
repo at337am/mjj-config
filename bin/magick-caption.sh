@@ -2,7 +2,7 @@
 
 if [ "$#" -ne 2 ]; then
     printf "参数错误\n" >&2
-    printf "用法: %s <图像文件> <文字内容>\n" "$0"
+    printf "用法: %s <图像文件> <文字内容>\n" "magick-caption.sh"
     exit 1
 fi
 
