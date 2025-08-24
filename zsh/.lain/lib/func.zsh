@@ -341,15 +341,3 @@ byebye() {
   # 使用 sudo 权限执行系统关机命令, 立即关闭系统电源
   sudo shutdown -h now
 }
-
-# ------------
-#  cnt
-# ------------
-
-# 统计当前路径下, 目录和文件的数量
-# 包含隐藏, 不包含子目录
-cnt() {
-  printf "dirs: %d  files: %d\n" \
-    "$(fd --no-ignore --hidden --type d --max-depth 1 | wc -l)" \
-    "$(fd --no-ignore --hidden --type f --max-depth 1 | wc -l)"
-}
