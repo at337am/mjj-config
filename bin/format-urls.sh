@@ -14,7 +14,7 @@ if [ ! -f "$INPUT_PATH" ]; then
     exit 1
 fi
 
-output_path="$(dirname "$INPUT_PATH")/furl_output.txt"
+output_path="$(dirname "$INPUT_PATH")/furls_result.txt"
 
 # -o 仅输出匹配部分
 links=$(rg -o 'https://www\.xiaohongshu\.com/discovery/item/[^\s]+' "$INPUT_PATH")

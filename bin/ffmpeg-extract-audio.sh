@@ -37,7 +37,7 @@ case "$audio_codec" in
         ext="wav"
         ;;
     *)
-        echo "Error: 不支持的音频编码: $audio_codec" >&2
+        printf "Error: 不支持的音频编码: %s\n" "$audio_codec" >&2
         exit 1
         ;;
 esac

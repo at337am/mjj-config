@@ -16,10 +16,9 @@ do
     printf "ERR -> %s\n" "$apk"
     fail=$((fail + 1))
   fi
-  printf "-------------\n"
+  printf "%s\n" "-------------"
 done
 
-printf "\n"
-printf "--- Total ---\n"
+printf "%s\n" "--- Total ---"
 printf "OK count: %d\n" "$success"
 printf "ERR count: %d\n" "$fail"
