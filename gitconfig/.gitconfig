@@ -18,7 +18,7 @@
     pom = push origin main
     count = rev-list --count HEAD
     soft = reset --soft
-    ore = restore
+    rec = restore
 [core]
     quotepath = false
     editor = nvim
