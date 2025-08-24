@@ -15,7 +15,7 @@
     wip = commit -m "WIP"
     aa = !git add --all && git status -bs
     aw = !git add --all && git commit -m "WIP"
-    pom = push origin main
+    ps = push origin main
     count = rev-list --count HEAD
     soft = reset --soft
     rec = restore
