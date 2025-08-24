@@ -9,16 +9,16 @@
     sw = switch
     br = branch
     co = checkout
-    aa = !git add --all && git status -bs
     ci = commit
-    cim = commit -m
+    cm = commit -m
+    ca = commit --amend
     wip = commit -m "WIP"
-    cia = commit --amend
+    aa = !git add --all && git status -bs
     aw = !git add --all && git commit -m "WIP"
-    ps = push origin main
+    pom = push origin main
     count = rev-list --count HEAD
-    res = restore
-    rts = reset --soft
+    soft = reset --soft
+    ore = restore
 [core]
     quotepath = false
     editor = nvim
