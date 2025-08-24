@@ -41,6 +41,32 @@
         },
         "break",
         {
+            "type": "terminal",
+            "key": "",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": "󱆃",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "de",
+            "key": "󱢅",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "wm",
+            "key": "󰿘",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "battery",
+            "key": "",
+            "keyColor": "magenta"
+        },
+        "break",
+        {
             "type": "cpu",
             "key": "",
             "keyColor": "green"
@@ -65,32 +91,6 @@
             "type": "disk",
             "key": "",
             "keyColor": "green"
-        },
-        "break",
-        {
-            "type": "terminal",
-            "key": "",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "shell",
-            "key": "󱆃",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "de",
-            "key": "󱢅",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "wm",
-            "key": "󰿘",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "battery",
-            "key": "",
-            "keyColor": "magenta"
         },
         "break",
         {
