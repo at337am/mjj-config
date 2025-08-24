@@ -15,8 +15,8 @@ alias bp='bat -p'
 alias l='eza --long --all --binary --time-style="+%y%m%d %H:%M"'
 alias lf='l --only-files'
 alias lt='l --sort=modified'
-alias fm='systemd-run --user --service-type=exec --unit="dolphin-$(date +%s)" dolphin .'
-alias mm='systemd-run --user --service-type=exec --unit="kwrite-$(date +%s)" kwrite ~/workspace/tmp/memo_$(date +"%y%m%d%H%M%S").md'
+alias fm='systemd-run --user --service-type=exec dolphin .'
+alias mm='systemd-run --user --service-type=exec kwrite ~/workspace/tmp/memo_$(date +"%y%m%d%H%M%S").md'
 
 # base
 alias _='sudo '
