@@ -2,7 +2,7 @@ default:
     @just --list
 
 # 重置 obsidian
-obsidian-in:
+reset-obsidian:
     @rm -rfv ~/Documents/notes/.obsidian
     @tar -zxvf /data/bak/reset/obsidian_config_bak.tar.gz -C ~/Documents/notes
     @echo "✅ obsidian 重置完成"
@@ -10,20 +10,24 @@ obsidian-in:
 # obsidian 备份时注意: 先恢复跟踪 -> data 重置 -> 改配置 -> git 提交 -> data 备份 -> 最后忽略跟踪
 
 # 备份 obsidian
-obsidian-bak:
+bak-obsidian:
+    @echo "注意! 将在 3 秒后开始备份 obsidian 配置"
+    @sleep 3
     @rm -rfv /data/bak/reset/obsidian_config_bak.tar.gz
     @tar -zcvf /data/bak/reset/obsidian_config_bak.tar.gz -C ~/Documents/notes .obsidian
     @echo "✅ obsidian 备份完成"
 
-# 重新安装 nekoray
-nekoray-in:
+# 重置 nekoray
+reset-nekoray:
     @pkill -15 nekoray || echo "nekoray 未运行，跳过终止步骤"
     @rm -rfv /opt/soft/nekoray
     @tar -zxvf /data/bak/reset/nekoray.tar.gz -C /opt/soft
     @echo "✅ nekoray 已重新安装"
 
 # 备份 nekoray
-nekoray-bak:
+bak-nekoray:
+    @echo "注意! 将在 3 秒后开始备份 nekoray"
+    @sleep 3
     @pkill -15 nekoray || echo "nekoray 未运行，跳过终止步骤"
     @rm -rfv /data/bak/reset/nekoray.tar.gz
     @tar -zcvf /data/bak/reset/nekoray.tar.gz -C /opt/soft nekoray
