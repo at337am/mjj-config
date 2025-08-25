@@ -10,4 +10,4 @@ rg --no-ignore
 rg --files-with-matches
 
 # 统计匹配到的总个数
-rg --no-ignore --hidden -o "xxx" | wc -l
+rg --no-ignore --hidden -o "https:" | wc -l
