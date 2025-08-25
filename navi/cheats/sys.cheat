@@ -28,7 +28,7 @@ sudo fdisk -l
 # 显示已挂载的文件系统的磁盘空间使用情况
 df -hT
 
-% sys, htop
+% sys, htop, pgrep
 
 # 监控指定名称的进程
 htop -p $(pgrep <ProcessName>)
