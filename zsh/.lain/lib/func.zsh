@@ -2,7 +2,7 @@
 TRASH_DIR="/data/.trash"
 
 # 关机时, 关闭程序的脚本路径
-KILL_APPS_SCRIPT="$HOME/workspace/dev/mjj-config/shutdown/kill_apps.sh"
+KILL_APPS_SCRIPT="$HOME/.config/plasma-workspace/shutdown/kill_apps.sh"
 
 # ------------
 #  rm
