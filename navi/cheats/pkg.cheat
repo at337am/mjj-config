@@ -1,10 +1,12 @@
 % pkg, rpm
 
 # 查询软件包版本信息 (检查是否已安装)
-rpm -q <AppName>
+rpm -q <appname>
 
 # 列出所有已安装的 RPM 软件包
 rpm -qa
+
+
 
 % pkg, dnf
 
@@ -15,7 +17,7 @@ dnf history list
 dnf repolist --all
 
 # 查看命令由哪个软件包提供
-dnf provides <CliName>
+dnf provides <cliname>
 
 # 清理缓存
 sudo dnf clean all
@@ -25,6 +27,8 @@ sudo dnf makecache
 
 # 删除系统中不再需要的依赖包
 sudo dnf autoremove
+
+
 
 % pkg, flatpak
 

@@ -3,15 +3,21 @@
 # 生成单个文件的哈希
 sha256sum a.txt > a.txt.sha256
 
+
+
 % bak, hash, fd
 
 # 在当前路径下, 遍历所有文件并生成哈希清单 SHA256SUMS
 fd -t f --exclude 'SHA256SUMS' -x sha256sum {} > SHA256SUMS
 
+
+
 % bak, hash, check
 
 # 校验哈希
 sha256sum -c SHA256SUMS
+
+
 
 % bak, split
 

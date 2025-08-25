@@ -3,10 +3,14 @@
 # 生成一句随机格言
 fortune | cowsay
 
+
+
 % misc, wl-copy
 
 # 拷贝文件内容到剪贴板
 wl-copy < 1.txt
+
+
 
 % misc, watch
 
