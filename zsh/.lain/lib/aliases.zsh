@@ -15,7 +15,7 @@ alias bp='bat -p'
 alias l='eza --long --all --binary --time-style="+%y%m%d %H:%M"'
 alias lf='l --only-files'
 alias lt='l --sort=modified'
-alias fm='systemd-run --user --service-type=exec dolphin .'
+alias fm='dolphin . > /dev/null 2>&1'
 alias mm='systemd-run --user --service-type=exec kwrite ~/workspace/tmp/memo_$(date +"%y%m%d%H%M%S").md'
 alias cnt='echo "dirs: $(fd -IH -t d -d 1 | wc -l)  files: $(fd -IH -t f -d 1 | wc -l)"'
 
