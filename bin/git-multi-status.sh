@@ -5,6 +5,7 @@ PROJECT_PATHS=(
     "$HOME/workspace/dev/mjj-config"
     "$HOME/workspace/dev/skit"
     "$HOME/workspace/dev/raindrop"
+    "/data/bak/memos"
 )
 
 C_BLUE="\033[0;34m"
