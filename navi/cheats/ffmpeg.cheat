@@ -2,3 +2,17 @@
 
 # 截取单个视频片段
 ffmpeg -ss 00:00:30 -i input.mp4 -t 00:00:10 -c copy clip.mp4
+
+
+
+% ffmpeg, flac, music
+
+# 将 封面 和 歌词 写入音乐文件
+ffmpeg -i [input.flac] \
+    -i [封面.jpg] \
+    -map 0:a \
+    -map 1:v \
+    -c copy \
+    -disposition:v attached_pic \
+    -metadata "LYRICS=$(cat [合并歌词.lrc])" \
+    -y [output.flac]
