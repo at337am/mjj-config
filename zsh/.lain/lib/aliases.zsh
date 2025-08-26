@@ -18,6 +18,7 @@ alias lt='l --sort=modified'
 alias fm='dolphin . > /dev/null 2>&1'
 alias mm='systemd-run --user --service-type=exec kwrite ~/workspace/tmp/memo_$(date +"%y%m%d%H%M%S").md'
 alias cnt='printf "dirs: %s  symlinks: %s  files: %s\n" "$(fd -IH -t d -d 1 | wc -l)" "$(fd -IH -t l -d 1 | wc -l)" "$(fd -IH -t f -d 1 | wc -l)"'
+alias cpwd='pwd | tr -d "\n" | wl-copy && echo "\e[32mPath copied!\e[0m"'
 
 # base
 alias _='sudo '
