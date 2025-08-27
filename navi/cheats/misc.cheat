@@ -16,3 +16,16 @@ wl-copy < 1.txt
 
 # 监控当前目录下的文件变化, 新生成的文件会出现在最下面
 watch -d -n 1 'ls -lhrt'
+
+
+
+% misc, file
+
+# 检查文件的真实类型
+file a.mp4
+
+# 输出文件的 MIME 类型
+file -i a.mp4
+
+# 批量检查文件的类型
+file *
