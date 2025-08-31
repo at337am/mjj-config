@@ -29,3 +29,10 @@ file -i a.mp4
 
 # 批量检查文件的类型
 file *
+
+
+
+% misc, tr
+
+# 去除多余换行
+tr -s '\n' < input.md > output.md
