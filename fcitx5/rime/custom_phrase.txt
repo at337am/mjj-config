@@ -23,42 +23,45 @@
 #
 # 此行之后不能写注释
 
-噷	hm
-呣	m
-呒	m
 
-有	u	3
-又	u	2
-由	u	1
+好	h
+吗	m
+好吗	hm
+不知道	bzd
+小红书	xhs
+笑死我了	xswl
+有误	youwu
+是什么	ssm
+是什么意思	ssmys
+最佳实践	zjsj
+最佳实践	zuijiashijian
+Telegram	tg
+Telegram	telegram
 
-一	i	4
-以	i	3
-已	i	2
-亦	i	1
+毛时期	msq
+毛时期	maoshiqi
+邓时期	dsq
+邓时期	dengshiqi
+江时期	jsq
+江时期	jiangshiqi
+胡时期	hsq
+胡时期	hushiqi
 
-一个	ig
-有个	ug
-是一个	sig
-有一个	uig
-有一个	uyig
-有一个	uyige
-有没有	umu
-有没有	umeiu
-又有	uu
-又又又	uuu
-又双叒叕	uuuu
+杨继绳	yangjishen
+杨继绳	yangjisheng
+高华	gaohua
+杨显惠	yangxianhui
+夹边沟	jiabiangou
+记事	jishi
+夹边沟记事	jiabiangoujishi
 
-go	go
+LLM	llm
+AI	ai
+Go	go
 Golang	golang
-Hugo	hugo
-goto	goto
-domain	domain
-TODO	todo
-Dota	dota
-main	main
+Gemini	gemini
+ChatGPT	chatgpt
 Amazon	amazon
 NASA	nasa
-gone	gone
-Go程	gocheng
 code	code
-SOHO	soho
+todo	todo
