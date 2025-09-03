@@ -27,6 +27,7 @@
 好	h
 吗	m
 好吗	hm
+什么	sm
 不知道	bzd
 小红书	xhs
 笑死我了	xswl
@@ -37,6 +38,9 @@
 最佳实践	zuijiashijian
 Telegram	tg
 Telegram	telegram
+会发生	hfs
+会发生	huifashen
+会发生什么	hfssm
 
 毛时期	msq
 毛时期	maoshiqi
