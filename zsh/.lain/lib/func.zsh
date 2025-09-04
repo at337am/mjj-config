@@ -12,9 +12,15 @@ KILL_APPS_SCRIPT="$HOME/.config/plasma-workspace/shutdown/kill_apps.sh"
 # --- 1 个或以上参数 ---
 rm() {
   # 若未提供任何参数, 则提示用户用法并退出
-  if [ $# -eq 0 ]; then
+  if [[ "$#" -eq 0 ]]; then
     printf "rm: Nothing to delete, buddy.\n" >&2
     printf "Usage: rm <path>...\n" >&2
+    return 1
+  fi
+
+  # 若在 ~ 路径下执行, 且位置参数 >= 2 个, 则报错退出, 防止误删
+  if [[ "$PWD" == "$HOME" && "$#" -ge 2 ]]; then
+    printf "Error: For safety, batch deletion of 2 or more items from the home directory '~' is prohibited.\n" >&2
     return 1
   fi
 
@@ -39,7 +45,7 @@ rm() {
   # 遍历所有待删除的参数, 逐一处理
   for item in "$@"; do
     # 若指定路径不存在且不是符号链接, 则跳过并报错
-    if [ ! -e "$item" ] && [ ! -L "$item" ]; then
+    if [[ ! -e "$item" && ! -L "$item" ]]; then
       printf "Error: Can't find '%s' — already gone?\n" "$item" >&2
       move_failed=1
       continue
@@ -50,12 +56,12 @@ rm() {
     local destination_path="${TRASH_DIR}/$(date +%y%m%d%H%M%S_%N)_${base_name}"
 
     # 检查生成的路径是否与现有文件冲突, 若冲突则附加随机后缀以保证唯一性
-    if [ -e "$destination_path" ] || [ -L "$destination_path" ]; then
+    if [[ -e "$destination_path" || -L "$destination_path" ]]; then
       destination_path+=".$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)"
     fi
 
     # 显示移动操作的信息, 便于用户追踪
-    printf "Moving to trash: %s -> %s\n" "$item" "$(basename -- "$destination_path")"
+    printf "remove: %s -> %s\n" "$item" "$(basename -- "$destination_path")"
 
     # 执行移动操作, 将目标文件/目录移动至回收站目录
     # 使用 '--' 明确后续为路径参数, 防止误解析为选项
@@ -132,19 +138,19 @@ mkcd() {
 # ------------
 
 # 创建一个新目录, 并将一个或多个指定文件或目录移动到该目录中
-# 若新目录已存在, 则不执行, 该函数不允许在 ~ 中运行
+# 若新目录已存在, 则不执行
 # --- 2 个或以上参数 ---
 mkmv() {
-  # 防止在主目录下运行
-  if [[ "$PWD" == "$HOME" ]]; then
-    printf "Error: Do not run 'mkmv' in your home directory.\n" >&2
+  # 检查传入参数数量是否不少于两个, 若不足则提示错误并退出
+  if [[ "$#" -lt 2 ]]; then
+    printf "mkmv: Oops! At least two arguments are required.\n" >&2
+    printf "Usage: mkmv <path>... <new-dir>\n" >&2
     return 1
   fi
 
-  # 检查传入参数数量是否不少于两个, 若不足则提示错误并退出
-  if [[ $# -lt 2 ]]; then
-    printf "mkmv: Oops! At least two arguments are required.\n" >&2
-    printf "Usage: mkmv <path>... <new-dir>\n" >&2
+  # 若在 ~ 路径下执行, 且位置参数 >= 3 个, 则报错退出, 防止误操作
+  if [[ "$PWD" == "$HOME" && "$#" -ge 3 ]]; then
+    printf "Error: For safety, batch moving of 2 or more items from the home directory '~' is prohibited.\n" >&2
     return 1
   fi
 
@@ -190,7 +196,7 @@ mkmv() {
 # --- 1 个或以上参数 ---
 bak() {
   # 检查是否提供了至少一个参数, 若无则输出错误提示并退出
-  if [[ $# -eq 0 ]]; then
+  if [[ "$#" -eq 0 ]]; then
     printf "bak: Nothing to back up, buddy.\n" >&2
     printf "Usage: bak <file>...\n" >&2
     return 1
@@ -214,7 +220,7 @@ bak() {
     local backup_file="${file}_$(date +%y%m%d%H%M%S_%N).bak"
 
     # 检测备份文件名是否已存在, 若存在则添加随机后缀确保唯一性
-    if [ -e "$backup_file" ] || [ -L "$backup_file" ]; then
+    if [[ -e "$backup_file" || -L "$backup_file" ]]; then
       backup_file+=".$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 6)"
     fi
 
@@ -256,7 +262,7 @@ pack() {
   fi
 
   # 检查是否提供至少一个要打包的参数
-  if [[ $# -eq 0 ]]; then
+  if [[ "$#" -eq 0 ]]; then
     printf "pack: Nothing to pack, buddy.\n" >&2
     printf "Usage: pack [-z|--gzip] <path>...\n" >&2 # 更新用法提示
     return 1

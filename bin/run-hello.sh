@@ -30,7 +30,7 @@ PID=$!
 
 
 # 简单检查 PID 是否有效
-if [ "$PID" -eq 0 ] || [ "$PID" -eq 1 ]; then
+if [[ "$PID" -eq 0 || "$PID" -eq 1 ]]; then
     printf "🤯 Uh-oh, the server didn't start right.\n" >&2
     printf "🧐 Check the logs: '%s/%s'\n" "$TARGET_DIR" "$LOG_FILE" >&2
     popd > /dev/null 2>&1

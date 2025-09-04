@@ -4,7 +4,7 @@
 TARGET_DIR="/opt/soft/XHS-Downloader"
 
 # 检查是否存在该目录
-if [ -d "$TARGET_DIR" ]; then
+if [[ -d "$TARGET_DIR" ]]; then
   # 进入目录
   cd "$TARGET_DIR" || exit 1
   

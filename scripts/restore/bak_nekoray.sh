@@ -10,7 +10,7 @@ pkill -15 nekoray || printf "nekoray 未运行，跳过终止步骤\n"
 
 sleep 2
 
-if [ -f "$bak_path" ]; then
+if [[ -f "$bak_path" ]]; then
     mv -v "$bak_path" "$old_bak_path"
 fi
 

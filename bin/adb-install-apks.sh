@@ -7,7 +7,7 @@ fail=0
 for apk in *.apk
 do
   # 检查是否存在文件
-  [ ! -f "$apk" ] && continue
+  [[ ! -f "$apk" ]] && continue
 
   if adb install -r "$apk"; then
     printf "OK -> %s\n" "$apk"

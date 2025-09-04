@@ -24,7 +24,7 @@ shift $((OPTIND - 1))
 
 video_path="$1"
 
-if [ "$#" -ne 1 ]; then
+if [[ "$#" -ne 1 ]]; then
     printf "参数错误\n" >&2
     usage
 fi

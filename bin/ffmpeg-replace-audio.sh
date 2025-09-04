@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$#" -ne 2 ]; then
+if [[ "$#" -ne 2 ]]; then
     printf "参数错误\n" >&2
     printf "用法: %s <视频文件> <音频文件>\n" "ffmpeg-replace-audio.sh" >&2
     exit 1
@@ -10,11 +10,11 @@ VID_PATH="$1"
 AUD_PATH="$2"
 
 # 检查输入文件是否存在
-if [ ! -f "$VID_PATH" ]; then
+if [[ ! -f "$VID_PATH" ]]; then
     printf "Error: 视频文件不存在: %s\n" "$VID_PATH" >&2
     exit 1
 fi
-if [ ! -f "$AUD_PATH" ]; then
+if [[ ! -f "$AUD_PATH" ]]; then
     printf "Error: 音频文件不存在: %s\n" "$AUD_PATH" >&2
     exit 1
 fi
@@ -44,7 +44,7 @@ ffmpeg -hide_banner -loglevel error \
     -shortest \
     -y "$output_path"
 
-if [ $? -eq 0 ]; then
+if [[ "$?" -eq 0 ]]; then
     printf "OK -> %s\n" "$output_path"
 else
     printf "ERR -> %s\n" "$output_path" >&2

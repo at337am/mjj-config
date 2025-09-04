@@ -9,7 +9,7 @@ bak_path="/data/bak/restore/obsidian_config.tar.gz"
 
 old_bak_path="/data/bak/restore/old/obsidian_config_$(date "+%s").tar.gz"
 
-if [ -f "$bak_path" ]; then
+if [[ -f "$bak_path" ]]; then
     mv -v "$bak_path" "$old_bak_path"
 fi
 

@@ -2,7 +2,7 @@
 
 bak_path="/data/bak/restore/nekoray.tar.gz"
 
-if [ ! -f "$bak_path" ]; then
+if [[ ! -f "$bak_path" ]]; then
     printf "Error: 文件备份不存在: %s\n" "$bak_path" >&2
     exit 1
 fi
