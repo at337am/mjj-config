@@ -34,5 +34,24 @@ file *
 
 % misc, tr
 
-# 去除多余换行
+# 去除多余的换行符
 tr -s '\n' < input.md > output.md
+
+
+
+% misc, uniq, sort
+
+# 去除重复行
+sort file.txt | uniq
+
+# 显示重复行
+sort file.txt | uniq -d
+
+# 显示重复行及次数
+sort file.txt | uniq -c | awk '$1>1'
+
+# 只显示未重复的行
+sort file.txt | uniq -u
+
+# 显示每行出现次数
+sort file.txt | uniq -c
