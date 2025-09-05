@@ -42,16 +42,16 @@ tr -s '\n' < input.md > output.md
 % misc, uniq, sort
 
 # 去除重复行
-sort file.txt | uniq
+sort a.txt | uniq
 
 # 显示重复行
-sort file.txt | uniq -d
+sort a.txt | uniq -d
 
 # 显示重复行及次数
-sort file.txt | uniq -c | awk '$1>1'
+sort a.txt | uniq -c | awk '$1>1'
 
 # 只显示未重复的行
-sort file.txt | uniq -u
+sort a.txt | uniq -u
 
 # 显示每行出现次数
-sort file.txt | uniq -c
+sort a.txt | uniq -c
