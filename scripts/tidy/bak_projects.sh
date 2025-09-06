@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-mkdir -p "/data/bak/restore/projects"
+bak_dir="/data/bak/projects"
+
+mkdir -p "$bak_dir"
 
 bak_notes() {
     rsync -avh \
@@ -10,7 +12,7 @@ bak_notes() {
         --exclude='.gitignore' \
         --exclude='.obsidian' \
         "$HOME/Documents/notes/" \
-        "/data/bak/restore/projects/notes/"
+        "$bak_dir/notes/"
 }
 
 bak_memos() {
@@ -19,7 +21,7 @@ bak_memos() {
         --delete-excluded \
         --exclude='.git' \
         "$HOME/Documents/memos/" \
-        "/data/bak/restore/projects/memos/"
+        "$bak_dir/memos/"
 }
 
 bak_dev() {
@@ -28,7 +30,7 @@ bak_dev() {
         --delete-excluded \
         --exclude='*/.git' \
         "$HOME/workspace/dev/" \
-        "/data/bak/restore/projects/dev/"
+        "$bak_dir/dev/"
 }
 
 bak_notes
