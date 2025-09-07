@@ -58,6 +58,9 @@ Telegram	telegram
 夹边沟	jiabiangou
 记事	jishi
 夹边沟记事	jiabiangoujishi
+《红太阳是怎样升起的：延安整风的来龙去脉》	hty
+《红太阳是怎样升起的：延安整风的来龙去脉》	htyszysqd
+《红太阳是怎样升起的：延安整风的来龙去脉》	hongtaiyangshizenyangshengqide
 
 LLM	llm
 AI	ai
