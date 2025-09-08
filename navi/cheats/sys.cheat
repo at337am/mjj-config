@@ -5,6 +5,16 @@ last reboot -F | tac
 
 
 
+% sys, uptime
+
+# 显示系统启动时间
+uptime -s
+
+# 显示系统运行时间
+uptime -p
+
+
+
 % sys, kernel, rpm
 
 # 列出所有已安装的内核版本
