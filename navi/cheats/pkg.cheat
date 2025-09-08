@@ -8,10 +8,14 @@ rpm -qa
 
 
 
-% pkg, dnf
+% pkg, dnf, history
 
 # 显示 DNF 的命令历史记录
 dnf history list
+
+
+
+% pkg, dnf
 
 # 列出所有仓库
 dnf repolist --all
