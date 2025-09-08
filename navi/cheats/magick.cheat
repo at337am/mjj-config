@@ -12,6 +12,8 @@ magick input.jpg -flip output_flip.png
 # 顺时针旋转 (指定度数)
 magick input.jpg -rotate 90 output_rotate.png
 
+# 生成纯色图片
+magick -size 1080x1080 xc:"#ffffff" output.png
 
 
 % magick, img, blur
@@ -24,7 +26,7 @@ magick input.jpg -motion-blur 0x10+45 output_motion_blur.png
 
 
 
-% magick, img, size
+% magick, img, resize
 
 # 调整尺寸 (固定宽度; 高度按比例自适应)
 magick input.jpg -resize 160x output_resize.png
@@ -57,7 +59,7 @@ magick -list font | rg "Font:" | fzf
 
 
 
-% magick, img, size, fd
+% magick, img, resize, fd
 
 # 批量调整尺寸 (输出到新目录); 将路径下所有 PNG 的宽度调整为 80 像素
 mkdir -p output; fd -I -e png -x magick {} -resize 80x output/{/}
