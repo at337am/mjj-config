@@ -40,16 +40,12 @@ URLS=(
     "https://youtube.com"
 )
 
-printf "准备使用默认浏览器打开以下网站...\n"
-printf "%s\n" "------------"
-
 i=1
 
 for url in "${URLS[@]}"; do
-    printf "-> 正在打开 %s. %s\n" "$i" "$url"
+    printf "正在打开 %s. %s\n" "$i" "$url"
     xdg-open "$url"
     ((i++))
 done
 
-printf "%s\n" "------------"
 printf "操作完成! 所有网站都已请求在浏览器中打开\n"
