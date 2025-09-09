@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
 
-session_name="nekoray"
+session="nekoray"
+nekoray_path="/opt/soft/nekoray/nekoray"
 
-# Check if the session exists
-if tmux has-session -t $session_name 2>/dev/null; then
-    printf "Session %s already exists. Killing the session...\n" "$session_name"
-    # Kill the session
-    tmux kill-session -t $session_name
+# 检查会话是否存在
+if tmux has-session -t "$session" 2>/dev/null; then
+    printf "%s already exists, recreating...\n" "$session"
+    tmux kill-session -t "$session"
 fi
 
-# Create a new tmux session and run nekoray
-tmux new-session -d -s $session_name '/opt/soft/nekoray/nekoray'
-
-# Detach from the tmux session
-tmux detach -s $session_name
+# 启动新会话
+tmux new-session -d -s "$session" "$nekoray_path"
 
 exit 0
