@@ -1,4 +1,4 @@
-% pkg, rpm
+% pkg, dnf, rpm
 
 # 查询软件包版本信息 (检查是否已安装)
 rpm -q <appname>
@@ -16,6 +16,9 @@ dnf history list
 
 
 % pkg, dnf
+
+# 列出已启用的仓库
+dnf repolist
 
 # 列出所有仓库
 dnf repolist --all
