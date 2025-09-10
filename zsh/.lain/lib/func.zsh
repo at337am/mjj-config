@@ -217,7 +217,7 @@ bak() {
     fi
 
     # 生成备份文件名, 附加精确到纳秒的时间戳, 避免文件名冲突
-    local backup_file="${file}_$(date +%y%m%d%H%M%S_%N).bak"
+    local backup_file="${file}_$(date +%y%m%d%H%M%S%N).bak"
 
     # 检测备份文件名是否已存在, 若存在则添加随机后缀确保唯一性
     if [[ -e "$backup_file" || -L "$backup_file" ]]; then
