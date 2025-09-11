@@ -1,0 +1,23 @@
+% hypr
+
+# 重新加载配置文件
+hyprctl reload
+
+# 显示硬件设备名称
+hyprctl devices
+
+# 列出显示器信息
+hyprctl monitors
+
+
+
+% hypr, window
+
+# 列出所有窗口
+hyprctl clients
+
+# 查看当前活动窗口的信息
+hyprctl activewindow
+
+# 查看所有工作区
+hyprctl workspaces
