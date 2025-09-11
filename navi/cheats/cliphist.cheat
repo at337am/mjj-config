@@ -1,0 +1,4 @@
+% cliphist, wipe
+
+# 清空贴板历史记录
+rm ~/.cache/cliphist
