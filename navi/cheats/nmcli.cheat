@@ -1,0 +1,19 @@
+% nmcli, wifi
+
+# 检查网络后台服务
+systemctl status NetworkManager
+
+# 添加配置
+nmcli connection add type wifi con-name "网络连接受限-profile" ssid "网络连接受限" -- wifi-sec.key-mgmt wpa-psk wifi-sec.psk "110110110"
+
+# 删除连接配置
+nmcli connection delete "网络连接受限-profile"
+
+# 手动激活配置
+nmcli connection up "网络连接受限-profile"
+
+# 查看已保存的连接配置
+nmcli connection show
+
+# 扫描附近的 Wi-Fi 列表
+nmcli device wifi list
