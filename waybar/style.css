@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-    background: rgba(40, 40, 40, 0.85);
-    color: #ffffff;
+    background: rgba(46, 46, 46, 0.85);
+    color: #e5e5e5;
 }
 
 /* ------------------- */
@@ -40,14 +40,14 @@ window#waybar {
 
 /* 当前活动工作区 */
 #workspaces button.active {
-    color: #ffffff;
+    color: #e5e5e5;
     background-color: #555555;
     /* border-radius: 4px; */
 }
 
 /* 有窗口但非活动的工作区 */
 #workspaces button.occupied {
-    color: #ffffff;
+    color: #e5e5e5;
 }
 
 /* ------------------- */
