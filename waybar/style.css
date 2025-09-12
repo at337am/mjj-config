@@ -38,8 +38,8 @@ window#waybar {
 
 /* 当前活动工作区 */
 #workspaces button.active {
-    color: #333;
-    background-color: #E69DB8;
+    color: #e5e5e5;
+    background-color: #555555;
 }
 
 /* 有窗口但非活动的工作区 */
