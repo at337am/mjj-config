@@ -12,8 +12,6 @@ window#waybar {
     color: #e5e5e5;
 }
 
-/* ------------------- */
-
 #clock,
 #workspaces,
 #tray,
@@ -24,7 +22,7 @@ window#waybar {
     margin: 4px 0;
 }
 
-/* ------------------- */
+
 
 /* 工作区样式 */
 #workspaces button {
@@ -40,9 +38,8 @@ window#waybar {
 
 /* 当前活动工作区 */
 #workspaces button.active {
-    color: #e5e5e5;
-    background-color: #555555;
-    /* border-radius: 4px; */
+    color: #333;
+    background-color: #E69DB8;
 }
 
 /* 有窗口但非活动的工作区 */
@@ -50,7 +47,7 @@ window#waybar {
     color: #e5e5e5;
 }
 
-/* ------------------- */
+
 
 /* 为右侧模块添加一个简单的分隔符 */
 #workspaces,
