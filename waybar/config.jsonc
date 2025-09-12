@@ -1,8 +1,12 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32, // Bar 的高度
-    "spacing": 5, // 模块之间的间距
+
+    // Bar 的高度
+    "height": 32,
+
+    // 模块之间的间距
+    "spacing": 5,
 
     // 左侧模块: 在最前面添加了 "clock"
     "modules-left": ["clock", "hyprland/workspaces"],
