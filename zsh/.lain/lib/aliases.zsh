@@ -19,7 +19,8 @@ alias fm='dolphin . > /dev/null 2>&1'
 alias kw='kwrite'
 alias mm='systemd-run --user --service-type=exec kwrite ~/workspace/tmp/memo_$(date +"%y%m%d%H%M%S").md'
 alias cnt='printf "dirs: %s  symlinks: %s  files: %s\n" "$(fd -IH -t d -d 1 | wc -l)" "$(fd -IH -t l -d 1 | wc -l)" "$(fd -IH -t f -d 1 | wc -l)"'
-alias code='code --unity-launch --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto > /dev/null 2>&1'
+# alias code='code --unity-launch --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto > /dev/null 2>&1'
+alias code='code --ozone-platform-hint=auto > /dev/null 2>&1'
 
 # base
 alias _='sudo '
