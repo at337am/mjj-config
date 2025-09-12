@@ -39,7 +39,6 @@
     },
 
     "backlight": {
-        // 请用 `ls /sys/class/backlight/` 确认你的设备名称
         "device": "intel_backlight",
         "format": "Bright: {percent}%"
     },

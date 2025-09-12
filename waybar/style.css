@@ -5,13 +5,11 @@
     border-radius: 0;
     font-family: "Google Sans Code", "0xProto Nerd Font Mono", sans-serif;
     font-size: 14px;
-    min-height: 0;
 }
 
 window#waybar {
     background: rgba(40, 40, 40, 0.85);
     color: #ffffff;
-    /* padding: 0 8px; */
 }
 
 /* ------------------- */
@@ -33,7 +31,6 @@ window#waybar {
     padding: 0 16px;
     margin: 0 2px;
     color: #a6a6a6;
-    background-color: transparent;
 }
 
 /* 鼠标悬停时 */
