@@ -11,7 +11,7 @@
     // "modules-center": [],
 
     // 右侧模块
-    "modules-right": ["network", "pulseaudio", "backlight", "battery", "tray"],
+    "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery"],
 
     "clock": {
         // "format": "{:%F %H:%M}",

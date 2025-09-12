@@ -14,16 +14,15 @@ window#waybar {
     padding: 0 8px;
 }
 
-
 /* ------------------- */
 
 #clock,
 #workspaces,
+#tray,
 #network,
 #pulseaudio,
 #backlight,
-#battery,
-#tray {
+#battery {
     padding: 0 10px;
     margin: 4px 0;
 }
@@ -66,19 +65,18 @@ window#waybar {
 /* ------------------- */
 
 /* 为右侧模块添加一个简单的分隔符 */
-#tray,
 #network,
 #pulseaudio,
 #backlight,
 #battery {
-    border-left: 2px solid #ffffff;
+    border-left: 2px solid #c0c0c0;
     padding-left: 10px;
 }
 
 /* 第一个模块不需要左边框 */
-#network {
+/* #tray {
     border-left: none;
-}
+} */
 
 #battery.warning {
     color: #ffb86c;
