@@ -2,11 +2,8 @@
     "layer": "top",
     "position": "top",
 
-    // Bar 的高度
+    // 状态栏高度
     "height": 32,
-
-    // 模块之间的间距
-    "spacing": 5,
 
     // 左侧模块: 在最前面添加了 "clock"
     "modules-left": ["clock", "hyprland/workspaces"],
@@ -15,7 +12,7 @@
     // "modules-center": [],
 
     // 右侧模块
-    "modules-right": ["tray", "network", "pulseaudio", "backlight", "battery"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
 
     "clock": {
         // "format": "{:%F %H:%M}",
@@ -24,25 +21,15 @@
         "tooltip-format": "{:%F}"
     },
 
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
     "tray": {
         "icon-size": 16,
         "spacing": 10,
         "reverse-direction": true
-    },
-
-    "hyprland/workspaces": {
-        "format": "{name}", // 只显示工作区名称或数字
-        "on-click": "activate"
-    },
-    
-    "network": {
-        // 请用 `ip a` 命令确认你的无线网卡名称，通常是 wlan0 或 wlpXsY
-        "interface": "wlp0s20f3",
-        "format-wifi": "Wi-Fi: {essid} ({signalStrength}%)",
-        "format-ethernet": "Eth: {ipaddr}/{cidr}",
-        "format-disconnected": "Wi-Fi: Disconnected",
-        "tooltip-format": "{ifname} via {gwaddr} "
-        // "on-click": "nm-connection-editor" // 点击打开网络管理器
     },
 
     "pulseaudio": {
@@ -53,7 +40,7 @@
 
     "backlight": {
         // 请用 `ls /sys/class/backlight/` 确认你的设备名称
-        "device": "intel_backlight", 
+        "device": "intel_backlight",
         "format": "Bright: {percent}%"
     },
 

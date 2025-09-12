@@ -11,7 +11,7 @@
 window#waybar {
     background: rgba(40, 40, 40, 0.85);
     color: #ffffff;
-    padding: 0 8px;
+    /* padding: 0 8px; */
 }
 
 /* ------------------- */
@@ -69,14 +69,9 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #battery {
-    border-left: 2px solid #c0c0c0;
+    border-left: 2px solid #8c8c8c;
     padding-left: 10px;
 }
-
-/* 第一个模块不需要左边框 */
-/* #tray {
-    border-left: none;
-} */
 
 #battery.warning {
     color: #ffb86c;
