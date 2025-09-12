@@ -19,20 +19,11 @@ window#waybar {
 #clock,
 #workspaces,
 #tray,
-#network,
 #pulseaudio,
 #backlight,
 #battery {
     padding: 0 10px;
     margin: 4px 0;
-}
-
-/* ------------------- */
-
-/* 时钟样式 */
-#clock {
-    border-right: 1px solid #ffffff;
-    padding-right: 10px;
 }
 
 /* ------------------- */
@@ -65,7 +56,7 @@ window#waybar {
 /* ------------------- */
 
 /* 为右侧模块添加一个简单的分隔符 */
-#network,
+#workspaces,
 #pulseaudio,
 #backlight,
 #battery {
