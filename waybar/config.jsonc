@@ -5,13 +5,13 @@
     "spacing": 5, // 模块之间的间距
 
     // 左侧模块: 在最前面添加了 "clock"
-    "modules-left": ["tray", "hyprland/workspaces"],
+    "modules-left": ["clock", "hyprland/workspaces"],
 
     // 中间模块
-    "modules-center": ["clock"],
+    // "modules-center": [],
 
     // 右侧模块
-    "modules-right": ["network", "pulseaudio", "backlight", "battery"],
+    "modules-right": ["network", "pulseaudio", "backlight", "battery", "tray"],
 
     "clock": {
         // "format": "{:%F %H:%M}",

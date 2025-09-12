@@ -1,6 +1,5 @@
-/* ~/.config/waybar/style.css */
+/* ------------------- */
 
-/* --- 全局样式 --- */
 * {
     border: none;
     border-radius: 0;
@@ -15,48 +14,59 @@ window#waybar {
     padding: 0 8px;
 }
 
-/* --- 模块通用样式 --- */
-#tray,
-#workspaces,
+
+/* ------------------- */
+
 #clock,
+#workspaces,
 #network,
 #pulseaudio,
 #backlight,
-#battery {
-    padding: 0 10px; /* 模块左右内边距，让文字不贴边 */
-    margin: 4px 0; /* 模块上下外边距，让模块在 Bar 中垂直居中 */
+#battery,
+#tray {
+    padding: 0 10px;
+    margin: 4px 0;
 }
 
-/* --- 新增：为左侧的模块添加分隔符 --- */
-#tray {
+/* ------------------- */
+
+/* 时钟样式 */
+#clock {
     border-right: 1px solid #ffffff;
     padding-right: 10px;
 }
 
-/* --- 工作区样式 --- */
+/* ------------------- */
+
+/* 工作区样式 */
 #workspaces button {
     padding: 0 16px;
     margin: 0 2px;
-    color: #a6a6a6; /* 非活动工作区的颜色 */
+    color: #a6a6a6;
     background-color: transparent;
 }
 
+/* 鼠标悬停时 */
 #workspaces button:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时高亮 */
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 当前活动工作区 */
 #workspaces button.active {
-    color: #ffffff; /* 当前活动工作区的颜色 */
-    background-color: #555555; /* 当前活动工作区的背景 */
+    color: #ffffff;
+    background-color: #555555;
     /* border-radius: 4px; */
 }
 
+/* 有窗口但非活动的工作区 */
 #workspaces button.occupied {
-    color: #ffffff; /* 有窗口但非活动的工作区颜色 */
+    color: #ffffff;
 }
 
-/* --- 右侧模块样式 --- */
+/* ------------------- */
+
 /* 为右侧模块添加一个简单的分隔符 */
+#tray,
 #network,
 #pulseaudio,
 #backlight,
@@ -64,11 +74,11 @@ window#waybar {
     border-left: 2px solid #ffffff;
     padding-left: 10px;
 }
+
 /* 第一个模块不需要左边框 */
 #network {
     border-left: none;
 }
-
 
 #battery.warning {
     color: #ffb86c;
