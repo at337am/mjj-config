@@ -81,3 +81,7 @@ element-text selected {
 element selected {
     background-color: @selectedc;
 }
+
+element-icon {
+    size: 16px;
+}
