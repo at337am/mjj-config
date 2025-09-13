@@ -9,7 +9,7 @@
     "modules-left": ["clock", "hyprland/workspaces"],
 
     // 中间模块
-    // "modules-center": [],
+    "modules-center": ["custom/logo"],
 
     // 右侧模块
     "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
@@ -17,7 +17,7 @@
     "clock": {
         // "format": "{:%F %H:%M}",
         // "format": "{:%F (%A) %H:%M}",
-        "format": "{:%A %H:%M}",
+        "format": "✿ {:%A %H:%M}",
         "tooltip-format": "{:%F}"
     },
 
@@ -28,19 +28,19 @@
 
     "tray": {
         "icon-size": 16,
-        "spacing": 10,
+        "spacing": 8,
         "reverse-direction": true
     },
 
     "pulseaudio": {
-        "format": "Vol: {volume}%",
+        "format": "VOL: {volume}%",
         "format-muted": "Vol: Muted"
         // "on-click": "pavucontrol" // 点击打开音量控制
     },
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "Bright: {percent}%"
+        "format": "BRT: {percent}%"
     },
 
     "battery": {
@@ -49,9 +49,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "Bat: {capacity}%",
-        "format-charging": "Bat: {capacity}% (Charging)",
-        "format-plugged": "Bat: {capacity}% (Plugged)",
+        "format": "BAT: {capacity}%",
+        "format-charging": "BAT: {capacity}% (Charging)",
+        "format-plugged": "BAT: {capacity}% (Plugged)",
         "format-alt": "{time} {icon}"
     }
 }
