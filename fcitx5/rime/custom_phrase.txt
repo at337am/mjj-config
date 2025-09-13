@@ -41,6 +41,9 @@ Telegram	telegram
 会发生	hfs
 会发生	huifashen
 会发生什么	hfssm
+高亮	gaoliang
+奇数	jishu
+偶数	oushu
 
 毛时期	msq
 毛时期	maoshiqi

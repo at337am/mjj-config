@@ -2,7 +2,7 @@
     font: "Google Sans Code 12";
 
     background-color: transparent;
-    text-color: #d8dee9;
+    text-color: #e5e5e5;
 
     margin: 0px;
     padding: 0px;
@@ -15,7 +15,7 @@ window {
     width: 480;
     border-radius: 0px;
 
-    background-color: #2e3440f2;
+    background-color: #2e2e2e;
 }
 
 mainbox {
@@ -23,27 +23,29 @@ mainbox {
 }
 
 inputbar {
-    background-color: #3b4252;
-    border-color: #88c0d0f2;
+    border-color: #555555;
 
     border: 2px;
     border-radius: 0px;
 
     padding: 8px 16px;
+
+    /* 子元素之间的间距 */
     spacing: 8px;
-    children: [ prompt, entry];
+
+    /* children: [ prompt, entry]; */
 }
 
-prompt {
+/* prompt {
     text-color: #d8dee9;
 }
 
 entry {
     placeholder: "Search";
     placeholder-color: #4c566a;
-}
+} */
 
-message {
+/* message {
     margin: 12px 0 0;
     border-radius: 0px;
     border-color: #4c566a80;
@@ -52,15 +54,18 @@ message {
 
 textbox {
     padding: 8px 24px;
-}
+} */
 
 listview {
-    background-color: transparent;
-
     margin: 12px 0 0;
+
+    /* 显示的行数 */
     lines: 8;
+
+    /* 显示的列数 */
     columns: 1;
 
+    /* 保持高度固定 */
     fixed-height: true;
 }
 
@@ -70,28 +75,16 @@ element {
     border-radius: 0px;
 }
 
-element normal active {
-    text-color: #88c0d0f2;
+/* 关闭搜索词条高亮 */
+element-text {
+    highlight: none;
 }
 
-element alternate active {
-    text-color: #88c0d0f2;
-}
-
-element selected normal,
-element selected active {
-    background-color: #88c0d0f2;
-}
-
-element-icon {
+/* element-icon {
     size: 1em;
     vertical-align: 0.5;
-}
-
-element-text {
-    text-color: inherit;
-}
+} */
 
 element selected {
-    text-color: #3b4252;
+    background-color: #555555;
 }
