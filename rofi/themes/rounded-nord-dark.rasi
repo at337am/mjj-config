@@ -60,6 +60,10 @@ listview {
     /* 显示的列数 */
     columns: 1;
 
+    /* 启用滚动条 */
+    /* scrollbar: true;
+    spacing: 12px; */
+
     /* 保持高度固定 */
     fixed-height: true;
 }
