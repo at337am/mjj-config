@@ -9,7 +9,7 @@
     "modules-left": ["clock", "hyprland/workspaces"],
 
     // 中间模块
-    "modules-center": ["custom/logo"],
+    // "modules-center": ["custom/logo"],
 
     // 右侧模块
     "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
@@ -33,7 +33,8 @@
     },
 
     "pulseaudio": {
-        "format": "VOL: {volume}%",
+        // "format": "VOL: {volume}%",
+        "format": "󰕾 {volume}%",
         "format-muted": "Vol: Muted"
         // "on-click": "pavucontrol" // 点击打开音量控制
     },
@@ -46,8 +47,8 @@
     "battery": {
         "states": {
             "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 50,
+            "critical": 20
         },
         "format": "BAT: {capacity}%",
         "format-charging": "BAT: {capacity}% (Charging)",

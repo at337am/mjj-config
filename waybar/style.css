@@ -18,9 +18,6 @@ window#waybar {
     padding: 0 8px;
 }
 
-
-
-
 /* 工作区 */
 
 #workspaces {
@@ -43,24 +40,20 @@ window#waybar {
     background-color: #555555;
 }
 
-
 /* 电池电量 */
-
 #battery {
     color: #e5e5e5;
 }
 
 #battery.charging {
-    color: #81E7AF;
+    color: #81e7af;
 }
-
 
 #battery.warning:not(.charging) {
-    color: #E69DB8;
+    color: #e69db8;
 }
 
-
 #battery.critical:not(.charging) {
-    color: #E69DB8;
+    color: #e69db8;
     background-color: #555555;
 }
