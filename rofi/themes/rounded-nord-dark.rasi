@@ -8,7 +8,6 @@
 
 * {
     font: "Adwaita Sans, Noto Sans CJK SC SemiBold 12";
-    /* font: "Google Sans Code, Noto Sans CJK SC SemiBold 12"; */
 
     background-color: transparent;
     text-color: @textc;
