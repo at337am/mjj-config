@@ -6,6 +6,9 @@ rpm -q <appname>
 # 列出所有已安装的 RPM 软件包
 rpm -qa
 
+# 查询某个文件属于哪个 RPM 包
+rpm -qf ./index.theme
+
 
 
 % pkg, dnf, history
