@@ -16,8 +16,11 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #battery {
-    margin: 5px 0;
     padding: 0 10px;
+}
+
+#workspaces {
+    margin: 4px 0;
 }
 
 /* 工作区 */

@@ -12,6 +12,7 @@
 
     // 时钟
     "clock": {
+        // "tooltip": false
         "format": "{:%A %H:%M}",
         "tooltip-format": "{:%F}"
     },
@@ -31,6 +32,7 @@
 
     // 音量
     "pulseaudio": {
+        "tooltip": false,
         "format": "VOL {volume}%",
         "format-muted": "VOL Muted"
         // "on-click": "pavucontrol"
@@ -38,12 +40,14 @@
 
     // 亮度
     "backlight": {
+        "tooltip": false,
         "device": "intel_backlight",
         "format": "BRT {percent}%"
     },
 
     // 电量
     "battery": {
+        "tooltip": false,
         "states": {
             "good": 95,
             "warning": 50,
