@@ -12,9 +12,9 @@
 
     // 时钟
     "clock": {
-        // "tooltip": false
-        "format": "{:%A %H:%M}",
-        "tooltip-format": "{:%F}"
+        "tooltip": false,
+        // "tooltip-format": "{:%F}",
+        "format": "{:%A %H:%M}"
     },
 
     // 工作区
@@ -35,7 +35,6 @@
         "tooltip": false,
         "format": "VOL {volume}%",
         "format-muted": "VOL Muted"
-        // "on-click": "pavucontrol"
     },
 
     // 亮度
