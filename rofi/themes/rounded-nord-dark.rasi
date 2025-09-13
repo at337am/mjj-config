@@ -15,7 +15,7 @@ window {
     width: 480;
     border-radius: 6px;
 
-    background-color: #2e2e2e;
+    background-color: rgba(46, 46, 46, 0.85);
 }
 
 mainbox {
