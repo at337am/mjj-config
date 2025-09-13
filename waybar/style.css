@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "0xProto Nerd Font Mono", sans-serif;
+    font-family: "Google Sans Code", "0xProto Nerd Font Mono", sans-serif;
     font-size: 15px;
 }
 
@@ -11,21 +11,19 @@ window#waybar {
 }
 
 #clock,
+#workspaces,
 #tray,
 #pulseaudio,
 #backlight,
 #battery {
-    padding: 0 8px;
+    margin: 5px 0;
+    padding: 0 10px;
 }
 
 /* 工作区 */
-#workspaces {
-    padding: 0;
-    margin: 4px 0;
-}
 
 #workspaces button {
-    padding: 0 16px;
+    padding: 0 15px;
     color: #a6a6a6;
 }
 
@@ -33,15 +31,13 @@ window#waybar {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-#workspaces button.active { /* 当前的工作区 */
+#workspaces button.active {
+    /* 当前的工作区 */
     color: #e5e5e5;
     background-color: #555555;
 }
 
 /* 电池电量 */
-#battery {
-    color: #e5e5e5;
-}
 
 #battery.charging {
     color: #81e7af;

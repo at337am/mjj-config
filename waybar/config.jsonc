@@ -10,42 +10,48 @@
 
     "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
 
+    // 时钟
     "clock": {
         "format": "{:%A %H:%M}",
         "tooltip-format": "{:%F}"
     },
 
+    // 工作区
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate"
     },
 
+    // 后台程序
     "tray": {
         "icon-size": 15,
-        "spacing": 8,
+        "spacing": 10,
         "reverse-direction": true   // 倒序
     },
 
+    // 音量
     "pulseaudio": {
-        "format": "󰕾 {volume}%",
-        "format-muted": "Vol: Muted"
+        "format": "VOL {volume}%",
+        "format-muted": "VOL Muted"
         // "on-click": "pavucontrol"
     },
 
+    // 亮度
     "backlight": {
         "device": "intel_backlight",
-        "format": "BRT: {percent}%"
+        "format": "BRT {percent}%"
     },
 
+    // 电量
     "battery": {
         "states": {
             "good": 95,
             "warning": 50,
             "critical": 20
         },
-        "format": "BAT: {capacity}%",
-        "format-charging": "BAT: {capacity}% (Charging)",
-        "format-plugged": "BAT: {capacity}% (Plugged)",
+        "format": "BAT {capacity}%",
+        "format-charging": "BAT {capacity}% (Charging)",
+        "format-plugged": "BAT {capacity}% (Plugged)",
         "format-alt": "{time} {icon}"
     }
 }
