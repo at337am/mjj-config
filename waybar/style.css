@@ -6,8 +6,7 @@
 }
 
 window#waybar {
-    color: #333;
-    /* color: #e5e5e5; */
+    color: #e5e5e5;
     background: rgba(46, 46, 46, 0.85);
 }
 
@@ -17,7 +16,6 @@ window#waybar {
 #backlight,
 #battery {
     padding: 0 8px;
-    background: #fff5f2;
 }
 
 
@@ -25,7 +23,6 @@ window#waybar {
 
 #workspaces {
     padding: 0;
-    background: #fff5f2;
     margin: 4px 0;
 }
 
@@ -44,12 +41,6 @@ window#waybar {
     color: #e5e5e5;
     background-color: #555555;
 }
-
-/* 有窗口但非活动的工作区 */
-/* #workspaces button.occupied {
-    color: #e5e5e5;
-} */
-
 
 
 
