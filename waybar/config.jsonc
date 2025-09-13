@@ -2,22 +2,16 @@
     "layer": "top",
     "position": "top",
 
-    // 状态栏高度
-    "height": 32,
+    "height": 32,   // 状态栏高度
 
-    // 左侧模块: 在最前面添加了 "clock"
     "modules-left": ["clock", "hyprland/workspaces"],
 
-    // 中间模块
     // "modules-center": ["custom/logo"],
 
-    // 右侧模块
     "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
 
     "clock": {
-        // "format": "{:%F %H:%M}",
-        // "format": "{:%F (%A) %H:%M}",
-        "format": "✿ {:%A %H:%M}",
+        "format": "{:%A %H:%M}",
         "tooltip-format": "{:%F}"
     },
 
@@ -27,15 +21,15 @@
     },
 
     "tray": {
-        "icon-size": 16,
+        "icon-size": 15,
         "spacing": 8,
-        "reverse-direction": true
+        "reverse-direction": true   // 倒序
     },
 
     "pulseaudio": {
         "format": "󰕾 {volume}%",
         "format-muted": "Vol: Muted"
-        // "on-click": "pavucontrol" // 点击打开音量控制
+        // "on-click": "pavucontrol"
     },
 
     "backlight": {
