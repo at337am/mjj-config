@@ -33,7 +33,6 @@
     },
 
     "pulseaudio": {
-        // "format": "VOL: {volume}%",
         "format": "󰕾 {volume}%",
         "format-muted": "Vol: Muted"
         // "on-click": "pavucontrol" // 点击打开音量控制
