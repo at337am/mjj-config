@@ -1,3 +1,5 @@
+# 注意: mako 配置不支持行内注释!
+
 font=Adwaita Sans 12
 
 # --- 窗口样式 ---
