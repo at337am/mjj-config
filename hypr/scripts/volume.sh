@@ -28,7 +28,7 @@ case "$1" in
     up)
         # 1. 获取当前音量
         current=$(get_volume)
-        
+
         # 2. 计算目标音量
         target=$((current + STEP))
 
@@ -36,7 +36,7 @@ case "$1" in
         if [ "$target" -gt "$MAX_VOLUME" ]; then
             target=$MAX_VOLUME
         fi
-        
+
         # 4. 最后，用计算好的目标值来设置音量（注意，这里不再用%+，而是直接设置绝对值）
         wpctl set-volume $SINK "${target}%"
         ;;
