@@ -6,7 +6,7 @@
 
     "modules-left": ["clock", "hyprland/workspaces"],
 
-    // "modules-center": ["custom/logo"],
+    "modules-center": ["hyprland/window"],
 
     "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
 
@@ -21,6 +21,16 @@
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate"
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 50,
+        "rewrite": {
+            "Mozilla Firefox": "Firefox",
+            "Visual Studio Code": "VS Code",
+            "(.*) - VIM": "$1" // 使用正则表达式，例如将 "main.c - VIM" 简化为 "main.c"
+        }
     },
 
     // 后台程序

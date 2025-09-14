@@ -3,6 +3,7 @@
     border-radius: 0;
     font-family: "Google Sans Code", "0xProto Nerd Font Mono", sans-serif;
     font-size: 15px;
+    font-weight: 500;
 }
 
 window#waybar {
@@ -12,6 +13,7 @@ window#waybar {
 
 #clock,
 #workspaces,
+#window,
 #tray,
 #pulseaudio,
 #backlight,
@@ -19,21 +21,22 @@ window#waybar {
     padding: 0 10px;
 }
 
+/* 窗口标题 */
+#window {
+    font-style: italic;
+}
+
+/* 工作区列表 */
 #workspaces {
     margin: 4px 0;
 }
-
-/* 工作区 */
-
 #workspaces button {
     padding: 0 15px;
     color: #a6a6a6;
 }
-
 #workspaces button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
-
 #workspaces button.active {
     /* 当前的工作区 */
     color: #e5e5e5;
@@ -45,11 +48,9 @@ window#waybar {
 #battery.charging {
     color: #81e7af;
 }
-
 #battery.warning:not(.charging) {
     color: #e69db8;
 }
-
 #battery.critical:not(.charging) {
     color: #e69db8;
     background-color: #555555;
