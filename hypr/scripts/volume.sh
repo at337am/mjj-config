@@ -26,14 +26,19 @@ is_muted() {
 # 根据传入的第一个参数（up, down, mute）执行不同操作
 case "$1" in
     up)
-        # 增加音量，并设置上限
+        # 1. 获取当前音量
         current=$(get_volume)
-        if [ "$current" -lt "$MAX_VOLUME" ]; then
-            wpctl set-volume $SINK "${STEP}%+"
-        else
-            # 如果已经达到或超过上限，就直接设置为上限值
-            wpctl set-volume $SINK "${MAX_VOLUME}%"
+        
+        # 2. 计算目标音量
+        target=$((current + STEP))
+
+        # 3. 如果目标音量超过上限，就把它设置为上限值
+        if [ "$target" -gt "$MAX_VOLUME" ]; then
+            target=$MAX_VOLUME
         fi
+        
+        # 4. 最后，用计算好的目标值来设置音量（注意，这里不再用%+，而是直接设置绝对值）
+        wpctl set-volume $SINK "${target}%"
         ;;
     down)
         # 降低音量
