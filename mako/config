@@ -10,15 +10,15 @@ anchor=top-right
 
 width=300
 height=100
-margin=10
-padding=15
-border-size=2
+margin=15
+padding=12
+border-size=0
 border-radius=0
 
 # --- 默认颜色 (适用于普通通知) ---
-background-color=#282a36aa
-text-color=#f8f8f2
-border-color=#bd93f9
+background-color=#FFF5F2
+border-color=#F5BABB
+text-color=#064232
 
 # --- 格式化 ---
 # %s 是摘要 (标题), %b 是正文, \n 是换行
@@ -46,7 +46,7 @@ border-color=#ffb86c
 default-timeout=0
 
 # 测试:
-# notify-send "测试标题" "这是一个简洁的直角风格通知。"
+# makoctl reload && notify-send "测试标题" "这是一个简洁的直角风格通知。"
 # notify-send -u low "低级通知" "这是一个低级通知"
 # notify-send -u critical "紧急！" "这是一个紧急通知"
 
