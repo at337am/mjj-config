@@ -44,6 +44,8 @@ Telegram	telegram
 高亮	gaoliang
 奇数	jishu
 偶数	oushu
+上面	smian
+上面	smia
 
 毛时期	msq
 毛时期	maoshiqi
