@@ -17,6 +17,6 @@ fi
 # 获取所选文件对应的真实路径
 file_path=${configs[$config_choice]}
 
-code "$file_path" &
+code "$file_path" --ozone-platform-hint=auto > /dev/null 2>&1 &
 
 # kitty -e nvim "$file_path"
