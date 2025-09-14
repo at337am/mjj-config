@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-if pgrep -x rofi > /dev/null
-then
+if pgrep -x rofi > /dev/null; then
     pkill -x rofi
-else
-    rofi -show drun
+    exit 0
 fi
+
+rofi -show drun

@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if pgrep -x rofi > /dev/null; then
+    pkill -x rofi
+    exit 0
+fi
+
 declare -A configs
 configs["hypr"]="$HOME/.config/hypr"
 configs["rofi"]="$HOME/.config/rofi"
