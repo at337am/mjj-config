@@ -19,9 +19,8 @@ if [[ -z "$config_choice" ]]; then
     exit 0
 fi
 
-# 获取所选文件对应的真实路径
-file_path=${configs[$config_choice]}
+config_path=${configs[$config_choice]}
 
-# 启动 VS Code
+real_path=$(readlink -f "$config_path")
 
-code "$file_path" --ozone-platform-hint=auto
+command code "$real_path" --ozone-platform-hint=auto > /dev/null 2>&1
