@@ -23,11 +23,11 @@
         "on-click": "activate"
     },
 
+    // 窗口标题
     "hyprland/window": {
         "format": "{}",
         "max-length": 50,
         "rewrite": {
-            "Mozilla Firefox": "Firefox",
             "Visual Studio Code": "VS Code",
             "(.*) - VIM": "$1" // 使用正则表达式，例如将 "main.c - VIM" 简化为 "main.c"
         }
