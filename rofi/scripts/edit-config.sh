@@ -9,6 +9,7 @@ declare -A configs
 configs["hypr"]="$HOME/.config/hypr"
 configs["rofi"]="$HOME/.config/rofi"
 configs["waybar"]="$HOME/.config/waybar"
+configs["mako"]="$HOME/.config/mako"
 configs["kitty"]="$HOME/.config/kitty"
 configs["rime"]="$HOME/.local/share/fcitx5/rime"
 
