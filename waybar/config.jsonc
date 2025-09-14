@@ -28,8 +28,8 @@
         "format": "{}",
         "max-length": 50,
         "rewrite": {
-            "Visual Studio Code": "VS Code",
-            "(.*) - VIM": "$1" // 使用正则表达式，例如将 "main.c - VIM" 简化为 "main.c"
+            // 使用正则表达式, 简化标题
+            // "(.*) - Visual Studio Code": "$1 - VSCode"
         }
     },
 
