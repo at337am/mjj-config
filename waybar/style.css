@@ -21,11 +21,6 @@ window#waybar {
     padding: 0 10px;
 }
 
-/* 窗口标题 */
-#window {
-    font-style: italic;
-}
-
 /* 工作区列表 */
 #workspaces {
     margin: 4px 0;
