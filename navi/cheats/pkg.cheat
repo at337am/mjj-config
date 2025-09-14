@@ -13,8 +13,8 @@ rpm -qf ./index.theme
 
 % pkg, dnf, history
 
-# 显示 DNF 的命令历史记录
-dnf history list
+# 显示 DNF 的命令历史记录 (最近 30 条)
+dnf history list | head -n 30
 
 
 
