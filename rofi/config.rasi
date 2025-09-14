@@ -167,4 +167,4 @@ configuration {
   }
 }
 
-@theme "~/.config/rofi/themes/rounded-nord-dark.rasi"
+@theme "~/.config/rofi/themes/style.rasi"
