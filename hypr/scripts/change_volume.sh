@@ -5,7 +5,7 @@
 STEP=5
 # 音量上限 (例如, 100 就是 100%)
 MAX_VOLUME=100
-# 使用 @DEFAULT_AUDIO_SINK@ 会自动选择当前默认的输出设备
+# 默认音频输出设备
 SINK="@DEFAULT_AUDIO_SINK@"
 
 # --- 脚本主逻辑 ---
