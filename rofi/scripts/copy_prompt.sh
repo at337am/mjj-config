@@ -26,7 +26,7 @@ if [ -f "$full_path" ]; then
     wl-copy < "$full_path"
     notify-send -a "prompts" \
                 "✅ 已拷贝" \
-                "提示词: $selected_file" \
+                "$selected_file" \
                 -h string:x-dunst-stack-tag:prompts_notif
 else
     notify-send -a "prompts" \
