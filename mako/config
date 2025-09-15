@@ -23,17 +23,17 @@ text-color=#e5e5e5
 
 # 提示词
 [app-name=prompts]
-anchor=bottom-center
+anchor=center
 margin=0
 
 # 音量
 [app-name=volume]
-anchor=bottom-center
+anchor=center
 margin=0
 
 # 麦克风
 [app-name=microphone]
-anchor=bottom-center
+anchor=center
 margin=0
 
 # 低优先级通知
