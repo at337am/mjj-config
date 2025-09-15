@@ -16,8 +16,9 @@ hyprctl monitors
 # 列出所有窗口
 hyprctl clients
 
-# 查看当前活动窗口的信息
-hyprctl activewindow
+
+
+% hypr, workspace
 
 # 查看所有工作区
 hyprctl workspaces
