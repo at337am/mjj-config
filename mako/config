@@ -24,19 +24,19 @@ text-color=#e5e5e5
 # 提示词
 [app-name=prompts]
 default-timeout=1000
-anchor=center
+anchor=bottom-center
 margin=0
 
 # 音量
 [app-name=volume]
 default-timeout=1000
-anchor=center
+anchor=bottom-center
 margin=0
 
 # 麦克风
 [app-name=microphone]
 default-timeout=1000
-anchor=center
+anchor=bottom-center
 margin=0
 
 # 低优先级通知
