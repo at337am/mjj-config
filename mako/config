@@ -33,15 +33,11 @@ default-timeout=3000
 
 [urgency=low]
 # 低优先级通知 (例如: 音乐换曲)
-background-color=#44475aaa
-border-color=#6272a4
-default-timeout=1000
+default-timeout=1500
 
 [urgency=critical]
 # 重要通知 (例如: 电量低警告)
-background-color=#ff5555aa
-text-color=#ffffff
-border-color=#ffb86c
+background-color=#ff8282d9
 # 0 代表永不自动消失，需要手动关闭
 default-timeout=0
 
