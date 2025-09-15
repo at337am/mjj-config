@@ -1,14 +1,14 @@
 # 注意: mako 配置不支持行内注释!
 
-# 默认字体
-font=Adwaita Sans SemiBold 12
+# 默认配置
+default-timeout=3000
 
-# 默认悬浮在屏幕最上方
+format=%s\n%b
+
 layer=overlay
-
-# 默认通知出现的位置
-# 
 anchor=top-right
+
+font=Adwaita Sans SemiBold 12
 
 width=250
 height=375
@@ -17,16 +17,9 @@ padding=12
 border-size=0
 border-radius=0
 
-# 默认颜色
 background-color=#2e2e2ed9
 border-color=#e5e5e5
 text-color=#e5e5e5
-
-# 默认格式化: %s 标题, %b 正文, \n 换行
-format=%s\n%b
-
-# 默认消失时间 (单位: 毫秒)
-default-timeout=3000
 
 # 提示词
 [app-name=prompts]
