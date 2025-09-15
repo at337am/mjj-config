@@ -24,6 +24,7 @@
 # 此行之后不能写注释
 
 
+
 好	h
 吗	m
 好吗	hm
@@ -51,6 +52,16 @@ Telegram	telegram
 进度条	jdt
 进度条	jingdutiao
 进度条	jindutiao
+怎么	zm
+禁用	jy
+禁用	jinyong
+禁用	jingyong
+静音	jinyin
+静音	jinying
+静音	jingying
+
+
+
 
 毛时期	msq
 毛时期	maoshiqi
@@ -60,7 +71,6 @@ Telegram	telegram
 江时期	jiangshiqi
 胡时期	hsq
 胡时期	hushiqi
-
 杨继绳	yangjishen
 杨继绳	yangjisheng
 高华	gaohua
@@ -72,6 +82,10 @@ Telegram	telegram
 《红太阳是怎样升起的：延安整风的来龙去脉》	htyszysqd
 《红太阳是怎样升起的：延安整风的来龙去脉》	hongtaiyangshizenyangshengqide
 
+
+
+
+
 LLM	llm
 AI	ai
 Go	go
@@ -82,3 +96,5 @@ Amazon	amazon
 NASA	nasa
 code	code
 todo	todo
+Hyprland	hyprland
+Hyprland	hypr
