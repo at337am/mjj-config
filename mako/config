@@ -1,6 +1,6 @@
 # 注意: mako 配置不支持行内注释!
 
-font=Adwaita Sans 12
+font=Adwaita Sans SemiBold 12
 
 # --- 窗口样式 ---
 # 通知出现的位置，可选: top-right, top-center, top-left, 
@@ -8,17 +8,17 @@ font=Adwaita Sans 12
 layer=overlay
 anchor=top-right
 
-width=300
-height=100
-margin=15
+width=250
+height=375
+margin=12
 padding=12
 border-size=0
 border-radius=0
 
 # --- 默认颜色 (适用于普通通知) ---
-background-color=#FFF5F2
-border-color=#F5BABB
-text-color=#064232
+background-color=#2e2e2ed9
+border-color=#e5e5e5
+text-color=#e5e5e5
 
 # --- 格式化 ---
 # %s 是摘要 (标题), %b 是正文, \n 是换行

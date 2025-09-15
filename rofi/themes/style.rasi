@@ -3,7 +3,8 @@
     backgroundc: #fff5f2;
     borderc: #f5babbdd;
     selectedc: #568f87;
-    textc: #064232;
+    /* textc: #064232; */
+    textc: #333333;
 }
 
 * {
