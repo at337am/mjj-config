@@ -47,6 +47,7 @@ Telegram	telegram
 上面	smian
 上面	smia
 链接	lianjie
+触发	chufa
 
 毛时期	msq
 毛时期	maoshiqi

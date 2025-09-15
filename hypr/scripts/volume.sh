@@ -50,11 +50,18 @@ case "$1" in
 
         # 检查切换后的状态并发送通知
         if is_muted; then
-            notify-send "音量已静音" -i audio-volume-muted -h string:x-dunst-stack-tag:volume_notif
+            # 设置通知的应用程序名称为 volume
+            # x-dunst-stack-tag 用来标记通知分组
+            notify-send -a "volume" \
+                        "音量已静音" \
+                        -h string:x-dunst-stack-tag:volume_notif
         else
             # 获取当前音量用于显示
             volume=$(get_volume)
-            notify-send "音量已取消静音" "当前音量: ${volume}%" -i audio-volume-high -h string:x-dunst-stack-tag:volume_notif
+            notify-send -a "volume" \
+                        "音量已取消静音" \
+                        "当前音量: $volume%" \
+                        -h string:x-dunst-stack-tag:volume_notif
         fi
         ;;
 esac

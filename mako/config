@@ -1,11 +1,13 @@
 # 注意: mako 配置不支持行内注释!
 
+# 默认字体
 font=Adwaita Sans SemiBold 12
 
-# --- 窗口样式 ---
-# 通知出现的位置，可选: top-right, top-center, top-left, 
-# bottom-right, bottom-center, bottom-left, center
+# 默认悬浮在屏幕最上方
 layer=overlay
+
+# 默认通知出现的位置
+# 可选: top-right, top-center, top-left, bottom-right, bottom-center, bottom-left, center
 anchor=top-right
 
 width=250
@@ -15,21 +17,29 @@ padding=12
 border-size=0
 border-radius=0
 
-# --- 默认颜色 (适用于普通通知) ---
+# 默认颜色
 background-color=#2e2e2ed9
 border-color=#e5e5e5
 text-color=#e5e5e5
 
-# --- 格式化 ---
-# %s 是摘要 (标题), %b 是正文, \n 是换行
+# 默认格式化: %s 标题, %b 正文, \n 换行
 format=%s\n%b
 
-# --- 行为 ---
 # 默认消失时间 (单位: 毫秒)
 default-timeout=3000
 
-# --- 为不同紧急程度的通知设置不同样式 ---
-# 这会让重要通知更醒目
+# 音量, 麦克风, 提示词
+[app-name=prompts]
+anchor=bottom-center
+margin=0
+
+[app-name=volume]
+anchor=bottom-center
+margin=0
+
+[app-name=microphone]
+anchor=bottom-center
+margin=0
 
 [urgency=low]
 # 低优先级通知 (例如: 音乐换曲)
@@ -45,3 +55,6 @@ default-timeout=0
 # makoctl reload && notify-send "测试标题" "这是一个简洁的直角风格通知"
 # notify-send -u low "低级通知" "这是一个低级通知"
 # notify-send -u critical "紧急！" "这是一个紧急通知"
+
+# 只有当 Firefox 发送的通知标题中包含 "Download" 时才触发
+# [app-name=Firefox summary="*Download*"]
