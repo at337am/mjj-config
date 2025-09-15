@@ -15,7 +15,7 @@ height=375
 margin=12
 padding=12
 border-size=0
-border-radius=0
+border-radius=4
 
 background-color=#2e2e2ed9
 border-color=#e5e5e5
@@ -24,20 +24,20 @@ text-color=#e5e5e5
 # 提示词
 [app-name=prompts]
 default-timeout=1000
-anchor=bottom-center
-margin=0
+anchor=center
+margin=360,0,0,0
 
 # 音量
 [app-name=volume]
 default-timeout=1000
-anchor=bottom-center
-margin=0
+anchor=center
+margin=360,0,0,0
 
 # 麦克风
 [app-name=microphone]
 default-timeout=1000
-anchor=bottom-center
-margin=0
+anchor=center
+margin=360,0,0,0
 
 # 低优先级通知
 [urgency=low]
