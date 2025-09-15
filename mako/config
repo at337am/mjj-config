@@ -41,14 +41,13 @@ margin=0
 anchor=bottom-center
 margin=0
 
+# 低优先级通知
 [urgency=low]
-# 低优先级通知 (例如: 音乐换曲)
 default-timeout=1500
 
+# 重要通知
 [urgency=critical]
-# 重要通知 (例如: 电量低警告)
 background-color=#ff8282d9
-# 0 代表永不自动消失，需要手动关闭
 default-timeout=0
 
 # 测试:
