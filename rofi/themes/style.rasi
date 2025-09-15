@@ -20,7 +20,7 @@
 
 /* 边框圆角 */
 window {
-    border-radius: 6px;
+    border-radius: 8px;
 }
 inputbar,
 element {
