@@ -48,6 +48,9 @@ Telegram	telegram
 上面	smia
 链接	lianjie
 触发	chufa
+进度条	jdt
+进度条	jingdutiao
+进度条	jindutiao
 
 毛时期	msq
 毛时期	maoshiqi
