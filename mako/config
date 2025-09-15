@@ -45,6 +45,3 @@ default-timeout=0
 # makoctl reload && notify-send "测试标题" "这是一个简洁的直角风格通知。"
 # notify-send -u low "低级通知" "这是一个低级通知"
 # notify-send -u critical "紧急！" "这是一个紧急通知"
-
-# 重启配置
-# makoctl reload
