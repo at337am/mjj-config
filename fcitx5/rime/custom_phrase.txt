@@ -59,9 +59,23 @@ Telegram	telegram
 静音	jinyin
 静音	jinying
 静音	jingying
-
-
-
+这些	zx
+这些	zhxie
+这些	zhexie
+注销	zhuxiao
+最新	zuix
+最新	zuixin
+最新	zuixng
+最新	zuixing
+执行	zhxin
+执行	zhixin
+执行	zhixng
+执行	zhixing
+直接	zhjie
+直接	zhijie
+安装	anz
+安装	anzhuang
+按照	anzhao
 
 毛时期	msq
 毛时期	maoshiqi
