@@ -33,6 +33,12 @@ case "$1" in
             target=$MAX_VOLUME
         fi
 
+        # 提前通知, 这样子动画更顺畅
+        notify-send -a "volume" \
+                    "Volume: "${target}%"" \
+                    -u low \
+                    -h string:x-dunst-stack-tag:volume_notif
+
         wpctl set-volume $SINK "${target}%"
         ;;
     down)
@@ -43,6 +49,12 @@ case "$1" in
         if [ "$target" -lt "$MIN_VOLUME" ]; then
             target=$MIN_VOLUME
         fi
+
+        # 提前通知, 这样子动画更顺畅
+        notify-send -a "volume" \
+                    "Volume: "${target}%"" \
+                    -u low \
+                    -h string:x-dunst-stack-tag:volume_notif
 
         wpctl set-volume $SINK "${target}%"
         ;;
