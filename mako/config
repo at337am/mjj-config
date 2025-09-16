@@ -29,18 +29,21 @@ text-color=#e5e5e5
 default-timeout=1000
 anchor=center
 margin=360,0,0,0
+width=150
 
 # 音量
 [app-name=volume]
 default-timeout=1000
 anchor=center
 margin=360,0,0,0
+width=150
 
 # 麦克风
 [app-name=microphone]
 default-timeout=1000
 anchor=center
 margin=360,0,0,0
+width=150
 
 # 低优先级通知
 [urgency=low]

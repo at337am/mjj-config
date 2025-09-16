@@ -25,13 +25,11 @@ full_path="$notes_path/$selected_file"
 if [ -f "$full_path" ]; then
     wl-copy < "$full_path"
     notify-send -a "prompts" \
-                "✅ 已拷贝" \
-                "$selected_file" \
+                "Copied" \
                 -h string:x-dunst-stack-tag:prompts_notif
 else
     notify-send -a "prompts" \
-                "❌ 拷贝失败" \
-                "$selected_file 不是一个有效的文件" \
+                "Copy Failed" \
                 -h string:x-dunst-stack-tag:prompts_notif
     exit 1
 fi
