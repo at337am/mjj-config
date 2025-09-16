@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# --- 配置 ---
-# 音量调整步长 (例如, 5 就是 5%)
 STEP=5
-# 音量上限 (例如, 100 就是 100%)
+MIN_VOLUME=0
 MAX_VOLUME=100
+
 # 默认音频输出设备
 SINK="@DEFAULT_AUDIO_SINK@"
 
@@ -26,23 +25,26 @@ is_muted() {
 # 根据传入的第一个参数（up, down, mute）执行不同操作
 case "$1" in
     up)
-        # 1. 获取当前音量
         current=$(get_volume)
 
-        # 2. 计算目标音量
         target=$((current + STEP))
 
-        # 3. 如果目标音量超过上限，就把它设置为上限值
         if [ "$target" -gt "$MAX_VOLUME" ]; then
             target=$MAX_VOLUME
         fi
 
-        # 4. 最后，用计算好的目标值来设置音量（注意，这里不再用%+，而是直接设置绝对值）
         wpctl set-volume $SINK "${target}%"
         ;;
     down)
-        # 降低音量
-        wpctl set-volume $SINK "${STEP}%-"
+        current=$(get_volume)
+
+        target=$((current - STEP))
+
+        if [ "$target" -lt "$MIN_VOLUME" ]; then
+            target=$MIN_VOLUME
+        fi
+
+        wpctl set-volume $SINK "${target}%"
         ;;
     mute)
         # 切换静音

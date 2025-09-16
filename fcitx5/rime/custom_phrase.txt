@@ -76,6 +76,9 @@ Telegram	telegram
 安装	anz
 安装	anzhuang
 按照	anzhao
+校验	jiaoyan
+矫正	jiaozhen
+
 
 毛时期	msq
 毛时期	maoshiqi
