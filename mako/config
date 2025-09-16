@@ -26,6 +26,8 @@ text-color=#333333
 
 # 低优先级通知
 [urgency=low]
+# 设置分组, 防止堆叠
+group-by=urgency
 default-timeout=1000
 anchor=center
 margin=360,0,0,0
@@ -36,19 +38,7 @@ width=150
 background-color=#ff8282d9
 default-timeout=0
 
-# --- 针对不同的 app-name ---
-
-# 提示词
-[app-name=prompts]
-width=120
-
-# 音量
-[app-name=volume]
-width=150
-
-# 麦克风
-[app-name=microphone]
-width=120
+# --- 需要调整的 app-name ---
 
 # 测试:
 # makoctl reload && notify-send "测试标题" "这是一个简洁的直角风格通知"
