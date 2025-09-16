@@ -14,7 +14,7 @@ configs["navi"]="$HOME/.config/navi"
 configs["kitty"]="$HOME/.config/kitty"
 configs["rime"]="$HOME/.local/share/fcitx5/rime"
 
-config_choice=$(printf "%s\n" "${!configs[@]}" | rofi -dmenu -i -p "Edit Config")
+config_choice=$(printf "%s\n" "${!configs[@]}" | rofi -dmenu -i -p "config")
 
 # 如果按 Esc 退出，则脚本结束
 if [[ -z "$config_choice" ]]; then

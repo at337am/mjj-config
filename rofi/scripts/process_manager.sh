@@ -10,7 +10,7 @@ fi
 # -eo: 自定义输出格式
 # --sort=-%cpu: 按 CPU 使用率降序排序
 # sed '1d': 删除 ps 命令输出的第一行标题
-selected_process=$(ps -u $USER -o pid,user,%cpu,%mem,comm --sort=-%cpu | sed '1d' | rofi -dmenu -i -p "Processes")
+selected_process=$(ps -u $USER -o pid,user,%cpu,%mem,comm --sort=-%cpu | sed '1d' | rofi -dmenu -i -p "processes")
 
 # 如果用户没有选择任何东西 (按了 Esc), 就退出脚本
 if [ -z "$selected_process" ]; then
@@ -41,13 +41,13 @@ case "$chosen_action" in
         # 发送 SIGTERM (15) 信号，允许程序优雅地关闭
         kill -15 "$pid"
         notify-send -a "processes" \
-            "Sent SIGTERM to $comm (PID: $pid)"
+            "Sent SIGTERM to $comm"
         ;;
     "$kill_kill")
         # 发送 SIGKILL (9) 信号，强制杀死进程
         kill -9 "$pid"
         notify-send -a "processes" \
-            "Sent SIGKILL to $comm (PID: $pid)"        
+            "Sent SIGKILL to $comm"        
         ;;
     "$details")
         # 显示进程

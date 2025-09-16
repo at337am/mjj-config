@@ -5,7 +5,7 @@ if pgrep -x rofi > /dev/null; then
     exit 0
 fi
 
-cliphist list | rofi -dmenu -i -p "Clipboard" | cliphist decode | wl-copy
+cliphist list | rofi -dmenu -i -p "clipboard" | cliphist decode | wl-copy
 
 # todo
 # if cliphist list | rofi -dmenu -p "Clipboard" | cliphist decode | wl-copy; then
