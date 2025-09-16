@@ -26,7 +26,7 @@ text-color=#333333
 
 # 低优先级通知
 [urgency=low]
-default-timeout=800
+default-timeout=1000
 anchor=center
 margin=360,0,0,0
 width=150
