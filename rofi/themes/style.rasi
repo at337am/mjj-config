@@ -1,8 +1,8 @@
 /* 颜色定义 */
 * {
-    backgroundc: #fff5f2;
-    borderc: #f5babbdd;
-    selectedc: #568f87;
+    backgroundc: #fff5f2f2;
+    borderc: #f5babbf2;
+    selectedc: #568f87f2;
     /* textc: #064232; */
     textc: #333333;
 }
