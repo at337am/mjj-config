@@ -54,12 +54,14 @@ case "$1" in
             # x-dunst-stack-tag 用来标记通知分组
             notify-send -a "volume" \
                         "🙉  Muted" \
+                        -u low \
                         -h string:x-dunst-stack-tag:volume_notif
         else
             # 获取当前音量用于显示
             volume=$(get_volume)
             notify-send -a "volume" \
                         "Unmute ($volume%)" \
+                        -u low \
                         -h string:x-dunst-stack-tag:volume_notif
         fi
         ;;

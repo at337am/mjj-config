@@ -24,35 +24,30 @@ background-color=#fff5f2f2
 border-color=#f5babbf2
 text-color=#333333
 
-# 提示词
-[app-name=prompts]
-default-timeout=1000
-anchor=center
-margin=360,0,0,0
-width=120
-
-# 音量
-[app-name=volume]
-default-timeout=1000
-anchor=center
-margin=360,0,0,0
-width=150
-
-# 麦克风
-[app-name=microphone]
-default-timeout=1000
-anchor=center
-margin=360,0,0,0
-width=120
-
 # 低优先级通知
 [urgency=low]
 default-timeout=1000
+anchor=center
+margin=360,0,0,0
 
 # 重要通知
 [urgency=critical]
 background-color=#ff8282d9
 default-timeout=0
+
+# --- 针对不同的 app-name ---
+
+# 提示词
+[app-name=prompts]
+width=120
+
+# 音量
+[app-name=volume]
+width=150
+
+# 麦克风
+[app-name=microphone]
+width=120
 
 # 测试:
 # makoctl reload && notify-send "测试标题" "这是一个简洁的直角风格通知"
