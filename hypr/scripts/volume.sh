@@ -35,9 +35,9 @@ case "$1" in
 
         # 提前通知, 这样子动画更顺畅
         notify-send -a "volume" \
-                    "Volume: "${target}%"" \
                     -u low \
-                    -h string:x-dunst-stack-tag:volume_notif
+                    -h string:x-dunst-stack-tag:volume_notif \
+                    "Volume: ${target}%"
 
         wpctl set-volume $SINK "${target}%"
         ;;
@@ -52,9 +52,9 @@ case "$1" in
 
         # 提前通知, 这样子动画更顺畅
         notify-send -a "volume" \
-                    "Volume: "${target}%"" \
                     -u low \
-                    -h string:x-dunst-stack-tag:volume_notif
+                    -h string:x-dunst-stack-tag:volume_notif \
+                    "Volume: ${target}%"
 
         wpctl set-volume $SINK "${target}%"
         ;;
@@ -67,16 +67,16 @@ case "$1" in
             # 设置通知的应用程序名称为 volume
             # x-dunst-stack-tag 用来标记通知分组
             notify-send -a "volume" \
-                        "🙉  Muted" \
                         -u low \
-                        -h string:x-dunst-stack-tag:volume_notif
+                        -h string:x-dunst-stack-tag:volume_notif \
+                        "🙉  Muted"
         else
             # 获取当前音量用于显示
             volume=$(get_volume)
             notify-send -a "volume" \
-                        "Unmute ($volume%)" \
                         -u low \
-                        -h string:x-dunst-stack-tag:volume_notif
+                        -h string:x-dunst-stack-tag:volume_notif \
+                        "Unmute ($volume%)"
         fi
         ;;
 esac

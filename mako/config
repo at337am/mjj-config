@@ -26,8 +26,6 @@ text-color=#333333
 
 # 低优先级通知
 [urgency=low]
-# 设置分组, 防止堆叠
-group-by=urgency
 default-timeout=800
 anchor=center
 margin=360,0,0,0

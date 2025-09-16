@@ -24,10 +24,12 @@ if [ -f "$full_path" ]; then
     wl-copy < "$full_path"
     notify-send -a "clipboard" \
                 -u low \
+                -h string:x-dunst-stack-tag:volume_notif \
                 "📋  Copied"
 else
     notify-send -a "clipboard" \
                 -u low \
+                -h string:x-dunst-stack-tag:volume_notif \
                 "Copy Failed"
     exit 1
 fi

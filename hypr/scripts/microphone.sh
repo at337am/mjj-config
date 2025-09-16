@@ -14,12 +14,12 @@ wpctl set-mute $SOURCE toggle
 
 if is_mic_muted; then
     notify-send -a "microphone" \
-                "🫢  Mic Off" \
                 -u low \
-                -h string:x-dunst-stack-tag:microphone_notif
+                -h string:x-dunst-stack-tag:volume_notif \
+                "🫢  Mic Off"
 else
     notify-send -a "microphone" \
-                "😍  Mic On" \
                 -u low \
-                -h string:x-dunst-stack-tag:microphone_notif
+                -h string:x-dunst-stack-tag:volume_notif \
+                "😍  Mic On"
 fi
