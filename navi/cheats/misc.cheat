@@ -5,6 +5,19 @@ fortune | cowsay
 
 
 
+% misc, cmatrix
+
+# 彩虹雨
+cmatrix -r
+
+# 不同的颜色
+cmatrix -C red
+
+# 异步滚动
+cmatrix -C red -a
+
+
+
 % misc, wl-copy
 
 # 拷贝文件内容到剪贴板
