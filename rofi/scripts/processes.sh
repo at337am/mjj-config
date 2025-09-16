@@ -10,11 +10,7 @@ fi
 # -eo: 自定义输出格式
 # --sort=-%cpu: 按 CPU 使用率降序排序
 # sed '1d': 删除 ps 命令输出的第一行标题
-# rofi -dmenu: 以 dmenu 模式启动 Rofi
-# -i: 不区分大小写
-# -p: 设置提示符
-# -l 20: 默认显示 20 行
-selected_process=$(ps -u $USER -o pid,user,%cpu,%mem,comm --sort=-%cpu | sed '1d' | rofi -dmenu -i -p "Processes" -l 8)
+selected_process=$(ps -u $USER -o pid,user,%cpu,%mem,comm --sort=-%cpu | sed '1d' | rofi -dmenu -i -p "Processes")
 
 # 如果用户没有选择任何东西 (按了 Esc), 就退出脚本
 if [ -z "$selected_process" ]; then
@@ -29,9 +25,9 @@ comm=$(echo "$selected_process" | awk '{print $5}')
 
 # 步骤 3: 创建操作菜单并让用户选择
 # 定义操作选项, 使用 Nerd Font 图标增强视觉效果
-kill_term=" Terminate (SIGTERM)"
-kill_kill=" Kill (SIGKILL)"
-details=" View Details"
+kill_term="Terminate (SIGTERM)"
+kill_kill="Kill (SIGKILL)"
+details="View Details"
 
 # 组合选项
 options="$details\n$kill_term\n$kill_kill"
@@ -44,13 +40,13 @@ case "$chosen_action" in
     "$kill_term")
         # 发送 SIGTERM (15) 信号，允许程序优雅地关闭
         kill -15 "$pid"
-        notify-send -a "Process Manager" \
+        notify-send -a "processes" \
             "Sent SIGTERM to $comm (PID: $pid)"
         ;;
     "$kill_kill")
         # 发送 SIGKILL (9) 信号，强制杀死进程
         kill -9 "$pid"
-        notify-send -a "Process Manager" \
+        notify-send -a "processes" \
             "Sent SIGKILL to $comm (PID: $pid)"        
         ;;
     "$details")

@@ -5,12 +5,15 @@ if pgrep -x rofi > /dev/null; then
     exit 0
 fi
 
-if cliphist list | rofi -dmenu | cliphist decode | wl-copy; then
-    notify-send -a "clipboard" \
-                -u low \
-                "📋  Copied"
-else
-    notify-send -a "clipboard" \
-                -u low \
-                "Copy Failed"
-fi
+cliphist list | rofi -dmenu -i -p "Clipboard" | cliphist decode | wl-copy
+
+# todo
+# if cliphist list | rofi -dmenu -p "Clipboard" | cliphist decode | wl-copy; then
+#     notify-send -a "clipboard" \
+#                 -u low \
+#                 "📋  Copied"
+# else
+#     notify-send -a "clipboard" \
+#                 -u low \
+#                 "Copy Failed"
+# fi

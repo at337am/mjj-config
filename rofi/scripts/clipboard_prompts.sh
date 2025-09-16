@@ -7,14 +7,12 @@ fi
 
 notes_path="$HOME/Documents/notes/prompts"
 
-rofi_prompt="Prompts"
-
 if [ ! -d "$notes_path" ]; then
     rofi -e "错误: 目录未找到: $notes_path"
     exit 1
 fi
 
-selected_file=$( (cd "$notes_path" && ls -1) | rofi -dmenu -i -p "$rofi_prompt")
+selected_file=$( (cd "$notes_path" && ls -1) | rofi -dmenu -i -p "Prompts")
 
 if [ -z "$selected_file" ]; then
     exit 0
