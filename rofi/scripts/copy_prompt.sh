@@ -25,7 +25,7 @@ full_path="$notes_path/$selected_file"
 if [ -f "$full_path" ]; then
     wl-copy < "$full_path"
     notify-send -a "prompts" \
-                "Copied" \
+                "📋  Copied" \
                 -h string:x-dunst-stack-tag:prompts_notif
 else
     notify-send -a "prompts" \
