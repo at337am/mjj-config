@@ -10,6 +10,9 @@ anchor=top-right
 
 font=Adwaita Sans SemiBold 12
 
+# 文字水平居中
+text-alignment=center
+
 width=250
 height=375
 margin=12

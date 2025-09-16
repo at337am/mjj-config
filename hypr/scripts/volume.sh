@@ -53,14 +53,13 @@ case "$1" in
             # 设置通知的应用程序名称为 volume
             # x-dunst-stack-tag 用来标记通知分组
             notify-send -a "volume" \
-                        "音量已静音" \
+                        "Muted" \
                         -h string:x-dunst-stack-tag:volume_notif
         else
             # 获取当前音量用于显示
             volume=$(get_volume)
             notify-send -a "volume" \
-                        "音量已取消静音" \
-                        "当前音量: $volume%" \
+                        "Unmute ($volume%)" \
                         -h string:x-dunst-stack-tag:volume_notif
         fi
         ;;
