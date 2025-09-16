@@ -44,12 +44,14 @@ case "$chosen_action" in
     "$kill_term")
         # 发送 SIGTERM (15) 信号，允许程序优雅地关闭
         kill -15 "$pid"
-        notify-send "Rofi Process Manager" "Sent SIGTERM to $comm (PID: $pid)"
+        notify-send -a "Process Manager" \
+            "Sent SIGTERM to $comm (PID: $pid)"
         ;;
     "$kill_kill")
         # 发送 SIGKILL (9) 信号，强制杀死进程
         kill -9 "$pid"
-        notify-send "Rofi Process Manager" "Sent SIGKILL to $comm (PID: $pid)"
+        notify-send -a "Process Manager" \
+            "Sent SIGKILL to $comm (PID: $pid)"        
         ;;
     "$details")
         # 显示进程

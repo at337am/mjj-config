@@ -24,11 +24,11 @@ full_path="$notes_path/$selected_file"
 
 if [ -f "$full_path" ]; then
     wl-copy < "$full_path"
-    notify-send -a "prompts" \
+    notify-send -a "clipboard" \
                 -u low \
                 "📋  Copied"
 else
-    notify-send -a "prompts" \
+    notify-send -a "clipboard" \
                 -u low \
                 "Copy Failed"
     exit 1

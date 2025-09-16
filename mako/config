@@ -28,7 +28,7 @@ text-color=#333333
 [urgency=low]
 # 设置分组, 防止堆叠
 group-by=urgency
-default-timeout=1000
+default-timeout=600
 anchor=center
 margin=360,0,0,0
 width=150
@@ -38,7 +38,13 @@ width=150
 background-color=#ff8282d9
 default-timeout=0
 
-# --- 需要调整的 app-name ---
+# --- 需要覆盖配置的 app ---
+
+[app-name=microphone]
+width=120
+
+[app-name=clipboard]
+width=120
 
 # 测试:
 # makoctl reload && notify-send "测试标题" "这是一个简洁的直角风格通知"
