@@ -29,6 +29,7 @@ text-color=#333333
 default-timeout=1000
 anchor=center
 margin=360,0,0,0
+width=150
 
 # 重要通知
 [urgency=critical]
