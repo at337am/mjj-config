@@ -13,8 +13,7 @@
     // 时钟
     "clock": {
         "tooltip": false,
-        // "tooltip-format": "{:%F}",
-        "format": "{:%A %H:%M}"
+        "format": "{:%a, %b %-d, %-I:%M %p}"
     },
 
     // 工作区
