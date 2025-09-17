@@ -68,3 +68,10 @@ fc-cache -fv
 
 # 查找已安装的字体
 fc-list : family | fzf
+
+
+
+% sys, language
+
+# 查看当前系统语言
+locale
