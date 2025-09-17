@@ -1,10 +1,7 @@
-#!/bin/sh
-# KDE Plasma shutdown script to kill specific apps
+#!/usr/bin/env bash
 
-apps_to_kill="nekoray Telegram"
+pkill -9 obsidian
 
-for app in $apps_to_kill; do
-    pkill -15 "$app"
-done
+pkill -15 Telegram
 
-# 不需要 sleep 或 exit 0，Plasma 会处理
+pkill -15 nekoray
