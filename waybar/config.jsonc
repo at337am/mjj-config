@@ -13,7 +13,6 @@
     // 时钟
     "clock": {
         "tooltip": false,
-        // "tooltip-format": "{:%F}",
         "format": "{:%I:%M %p}"
     },
 
