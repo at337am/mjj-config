@@ -22,3 +22,10 @@ hyprctl clients
 
 # 查看所有工作区
 hyprctl workspaces
+
+
+
+%hypr, waybar
+
+# 重启 waybar 配置
+killall waybar && waybar > /dev/null 2>&1 &
