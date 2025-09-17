@@ -1,11 +1,11 @@
-% sys, last
+% system, last
 
 # 显示系统重启历史 (倒序输出)
 last reboot -F | tac
 
 
 
-% sys, uptime
+% system, uptime
 
 # 显示系统启动时间
 uptime -s
@@ -15,63 +15,63 @@ uptime -p
 
 
 
-% sys, kernel, rpm
+% system, kernel, rpm
 
 # 列出所有已安装的内核版本
 rpm -q kernel
 
 
 
-% sys, kernel, uname
+% system, kernel, uname
 
 # 显示当前运行的内核版本
 uname -r
 
 
 
-% sys, disk, lsblk
+% system, disk, lsblk
 
 # 查看当前挂载情况
 lsblk -f
 
 
 
-% sys, disk, fdisk
+% system, disk, fdisk
 
 # 列出所有磁盘及其分区的详细信息
 sudo fdisk -l
 
 
 
-% sys, disk, df
+% system, disk, df
 
 # 显示已挂载的文件系统的磁盘空间使用情况
 df -hT
 
 
 
-% sys, htop, pgrep
+% system, htop, pgrep
 
 # 监控指定名称的进程
 htop -p $(pgrep <ProcessName>)
 
 
 
-% sys, font
+% system, font
 
 # 刷新字体缓存
 fc-cache -fv
 
 
 
-% sys, font, fzf
+% system, font, fzf
 
 # 查找已安装的字体
 fc-list : family | fzf
 
 
 
-% sys, language
+% system, language
 
 # 查看当前系统语言
 locale
