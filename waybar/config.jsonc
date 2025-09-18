@@ -56,8 +56,6 @@
 
     "battery": {
         "tooltip": false,
-        "bat": "BAT0",      // <-- 使用你看到的电池名称
-        "adapter": "AC",    // <-- 使用你看到的适配器名称
         "interval": 60, // 每60秒更新一次信息
         "states": {
             "warning": 30,
