@@ -38,23 +38,18 @@ window#waybar {
     background-color: #555555;
 }
 
-/* 电池未在充电 */
-#battery.charging {
+#battery {
     color: #e5e5e5;
 }
 
-/* 电池正在充电（插上电源） */
+/* 电池正在充电（插上电源）|| 电池正在充电（插上电源）*/
+#battery.charging,
 #battery.plugged {
     color: #81e7af;
 }
 
-/* 电量低（警告状态）且未在充电 */
-#battery.warning:not(.charging) {
-    color: #e69db8;
-}
-
-/* 电量极低（危险状态）且未在充电 */
+/* 电量极低（危险状态）|| 电量低（警告状态）&& 未在充电 */
+#battery.warning:not(.charging),
 #battery.critical:not(.charging) {
     color: #e69db8;
-    background-color: #555555;
 }

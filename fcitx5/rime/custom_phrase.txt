@@ -80,8 +80,8 @@ Telegram	telegram
 矫正	jiaozhen
 正经	zhenjing
 正经	zhenjin
-
-
+什么情况	smqk
+什么情况	smqinkuang
 
 毛时期	msq
 毛时期	maoshiqi

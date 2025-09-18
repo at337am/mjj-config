@@ -54,17 +54,19 @@
         "format": "󰃠 {percent}%"
     },
 
-    // 电量
     "battery": {
         "tooltip": false,
+        "bat": "BAT0",      // <-- 使用你看到的电池名称
+        "adapter": "AC",    // <-- 使用你看到的适配器名称
+        "interval": 60, // 每60秒更新一次信息
         "states": {
-            "good": 90,
-            "warning": 50,
-            "critical": 20
+            "warning": 30,
+            "critical": 15
         },
-        "format": "󰁹 {capacity}%",
-        "format-charging": "󰁹 {capacity}% (Charging)",
-        "format-plugged": "󰁹 {capacity}% (Plugged)",
-        "format-alt": "{time} {icon}"
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%", // 充电状态时
+        "format-plugged": " {capacity}%", // 已连接电源, 但电池没有在“充电中” 的情况下被触发, 比如电池已充满的时候
+        // "format-alt": "{icon} {time}", // 右键点击时，显示剩余时间
+        "format-icons": ["", "", "", "", ""] // 从低到高的电量图标 (fa-battery-empty to fa-battery-full)
     }
 }
