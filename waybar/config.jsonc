@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
 
-    "height": 32,   // 状态栏高度
+    "height": 30,   // 状态栏高度
 
     "modules-left": ["clock", "hyprland/workspaces"],
 
@@ -36,7 +36,7 @@
     // 后台程序
     "tray": {
         "icon-size": 15,
-        "spacing": 10,
+        "spacing": 15,
         "reverse-direction": true   // 倒序
     },
 

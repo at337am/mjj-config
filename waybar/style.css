@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "Google Sans Code", "0xProto Nerd Font Propo", "Noto Sans CJK SC";
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 window#waybar {
@@ -18,7 +18,7 @@ window#waybar {
 #pulseaudio,
 #backlight,
 #battery {
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 /* 工作区列表 */
