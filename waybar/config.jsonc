@@ -13,7 +13,7 @@
     // 时钟
     "clock": {
         "tooltip": false,
-        "format": "{:%a %b %d %I:%M %p}"
+        "format": "{:%a, %b %d %H:%M}"
         // "format": "{:%a %I:%M %p}"
     },
 
