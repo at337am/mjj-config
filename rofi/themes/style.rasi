@@ -8,7 +8,7 @@
 }
 
 * {
-    font: "Adwaita Sans, Noto Sans CJK SC SemiBold 12";
+    font: "Adwaita Sans, 0xProto Nerd Font Propo, Noto Sans CJK SC SemiBold 12";
 
     background-color: transparent;
     text-color: @textc;

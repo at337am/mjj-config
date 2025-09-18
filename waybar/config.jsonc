@@ -43,7 +43,7 @@
     // 音量
     "pulseaudio": {
         "tooltip": false,
-        "format": "{volume}% ",
+        "format": " {volume}%",
         "format-muted": "VOL Muted"
     },
 
@@ -51,20 +51,20 @@
     "backlight": {
         "tooltip": false,
         "device": "intel_backlight",
-        "format": "BRT {percent}%"
+        "format": "󰃠 {percent}%"
     },
 
     // 电量
     "battery": {
         "tooltip": false,
         "states": {
-            "good": 95,
+            "good": 90,
             "warning": 50,
             "critical": 20
         },
-        "format": "BAT {capacity}%",
-        "format-charging": "BAT {capacity}% (Charging)",
-        "format-plugged": "BAT {capacity}% (Plugged)",
+        "format": "󰁹 {capacity}%",
+        "format-charging": "󰁹 {capacity}% (Charging)",
+        "format-plugged": "󰁹 {capacity}% (Plugged)",
         "format-alt": "{time} {icon}"
     }
 }

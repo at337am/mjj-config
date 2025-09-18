@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Adwaita Sans", "0xProto Nerd Font Propo";
+    font-family: "Adwaita Sans", "0xProto Nerd Font Propo", "Noto Sans CJK SC";
     font-size: 15px;
     font-weight: 500;
 }
@@ -38,14 +38,22 @@ window#waybar {
     background-color: #555555;
 }
 
-/* 电池电量 */
-
+/* 电池未在充电 */
 #battery.charging {
+    color: #e5e5e5;
+}
+
+/* 电池正在充电（插上电源） */
+#battery.plugged {
     color: #81e7af;
 }
+
+/* 电量低（警告状态）且未在充电 */
 #battery.warning:not(.charging) {
     color: #e69db8;
 }
+
+/* 电量极低（危险状态）且未在充电 */
 #battery.critical:not(.charging) {
     color: #e69db8;
     background-color: #555555;
