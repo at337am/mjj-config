@@ -42,16 +42,12 @@ window#waybar {
     color: #e5e5e5;
 }
 
-/* todo 定义充满的时候的样式 */
-
-/* 电池正在充电（插上电源）|| 电池正在充电（插上电源）*/
-#battery.charging,
 #battery.plugged {
-    color: #81e7af;
+    color: #81E7AF;
 }
 
 /* 电量极低（危险状态）|| 电量低（警告状态）&& 未在充电 */
-#battery.warning:not(.charging),
-#battery.critical:not(.charging) {
-    color: #e69db8;
+#battery.warning:not(.plugged),
+#battery.critical:not(.plugged) {
+    color: #FF8282;
 }
