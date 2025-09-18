@@ -24,6 +24,7 @@
 
     // 窗口标题
     "hyprland/window": {
+        "tooltip": false,
         "format": "{}",
         "max-length": 50,
         "rewrite": {
