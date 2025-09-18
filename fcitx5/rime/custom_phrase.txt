@@ -82,6 +82,8 @@ Telegram	telegram
 正经	zhenjin
 什么情况	smqk
 什么情况	smqinkuang
+是怎么	szm
+是怎么	shizm
 
 毛时期	msq
 毛时期	maoshiqi
