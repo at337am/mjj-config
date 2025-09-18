@@ -78,6 +78,9 @@ Telegram	telegram
 按照	anzhao
 校验	jiaoyan
 矫正	jiaozhen
+正经	zhenjing
+正经	zhenjin
+
 
 
 毛时期	msq
