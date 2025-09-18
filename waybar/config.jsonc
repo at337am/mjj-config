@@ -14,7 +14,6 @@
     "clock": {
         "tooltip": false,
         "format": "{:%a, %b %d %H:%M}"
-        // "format": "{:%a %I:%M %p}"
     },
 
     // 工作区
