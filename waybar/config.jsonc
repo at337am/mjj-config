@@ -43,7 +43,7 @@
     // 音量
     "pulseaudio": {
         "tooltip": false,
-        "format": "VOL {volume}%",
+        "format": "{volume}% ",
         "format-muted": "VOL Muted"
     },
 

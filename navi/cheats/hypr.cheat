@@ -25,7 +25,7 @@ hyprctl workspaces
 
 
 
-%hypr, waybar
+% hypr, waybar
 
 # 重启 waybar 配置
 killall waybar; waybar > /dev/null 2>&1 &
