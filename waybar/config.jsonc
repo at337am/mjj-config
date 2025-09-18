@@ -44,7 +44,7 @@
     "pulseaudio": {
         "tooltip": false,
         "format": " {volume}%",
-        "format-muted": "VOL Muted"
+        "format-muted": ""
     },
 
     // 亮度
@@ -65,8 +65,8 @@
         },
         "format": "{icon} {capacity}%",
         // "format-charging": " {capacity}%", // 充电状态时
-        // "format-plugged": " {capacity}%", // 已连接电源, 但电池没有在“充电中” 的情况下被触发, 比如电池已充满的时候
+        "format-plugged": "󰂄 {capacity}%", // 已连接电源, 但电池没有在“充电中” 的情况下被触发, 比如电池已充满的时候
         // "format-alt": "{icon} {time}", // 右键点击时，显示剩余充满时间 (充电中), 左键点击时显示剩余可使用时间 (未充电)
-        "format-icons": ["", "", ""] // 从低到高的电量图标 (fa-battery-empty to fa-battery-full)
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"] // 从低到高的电量图标 (fa-battery-empty to fa-battery-full)
     }
 }
