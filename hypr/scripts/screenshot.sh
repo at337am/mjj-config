@@ -18,14 +18,14 @@ case "$1" in
         geometry=$(slurp)
         if [ -n "$geometry" ]; then
             grim -g "$geometry" "$file_path"
-            notify "截图已保存到本地"
+            notify "截图已保存为文件"
         else
             notify "截图已取消"
         fi
         ;;
     "full-save")
         grim "$file_path"
-        notify "截图已保存到本地"
+        notify "截图已保存为文件"
         ;;
     "area-copy")
         geometry=$(slurp)
