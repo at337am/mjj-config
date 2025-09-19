@@ -35,7 +35,7 @@ inputbar {
 
 window {
     location: center;
-    width: 25%;
+    width: 20%;
 
     background-color: @backgroundc;
 }
@@ -55,7 +55,7 @@ listview {
     margin: 12px 0 0;
 
     /* 显示的行数 */
-    lines: 6;
+    lines: 4;
 
     /* 显示的列数 */
     columns: 1;
