@@ -20,9 +20,9 @@ padding=12
 border-size=2
 border-radius=4
 
-background-color=#fff5f2f2
-border-color=#f5babbf2
-text-color=#333333
+background-color=#F5F5F5f2
+border-color=#48CFCBf2
+text-color=#424242
 
 # 低优先级通知
 [urgency=low]
