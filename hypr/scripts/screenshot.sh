@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 output_dir="$HOME/Pictures/Screenshots"
 
