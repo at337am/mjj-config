@@ -4,7 +4,7 @@ output_dir="$HOME/Pictures/Screenshots"
 
 mkdir -p "$output_dir"
 
-file_path="$output_dir/$(date +'%Y-%m-%d_%H-%M-%S').png"
+file_path="$output_dir/$(date +'%y%m%d_%H%M%S').png"
 
 notify() {
     notify-send -a "screenshot" \
