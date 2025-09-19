@@ -37,7 +37,7 @@ inputbar {
 window {
     location: north;
     y-offset: calc(50% - 176px);
-    width: 35%;
+    width: 25%;
 
     background-color: @backgroundc;
 }

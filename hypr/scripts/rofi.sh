@@ -5,4 +5,4 @@ if pgrep -x rofi > /dev/null; then
     exit 0
 fi
 
-rofi -show drun
+rofi -show drun -theme ~/.config/rofi/themes/drun.rasi
