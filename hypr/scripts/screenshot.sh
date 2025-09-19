@@ -1,71 +1,64 @@
 #!/usr/bin/env bash
 
-# Hyprland 截图脚本
-#
-# 功能:
-# - 截取全屏、活动窗口、指定区域
-# - 将截图保存到文件、复制到剪贴板或在 swappy 中打开编辑
+# 脚本功能: Hyprland 截图脚本
+# 依赖: grim, slurp, wl-copy, swappy, notify-send
 
-# --- 配置 ---
-SAVE_DIR="$HOME/Pictures/Screenshots"   # 截图保存目录
-EDITOR="swappy"                       # 截图后用于编辑的程序
+SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
+FILENAME="screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
+FILE_PATH="$SCREENSHOT_DIR/$FILENAME"
 
-# --- 脚本 ---
-# 确保保存目录存在
-mkdir -p "$SAVE_DIR"
+mkdir -p "$SCREENSHOT_DIR"
 
-# 生成带时间戳的文件名
-FILE_NAME="$(date +'%Y-%m-%d_%H-%M-%S.png')"
-SAVE_PATH="$SAVE_DIR/$FILE_NAME"
-
-# 获取活动窗口几何信息
-get_active_window_geometry() {
-    hyprctl activewindow | grep -E 'at:|size:' | grep -v 'workspace' | tr -d ' ' | cut -d ':' -f 2 | sed 's/,/x/'
+# 发送通知
+notify() {
+    notify-send "Screenshot" "$1" -i "camera-photo"
 }
 
-# 显示帮助信息
-show_help() {
-    echo "Usage: $0 [option]"
-    echo
-    echo "Options:"
-    echo "  full          截取全屏并保存"
-    echo "  area          截取选定区域并保存"
-    echo "  window        截取活动窗口并保存"
-    echo "  area-copy     截取选定区域并复制到剪贴板"
-    echo "  window-copy   截取活动窗口并复制到剪贴板"
-    echo "  area-edit     截取选定区域并在编辑器中打开"
-    echo
-    exit 1
+# 捕捉全屏
+capture_full() {
+    grim -
 }
 
-# 主逻辑
+# 捕捉区域
+capture_area() {
+    # slurp 获取选择的区域几何信息
+    local geometry
+    geometry=$(slurp)
+    # 如果用户按 Esc 取消了选择, slurp 会返回空, 此时脚本退出
+    if [ -z "$geometry" ]; then
+        exit 1
+    fi
+    grim -g "$geometry" -
+}
+
+# --- 主逻辑 ---
+
+# 根据传入的第一个参数选择操作
 case "$1" in
-    full)
-        grim "$SAVE_PATH"
-        notify-send "Screenshot" "全屏截图已保存到 $FILE_NAME"
+    "area-save")
+        capture_area | tee "$FILE_PATH" > /dev/null
+        notify "区域截图已保存到 $FILENAME"
         ;;
-    area)
-        grim -g "$(slurp)" "$SAVE_PATH"
-        notify-send "Screenshot" "区域截图已保存到 $FILE_NAME"
+    "full-save")
+        capture_full | tee "$FILE_PATH" > /dev/null
+        notify "全屏截图已保存到 $FILENAME"
         ;;
-    window)
-        grim -g "$(get_active_window_geometry)" "$SAVE_PATH"
-        notify-send "Screenshot" "活动窗口截图已保存到 $FILE_NAME"
+    "area-copy")
+        capture_area | wl-copy
+        notify "区域截图已复制到剪贴板"
         ;;
-    area-copy)
-        grim -g "$(slurp)" - | wl-copy
-        notify-send "Screenshot" "区域截图已复制到剪贴板"
+    "full-copy")
+        capture_full | wl-copy
+        notify "全屏截图已复制到剪贴板"
         ;;
-    window-copy)
-        grim -g "$(get_active_window_geometry)" - | wl-copy
-        notify-send "Screenshot" "活动窗口截图已复制到剪贴板"
+    "area-edit")
+        capture_area | swappy -f -
         ;;
-    area-edit)
-        grim -g "$(slurp)" - | $EDITOR -f -
+    "full-edit")
+        capture_full | swappy -f -
         ;;
     *)
-        show_help
+        echo "用法: $0 {area-save|full-save|area-copy|full-copy|area-edit|full-edit}"
+        exit 1
         ;;
 esac
-
-exit 0
