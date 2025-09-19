@@ -13,7 +13,7 @@ nmcli connection down "网络连接受限-profile"
 nmcli connection show
 
 # 查看某个 Wi-Fi 配置
-nmcli connection show "网络连接受限-profile" | fzf
+nmcli connection show "oishi-profile" | fzf
 
 # 扫描附近的 Wi-Fi 列表
 nmcli device wifi list
