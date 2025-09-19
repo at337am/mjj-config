@@ -53,7 +53,7 @@ rm() {
 
     # 生成带时间戳的目标文件名, 避免重复并保留原始文件名信息
     local base_name=$(basename -- "$item")
-    local destination_path="${TRASH_DIR}/$(date +%y%m%d%H%M%S_%N)_${base_name}"
+    local destination_path="${TRASH_DIR}/$(date +%y%m%d_%H%M%S_%N)_${base_name}"
 
     # 检查生成的路径是否与现有文件冲突, 若冲突则附加随机后缀以保证唯一性
     if [[ -e "$destination_path" || -L "$destination_path" ]]; then
@@ -217,7 +217,7 @@ bak() {
     fi
 
     # 生成备份文件名, 附加精确到纳秒的时间戳, 避免文件名冲突
-    local backup_file="${file}_$(date +%y%m%d%H%M%S%N).bak"
+    local backup_file="${file}_$(date +%y%m%d_%H%M%S_%N).bak"
 
     # 检测备份文件名是否已存在, 若存在则添加随机后缀确保唯一性
     if [[ -e "$backup_file" || -L "$backup_file" ]]; then
