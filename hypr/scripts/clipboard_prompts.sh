@@ -12,7 +12,7 @@ if [ ! -d "$notes_path" ]; then
     exit 1
 fi
 
-selected_file=$( (cd "$notes_path" && ls -1) | rofi -dmenu -i -p "prompts")
+selected_file=$( (cd "$notes_path" && ls -1) | rofi -dmenu -i -p "prompts" -theme ~/.config/rofi/themes/clipboard_prompts.rasi)
 
 if [ -z "$selected_file" ]; then
     exit 0
