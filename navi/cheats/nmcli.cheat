@@ -1,19 +1,71 @@
 % nmcli, wifi
 
-# 检查网络后台服务
+# 检查 NetworkManager 服务状态
 systemctl status NetworkManager
 
-# 添加配置
-nmcli connection add type wifi con-name "网络连接受限-profile" ssid "网络连接受限" -- wifi-sec.key-mgmt wpa-psk wifi-sec.psk "110110110"
-
-# 删除连接配置
-nmcli connection delete "网络连接受限-profile"
-
-# 手动激活配置
+# 启动连接
 nmcli connection up "网络连接受限-profile"
 
-# 查看已保存的连接配置
+# 断开连接
+nmcli connection down "网络连接受限-profile"
+
+# 查看保存的所有 Wi-Fi 配置
 nmcli connection show
+
+# 查看某个 Wi-Fi 配置
+nmcli connection show "网络连接受限-profile" | fzf
 
 # 扫描附近的 Wi-Fi 列表
 nmcli device wifi list
+
+
+
+% nmcli, wifi, add
+
+# 新增一个 Wi-Fi 配置 (DHCP)
+nmcli connection add \
+    type wifi \
+    con-name "网络连接受限-profile" \
+    ssid "网络连接受限" \
+    wifi-sec.key-mgmt wpa-psk \
+    wifi-sec.psk "110110110"
+
+# 新增一个 Wi-Fi 配置 (手动设置 IP)
+nmcli connection add \
+    type wifi \
+    con-name "oishi-profile" \
+    ssid "oishi" \
+    wifi-sec.key-mgmt wpa-psk \
+    wifi-sec.psk "110110110" \
+    ipv4.method manual \
+    ipv4.addresses 192.168.9.101/24 \
+    ipv4.gateway 192.168.9.9 \
+    ipv4.dns "223.5.5.5 223.6.6.6"
+
+
+
+% nmcli, wifi, modify
+
+# 修改某个 Wi-Fi 的 连接配置
+nmcli connection modify "oishi-profile" \
+    ipv4.method "manual" \
+    ipv4.addresses "192.168.9.101/24" \
+    ipv4.gateway "192.168.9.9" \
+    ipv4.dns "223.5.5.5 223.6.6.6"
+
+
+
+% nmcli, wifi, delete
+
+# 删除某个 Wi-Fi 配置
+nmcli connection delete "网络连接受限-profile"
+
+
+
+% nmcli, ip
+
+# 查看网关地址
+ip route
+
+# 查看 IP 信息 (ip a)
+ip addr show

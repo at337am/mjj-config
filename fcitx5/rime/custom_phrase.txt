@@ -47,7 +47,7 @@ Telegram	telegram
 偶数	oushu
 上面	smian
 上面	smia
-链接	lianjie
+连接	lianjie
 触发	chufa
 进度条	jdt
 进度条	jingdutiao
