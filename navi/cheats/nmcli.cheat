@@ -54,7 +54,11 @@ nmcli connection modify "oishi-profile" \
     ipv4.dns "223.5.5.5,223.6.6.6"
 
 # 把某个静态 Wi-Fi 改回 DHCP
-nmcli connection modify "oishi-profile" ipv4.method "auto"
+nmcli connection modify "oishi-profile" \
+    ipv4.method "auto" \
+    ipv4.addresses "" \
+    ipv4.gateway "" \
+    ipv4.dns ""
 
 
 
