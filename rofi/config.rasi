@@ -167,4 +167,4 @@ configuration {
   }
 }
 
-@theme "~/.config/rofi/themes/style.rasi"
+@theme "~/.config/rofi/themes/default.rasi"
