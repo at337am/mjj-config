@@ -2,17 +2,17 @@
 
 sudo systemctl stop firewalld && \
 sudo systemctl disable firewalld
-echo "防火墙已关闭"
+echo "-=> 防火墙已关闭 <=-"
 
 sudo timedatectl set-local-rtc '0'
-echo "已将硬件时钟设置为 UTC"
+echo "-=> 已将硬件时钟设置为 UTC <=-"
 
 echo 'Defaults    timestamp_timeout=60' | sudo tee -a /etc/sudoers
 echo 'Defaults    !tty_tickets' | sudo tee -a /etc/sudoers
-echo "已将 sudo 过期时间设置为 60 分钟"
+echo "-=> 已将 sudo 过期时间设置为 60 分钟 <=-"
 
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/shutdown" | sudo tee -a /etc/sudoers
-echo "已设置免密关机"
+echo "-=> 已设置免密关机 <=-"
 
 sudo mkdir -p /workspace/dev /workspace/tmp && \
 sudo chown -R $(whoami):$(id -gn) /workspace && \
@@ -24,7 +24,8 @@ sudo chown -R $(whoami):$(id -gn) /data
 sudo mkdir -p /opt/soft /opt/venvs && \
 sudo chown -R $(whoami):$(id -gn) /opt/soft /opt/venvs
 
-echo "已创建 个人偏好 的目录结构"
+echo "-=> 已创建 个人偏好 的目录结构 <=-"
+
 
 
 
