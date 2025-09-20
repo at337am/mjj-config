@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 command rm -rf ~/.p10k.zsh && \
 command rm -rf ~/.zshrc && \
 command rm -rf ~/.zsh_history && \
