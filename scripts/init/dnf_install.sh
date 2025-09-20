@@ -15,12 +15,22 @@ sudo dnf copr enable alternateved/eza
 
 # ---------------------
 
+echo "-=> 正在安装基础工具 <=-"
 sudo dnf -y group install "c-development" "development-tools"
 
-echo "正在安装字体文件"
-
+echo "-=> 正在安装字体文件 <=-"
 sudo dnf -y install \
+    adwaita-sans-fonts.noarch \
     google-noto-color-emoji-fonts
+
+echo "-=> 正在安装显卡驱动 <=-"
+sudo dnf install \
+    mesa-dri-drivers-25.1.9-1.fc42.x86_64 \
+    mesa-vulkan-drivers-25.1.9-1.fc42.x86_64 \
+    mesa-libGL-25.1.9-1.fc42.x86_64 \
+    mesa-libEGL-25.1.9-1.fc42.x86_64 \
+    libva-utils-2.22.0-4.fc42.x86_64 \
+    mesa-va-drivers-25.1.9-1.fc42.x86_64 \
 
 echo "-=> 正在安装基础软件包 <=-"
 sudo dnf -y install \
