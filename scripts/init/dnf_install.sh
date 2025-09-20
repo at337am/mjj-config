@@ -39,7 +39,9 @@ sudo dnf -y install \
     ffmpeg-libs \
     libva \
     libva-utils \
-    libva-intel-driver
+    libva-intel-driver \
+    openh264 \
+    gstreamer1-plugin-openh264
 
 # 因为上面 multimedia 安装了旧的, 需要替换为新的, 来适应 intel 5 代以上的机型
 # 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
