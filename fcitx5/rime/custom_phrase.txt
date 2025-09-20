@@ -85,6 +85,7 @@ Telegram	telegram
 是怎么	szm
 是怎么	shizm
 脚本	jb
+软件包	rjb
 
 
 毛时期	msq
