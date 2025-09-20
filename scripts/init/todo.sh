@@ -16,3 +16,19 @@ mv -n ~/公共/* ~/Public/
 mv -n ~/桌面/* ~/Desktop/
 
 command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~/桌面
+
+
+
+
+
+# ------------- 核心电源管理和 ACPI 服务 -------------
+
+sudo dnf remove tuned-ppd
+
+sudo dnf install \
+    power-profiles-daemon \
+    acpid \
+    upower
+
+sudo systemctl enable --now power-profiles-daemon.service
+sudo systemctl enable --now acpid.service
