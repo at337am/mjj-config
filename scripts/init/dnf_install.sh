@@ -69,3 +69,8 @@ sudo dnf -y install \
 
 echo "===>>> 正在安装 Breeze 光标主题... <<<==="
 sudo dnf -y install breeze-cursor-theme
+
+
+
+# todo:
+# Noto Color Emoji, 字体
