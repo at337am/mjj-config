@@ -9,6 +9,9 @@ rpm -qa
 # 查询某个文件属于哪个 RPM 包
 rpm -qf ./index.theme
 
+# 列出软件包安装的所有文件路径
+rpm -ql <packagename>
+
 
 
 % pkg, dnf, history
