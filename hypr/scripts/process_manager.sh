@@ -33,7 +33,7 @@ details="View Details"
 options="$details\n$kill_term\n$kill_kill"
 
 # 显示第二个 Rofi 菜单，提示符中包含进程名和 PID
-chosen_action=$(echo -e "$options" | rofi -dmenu -p "Action for $comm (PID: $pid)")
+chosen_action=$(echo -e "$options" | rofi -dmenu -p "Action for $comm (PID: $pid)" -theme ~/.config/rofi/themes/process_manager.rasi)
 
 # 步骤 4: 根据用户的选择执行相应的操作
 case "$chosen_action" in
