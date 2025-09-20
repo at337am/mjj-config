@@ -110,7 +110,7 @@ sudo dnf -y install \
     cmatrix
 
 echo "-=> 正在安装 fcitx5 输入法 <=-"
-sudo dnf install \
+sudo dnf -y install \
     fcitx5 \
     fcitx5-configtool \
     fcitx5-gtk \
@@ -122,3 +122,25 @@ sudo dnf install \
 
 # todo: ~/Desktop、~/Documents 等目录
 # sudo dnf install xdg-user-dirs
+
+
+# todo
+
+# ------------- 核心电源管理和 ACPI 服务 -------------
+
+sudo dnf remove tuned-ppd
+
+sudo dnf install \
+    power-profiles-daemon \
+    acpid \
+    upower
+
+# 启动服务
+sudo systemctl enable --now power-profiles-daemon.service
+sudo systemctl enable --now acpid.service
+
+# todo: 不知道要不要安装, 不确定是否已经安装
+# wireplumber
+# pipewire
+# xdg-utils
+# xdg-user-dirs
