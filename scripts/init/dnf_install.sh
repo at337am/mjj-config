@@ -122,16 +122,20 @@ sudo dnf -y install \
 
 # ------------- 核心电源管理和 ACPI 服务 -------------
 
-sudo dnf remove tuned-ppd
+# sudo dnf remove tuned-ppd
 
-sudo dnf install \
-    power-profiles-daemon \
-    acpid \
-    upower
+# sudo dnf install \
+#     power-profiles-daemon \
+#     acpid \
+#     upower
 
-# 启动服务
-sudo systemctl enable --now power-profiles-daemon.service
-sudo systemctl enable --now acpid.service
+# sudo systemctl enable --now power-profiles-daemon.service
+# sudo systemctl enable --now acpid.service
+
+
+
+
+# ------------- todo -------------
 
 # todo: 不知道要不要安装, 不确定是否已经安装
 # wireplumber
