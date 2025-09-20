@@ -13,24 +13,47 @@ sudo dnf copr enable solopasha/hyprland
 echo "-=> 正在启用 eza 的 copr 仓库 <=-"
 sudo dnf copr enable alternateved/eza
 
-# ---------------------
 
-echo "-=> 正在安装基础工具 <=-"
-sudo dnf -y group install "c-development" "development-tools"
 
-echo "-=> 正在安装字体文件 <=-"
-sudo dnf -y install \
-    adwaita-sans-fonts.noarch \
-    google-noto-color-emoji-fonts
+
+# ------------ INSTALL ------------
+
+echo "-=> 正在安装基础组 <=-"
+sudo dnf -y group install \
+    "c-development" \
+    "development-tools" \
+    "multimedia"
 
 echo "-=> 正在安装显卡驱动 <=-"
-sudo dnf install \
+sudo dnf -y install \
     mesa-dri-drivers-25.1.9-1.fc42.x86_64 \
     mesa-vulkan-drivers-25.1.9-1.fc42.x86_64 \
     mesa-libGL-25.1.9-1.fc42.x86_64 \
     mesa-libEGL-25.1.9-1.fc42.x86_64 \
     libva-utils-2.22.0-4.fc42.x86_64 \
     mesa-va-drivers-25.1.9-1.fc42.x86_64 \
+    glx-utils \
+    vulkan-tools \
+    mesa-vdpau-drivers \
+    intel-media-driver \
+    ffmpeg-libs \
+    libva \
+    libva-utils \
+    libva-intel-driver
+
+# 因为上面 multimedia 安装了旧的, 需要替换为新的, 来适应 intel 5 代以上的机型
+# 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
+sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing
+
+echo "-=> 正在安装字体和鼠标主题 <=-"
+sudo dnf -y install \
+    adwaita-sans-fonts.noarch \
+    google-noto-sans-cjk-fonts \
+    google-noto-color-emoji-fonts \
+    breeze-cursor-theme \
+
+
+# -----------------------
 
 echo "-=> 正在安装基础软件包 <=-"
 sudo dnf -y install \
@@ -59,7 +82,8 @@ sudo dnf -y install \
     tealdeer \
     cava \
     navi \
-    adb
+    adb \
+    htop
 
 echo "-=> 正在安装 Hyprland 及相关软件包 <=-"
 sudo dnf -y install \
@@ -82,9 +106,6 @@ sudo dnf -y install \
     wev \
     mako \
     cmatrix
-
-echo "-=> 正在安装 Breeze 光标主题 <=-"
-sudo dnf -y install breeze-cursor-theme
 
 echo "-=> 正在安装 fcitx5 输入法 <=-"
 sudo dnf install \
