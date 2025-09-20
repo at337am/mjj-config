@@ -43,6 +43,16 @@ sudo dnf autoremove
 
 
 
+% pkg, dnf, group
+
+# 列出可用组
+dnf group list
+
+# 查看组中的工具
+dnf group info "组名"
+
+
+
 % pkg, flatpak
 
 # 显示 Flatpak 仓库信息

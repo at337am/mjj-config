@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
 
-# 启动仓库
-if sudo dnf repolist | grep -q "alternateved:eza"; then
-    echo "-=> eza copr 仓库已启用，无需重复操作 <=-"
-else
-    echo "-=> 正在启用 eza 的 copr 仓库 <=-"
-    sudo dnf copr enable alternateved/eza
-fi
+echo "-=> 正在安装 RPM Fusion 仓库 <=-"
+sudo dnf -y install \
+    "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-# 启动仓库
-if sudo dnf repolist | grep -q "solopasha:hyprland"; then
-    echo "-=> Hyprland copr 仓库已启用，无需重复操作 <=-"
-else
-    echo "-=> 正在启用 Hyprland 的 copr 仓库 <=-"
-    sudo dnf copr enable solopasha/hyprland
-fi
+sudo dnf -y install \
+    "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+
+echo "-=> 正在启用 Hyprland 的 copr 仓库 <=-"
+sudo dnf copr enable solopasha/hyprland
+
+echo "-=> 正在启用 eza 的 copr 仓库 <=-"
+sudo dnf copr enable alternateved/eza
+
+# ---------------------
 
 echo "-=> 正在安装基础软件包 <=-"
 sudo dnf -y install \
@@ -83,3 +82,9 @@ sudo dnf install \
 
 # todo: ~/Desktop、~/Documents 等目录
 # sudo dnf install xdg-user-dirs
+
+
+# 组:
+
+# sound-and-video
+
