@@ -10,9 +10,9 @@ fi
 
 # 启动仓库
 if sudo dnf repolist | grep -q "solopasha:hyprland"; then
-    echo "===>>> Hyprland COPR 仓库已启用，无需重复操作 <<<==="
+    echo "===>>> Hyprland copr 仓库已启用，无需重复操作 <<<==="
 else
-    echo "===>>> 正在启用 Hyprland 的 COPR 仓库... <<<==="
+    echo "===>>> 正在启用 Hyprland 的 copr 仓库... <<<==="
     sudo dnf copr enable solopasha/hyprland
 fi
 
