@@ -117,14 +117,8 @@ sudo dnf -y install \
     fcitx5-qt \
     fcitx5-rime
 
-# todo: 字体
-# Noto Color Emoji
-
-# todo: ~/Desktop、~/Documents 等目录
-# sudo dnf install xdg-user-dirs
 
 
-# todo
 
 # ------------- 核心电源管理和 ACPI 服务 -------------
 
