@@ -72,5 +72,8 @@ sudo dnf -y install breeze-cursor-theme
 
 
 
-# todo:
-# Noto Color Emoji, 字体
+# todo: 字体
+# Noto Color Emoji
+
+# todo: ~/Desktop、~/Documents 等目录
+# sudo dnf install xdg-user-dirs
