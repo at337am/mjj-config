@@ -73,9 +73,10 @@ sudo dnf -y install breeze-cursor-theme
 echo "--- 正在安装 fcitx5 输入法 ---"
 sudo dnf install \
     fcitx5 \
-    fcitx5-{autostart,configtool} \
+    fcitx5-configtool \
     fcitx5-gtk \
-    fcitx5-{rime,chinese-addons} \
+    fcitx5-qt \
+    fcitx5-rime
 
 # todo: 字体
 # Noto Color Emoji
