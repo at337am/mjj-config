@@ -84,8 +84,7 @@ sudo dnf -y install \
     tealdeer \
     cava \
     navi \
-    adb \
-    htop
+    adb
 
 echo "-=> 正在安装 Hyprland 及相关软件包 <=-"
 sudo dnf -y install \
@@ -107,15 +106,13 @@ sudo dnf -y install \
     slurp \
     wev \
     mako \
-    cmatrix
-
-echo "-=> 正在安装 fcitx5 输入法 <=-"
-sudo dnf -y install \
+    cmatrix \
     fcitx5 \
     fcitx5-configtool \
     fcitx5-gtk \
     fcitx5-qt \
     fcitx5-rime
+
 
 
 
