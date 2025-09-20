@@ -15,6 +15,13 @@ sudo dnf copr enable alternateved/eza
 
 # ---------------------
 
+sudo dnf -y group install "c-development" "development-tools"
+
+echo "正在安装字体文件"
+
+sudo dnf -y install \
+    google-noto-color-emoji-fonts
+
 echo "-=> 正在安装基础软件包 <=-"
 sudo dnf -y install \
     zsh \
@@ -82,9 +89,3 @@ sudo dnf install \
 
 # todo: ~/Desktop、~/Documents 等目录
 # sudo dnf install xdg-user-dirs
-
-
-# 组:
-
-# sound-and-video
-
