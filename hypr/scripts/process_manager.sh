@@ -10,7 +10,7 @@ fi
 # -eo: 自定义输出格式
 # --sort=-%cpu: 按 CPU 使用率降序排序
 # sed '1d': 删除 ps 命令输出的第一行标题
-selected_process=$(ps -u $USER -o pid,user,%cpu,%mem,comm --sort=-%cpu | sed '1d' | rofi -dmenu -i -p "processes")
+selected_process=$(ps -u $USER -o pid,user,%cpu,%mem,comm --sort=-%cpu | sed '1d' | rofi -dmenu -i -p "processes" -theme ~/.config/rofi/themes/process_manager.rasi)
 
 # 如果用户没有选择任何东西 (按了 Esc), 就退出脚本
 if [ -z "$selected_process" ]; then
