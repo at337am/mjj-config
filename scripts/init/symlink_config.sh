@@ -10,10 +10,8 @@ ln -s ~/workspace/dev/mjj-config/fd ~/.config/fd
 command rm -rfv ~/.config/hypr && \
 ln -s ~/workspace/dev/mjj-config/hypr ~/.config/hypr
 
-
 command rm -rfv ~/.config/kitty && \
 ln -s ~/workspace/dev/mjj-config/kitty ~/.config/kitty
-
 
 command rm -rfv ~/.config/mako && \
 ln -s ~/workspace/dev/mjj-config/mako ~/.config/mako
