@@ -19,7 +19,7 @@ echo "zsh p10k 主题解压完成"
 chmod 600 ~/.zshrc &&; \
 chmod 600 ~/.zprofile; \
 chmod 600 ~/.p10k.zsh
-echo "zsh 文件权限设置完成"
+echo "zsh 文件权限已设置"
 
 command rm -rf ~/.lain/lib/aliases.zsh && \
 ln -s ~/workspace/dev/mjj-config/zsh/.lain/lib/aliases.zsh ~/.lain/lib/aliases.zsh
