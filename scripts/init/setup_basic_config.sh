@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 rsync -a ~/workspace/dev/mjj-config/fontconfig/ ~/.config/fontconfig/ && \
-fc-cache -fv
+fc-cache -f
 echo "fontconfig 配置同步完成"
 
 rsync -a ~/workspace/dev/mjj-config/gitconfig/.gitconfig ~/ && \
