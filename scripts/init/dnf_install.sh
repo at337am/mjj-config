@@ -7,7 +7,6 @@ log() {
     echo "-=> $1 <=-"
 }
 
-# 更换镜像
 log "安装 RPM Fusion 仓库..."
 sudo dnf install \
     "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
