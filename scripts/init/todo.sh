@@ -40,10 +40,7 @@ sudo systemctl enable --now acpid.service
 # ------------- todo -------------
 
 # todo: 不知道要不要安装, 不确定是否已经安装
-# wireplumber
-# pipewire
 # xdg-utils
-# xdg-user-dirs
-
+# 如果您使用 Wayland + Flatpak/沙箱应用，很多应用会调用 xdg-utils 来打开文件、浏览器或邮件客户端。
 
 # 尝试不显式安装 xdg-desktop-portal-hyprland, 这个会不会存在
