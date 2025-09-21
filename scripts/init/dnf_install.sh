@@ -86,7 +86,9 @@ sudo dnf install \
     navi \
     adb \
     ImageMagick \
-    htop
+    htop \
+    p7zip \
+    flatpak
 
 echo "-=> 正在安装 Hyprland 及相关软件包 <=-"
 sudo dnf install \
