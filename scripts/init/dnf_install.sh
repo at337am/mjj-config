@@ -78,8 +78,14 @@ sudo dnf install \
     catimg \
     cava \
     chafa \
+    cmatrix \
     eza \
     fastfetch \
+    fcitx5 \
+    fcitx5-configtool \
+    fcitx5-gtk \
+    fcitx5-qt \
+    fcitx5-rime \
     fd-find \
     figlet \
     flatpak \
@@ -106,12 +112,6 @@ sudo dnf install \
 log "安装 Hyprland 及相关软件包..."
 sudo dnf install \
     cliphist \
-    cmatrix \
-    fcitx5 \
-    fcitx5-configtool \
-    fcitx5-gtk \
-    fcitx5-qt \
-    fcitx5-rime \
     grim \
     hypridle \
     hyprland \
