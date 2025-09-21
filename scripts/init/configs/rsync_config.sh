@@ -7,22 +7,22 @@ log() {
     echo "-=> $1 <=-"
 }
 
-log "正在同步 fontconfig 配置..."
+log "同步 fontconfig 配置..."
 rsync -a ~/workspace/dev/mjj-config/fontconfig/ ~/.config/fontconfig/
 
-log "正在刷新 font 字体缓存..."
+log "刷新 font 字体缓存..."
 fc-cache -f
 
-log "正在同步 gitconfig 配置..."
+log "同步 gitconfig 配置..."
 rsync -a ~/workspace/dev/mjj-config/gitconfig/.gitconfig ~/
 
-log "正在设置 gitconfig 文件权限..."
+log "设置 gitconfig 文件权限..."
 chmod 600 ~/.gitconfig
 
-log "正在同步 ssh config 配置..."
+log "同步 ssh config 配置..."
 rsync -a ~/workspace/dev/mjj-config/ssh/config ~/.ssh/
 
-log "正在设置 ssh 文件权限..."
+log "设置 ssh 文件权限..."
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/config
 chmod 600 ~/.ssh/id_rsa
