@@ -10,10 +10,8 @@ log() {
 # 更换镜像
 log "安装 RPM Fusion 仓库..."
 sudo dnf install \
-    "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-
-sudo dnf install \
-    "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+    "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
+    "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 
 log "启用 Hyprland 的 copr 仓库..."
 sudo dnf copr enable solopasha/hyprland
