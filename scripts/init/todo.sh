@@ -28,8 +28,8 @@ sudo dnf install ffmpeg --allowerasing
 # sudo dnf remove tuned-ppd
 
 sudo dnf install \
-    power-profiles-daemon \
     acpid \
+    power-profiles-daemon \
     upower
 
 sudo systemctl enable --now power-profiles-daemon.service
