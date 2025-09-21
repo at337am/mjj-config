@@ -84,7 +84,9 @@ sudo dnf install \
     tealdeer \
     cava \
     navi \
-    adb
+    adb \
+    ImageMagick \
+    htop
 
 echo "-=> 正在安装 Hyprland 及相关软件包 <=-"
 sudo dnf install \
