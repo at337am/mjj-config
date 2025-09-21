@@ -59,15 +59,16 @@ sudo dnf install \
 # 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
 sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing
 
+
+# -----------------------
+
+
 log "安装字体和鼠标主题..."
 sudo dnf install \
     adwaita-sans-fonts.noarch \
-    google-noto-sans-cjk-fonts \
-    google-noto-color-emoji-fonts \
     breeze-cursor-theme \
-
-
-# -----------------------
+    google-noto-color-emoji-fonts \
+    google-noto-sans-cjk-fonts
 
 log "安装基础软件包..."
 sudo dnf install \
