@@ -7,19 +7,21 @@ log() {
     echo "-=> $1 <=-"
 }
 
+log "关闭防火墙..."
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
-log "防火墙已关闭"
 
+log "设置硬件时钟为 UTC..."
 sudo timedatectl set-local-rtc '0'
-log "已将硬件时钟设置为 UTC"
 
+log "设置 sudo 过期时间为 60 分钟..."
 echo 'Defaults    timestamp_timeout=60' | sudo tee -a /etc/sudoers
 echo 'Defaults    !tty_tickets' | sudo tee -a /etc/sudoers
-log "已将 sudo 过期时间设置为 60 分钟"
 
+log "设置免密关机..."
 echo "$(whoami) ALL=(ALL) NOPASSWD: /usr/sbin/shutdown" | sudo tee -a /etc/sudoers
-log "已设置免密关机"
+
+log "创建相关目录结构..."
 
 mkdir -p ~/.config
 mkdir -p ~/.local/share
@@ -33,5 +35,3 @@ sudo chown -R $(whoami):$(id -gn) /data
 
 sudo mkdir -p /opt/soft /opt/venvs
 sudo chown -R $(whoami):$(id -gn) /opt/soft /opt/venvs
-
-log "已创建相关目录结构"
