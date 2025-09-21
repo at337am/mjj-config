@@ -75,6 +75,7 @@ sudo dnf install \
     bat \
     cargo \
     catimg \
+    cava \
     chafa \
     eza \
     fastfetch \
@@ -85,21 +86,20 @@ sudo dnf install \
     git \
     go \
     htop \
+    ImageMagick \
+    just \
     kitty \
     mpv \
+    navi \
     neovim \
+    p7zip \
     pandoc \
     qimgv \
     ripgrep \
     rust \
-    uv \
-    zsh \
-    just \
     tealdeer \
-    cava \
-    navi \
-    ImageMagick \
-    p7zip \
+    uv \
+    zsh
 
 log "安装 Hyprland 及相关软件包..."
 sudo dnf install \
