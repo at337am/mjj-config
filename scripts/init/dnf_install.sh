@@ -71,35 +71,35 @@ sudo dnf install \
 
 log "安装基础软件包..."
 sudo dnf install \
-    zsh \
-    git \
-    neovim \
-    htop \
-    fastfetch \
-    go \
-    kitty \
-    catimg \
-    pandoc \
-    mpv \
-    qimgv \
-    uv \
-    rust \
-    cargo \
+    adb \
     bat \
-    ripgrep \
-    fd-find \
-    fzf \
-    eza \
+    cargo \
+    catimg \
     chafa \
+    eza \
+    fastfetch \
+    fd-find \
     figlet \
+    flatpak
+    fzf \
+    git \
+    go \
+    htop \
+    kitty \
+    mpv \
+    neovim \
+    pandoc \
+    qimgv \
+    ripgrep \
+    rust \
+    uv \
+    zsh \
     just \
     tealdeer \
     cava \
     navi \
-    adb \
     ImageMagick \
     p7zip \
-    flatpak
 
 log "安装 Hyprland 及相关软件包..."
 sudo dnf install \
