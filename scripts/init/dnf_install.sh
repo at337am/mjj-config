@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 
-echo "-=> 正在安装 RPM Fusion 仓库 <=-"
+# 设置严格模式，任何错误都会导致脚本退出
+set -euo pipefail
+
+log() {
+    echo "-=> $1 <=-"
+}
+
+log "正在安装 RPM Fusion 仓库"
 sudo dnf install \
     "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
 sudo dnf install \
     "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 
-echo "-=> 正在启用 Hyprland 的 copr 仓库 <=-"
+log "正在启用 Hyprland 的 copr 仓库"
 sudo dnf copr enable solopasha/hyprland
 
-echo "-=> 正在启用 eza 的 copr 仓库 <=-"
+log "正在启用 eza 的 copr 仓库"
 sudo dnf copr enable alternateved/eza
 
 
@@ -18,13 +25,13 @@ sudo dnf copr enable alternateved/eza
 
 # ------------ INSTALL ------------
 
-echo "-=> 正在安装基础组 <=-"
+log "正在安装基础组"
 sudo dnf group install \
     "c-development" \
     "development-tools" \
     "multimedia"
 
-echo "-=> 正在安装显卡驱动 <=-"
+log "正在安装显卡驱动"
 sudo dnf install \
     mesa-dri-drivers-25.1.9-1.fc42.x86_64 \
     mesa-vulkan-drivers-25.1.9-1.fc42.x86_64 \
@@ -47,7 +54,7 @@ sudo dnf install \
 # 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
 sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing
 
-echo "-=> 正在安装字体和鼠标主题 <=-"
+log "正在安装字体和鼠标主题"
 sudo dnf install \
     adwaita-sans-fonts.noarch \
     google-noto-sans-cjk-fonts \
@@ -57,7 +64,7 @@ sudo dnf install \
 
 # -----------------------
 
-echo "-=> 正在安装基础软件包 <=-"
+log "正在安装基础软件包"
 sudo dnf install \
     zsh \
     git \
@@ -90,7 +97,7 @@ sudo dnf install \
     p7zip \
     flatpak
 
-echo "-=> 正在安装 Hyprland 及相关软件包 <=-"
+log "正在安装 Hyprland 及相关软件包"
 sudo dnf install \
     hyprland \
     hyprpaper \
