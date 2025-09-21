@@ -130,12 +130,3 @@ sudo dnf install \
     wl-clipboard \
     xdg-desktop-portal-hyprland
 
-
-
-# ------------- todo -------------
-
-# todo: 不知道要不要安装, 不确定是否已经安装
-# wireplumber
-# pipewire
-# xdg-utils
-# xdg-user-dirs
