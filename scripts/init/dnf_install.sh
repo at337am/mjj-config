@@ -13,6 +13,13 @@ sudo dnf install \
     "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
     "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 
+# 更多镜像地址: https://mirrors.rpmfusion.org/mm/publiclist
+
+# bak: CN 镜像
+# sudo dnf install \
+#     "https://mirrors.ustc.edu.cn/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
+#     "https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+
 log "启用 Hyprland 的 copr 仓库..."
 sudo dnf copr enable solopasha/hyprland
 
