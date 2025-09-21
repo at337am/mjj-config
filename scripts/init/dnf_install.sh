@@ -53,7 +53,7 @@ sudo dnf install \
     mesa-vdpau-drivers \
     mesa-vulkan-drivers-25.1.9-1.fc42.x86_64 \
     openh264 \
-    vulkan-tools \
+    vulkan-tools
 
 # 因为上面 multimedia 安装了旧的, 需要替换为新的, 来适应 intel 5 代以上的机型
 # 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
@@ -127,7 +127,7 @@ sudo dnf install \
     waybar \
     wev \
     wl-clipboard \
-    xdg-desktop-portal-hyprland \
+    xdg-desktop-portal-hyprland
 
 
 
