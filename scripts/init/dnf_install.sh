@@ -103,30 +103,30 @@ sudo dnf install \
 
 log "安装 Hyprland 及相关软件包..."
 sudo dnf install \
-    hyprland \
-    hyprpaper \
-    hyprlock \
-    hypridle \
-    qt5-qtwayland \
-    qt6-qtwayland \
-    xdg-desktop-portal-hyprland \
-    lxqt-policykit \
-    libnotify \
-    network-manager-applet \
-    rofi-wayland \
-    waybar \
     cliphist \
-    wl-clipboard \
-    grim \
-    slurp \
-    wev \
-    mako \
     cmatrix \
     fcitx5 \
     fcitx5-configtool \
     fcitx5-gtk \
     fcitx5-qt \
     fcitx5-rime
+    grim \
+    hypridle \
+    hyprland \
+    hyprlock \
+    hyprpaper \
+    libnotify \
+    lxqt-policykit \
+    mako \
+    network-manager-applet \
+    qt5-qtwayland \
+    qt6-qtwayland \
+    rofi-wayland \
+    slurp \
+    waybar \
+    wev \
+    wl-clipboard \
+    xdg-desktop-portal-hyprland \
 
 
 
