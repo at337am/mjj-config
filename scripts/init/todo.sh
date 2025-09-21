@@ -19,8 +19,8 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 
 # ------------- 移除 ffmpeg-free -------------
-sudo dnf -y remove ffmpeg-free
-sudo dnf -y install ffmpeg --allowerasing
+sudo dnf remove ffmpeg-free
+sudo dnf install ffmpeg --allowerasing
 
 
 # ------------- 核心电源管理和 ACPI 服务 -------------
