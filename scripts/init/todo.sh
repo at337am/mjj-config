@@ -25,6 +25,8 @@ sudo dnf install ffmpeg --allowerasing
 
 # ------------- 核心电源管理和 ACPI 服务 -------------
 
+# sudo dnf remove tuned-ppd
+
 sudo dnf install \
     power-profiles-daemon \
     acpid \
