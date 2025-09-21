@@ -80,7 +80,7 @@ sudo dnf install \
     fastfetch \
     fd-find \
     figlet \
-    flatpak
+    flatpak \
     fzf \
     git \
     go \
