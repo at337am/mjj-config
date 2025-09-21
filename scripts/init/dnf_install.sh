@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 echo "-=> 正在安装 RPM Fusion 仓库 <=-"
-sudo dnf -y install \
+sudo dnf install \
     "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-sudo dnf -y install \
+sudo dnf install \
     "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 
 echo "-=> 正在启用 Hyprland 的 copr 仓库 <=-"
@@ -19,13 +19,13 @@ sudo dnf copr enable alternateved/eza
 # ------------ INSTALL ------------
 
 echo "-=> 正在安装基础组 <=-"
-sudo dnf -y group install \
+sudo dnf group install \
     "c-development" \
     "development-tools" \
     "multimedia"
 
 echo "-=> 正在安装显卡驱动 <=-"
-sudo dnf -y install \
+sudo dnf install \
     mesa-dri-drivers-25.1.9-1.fc42.x86_64 \
     mesa-vulkan-drivers-25.1.9-1.fc42.x86_64 \
     mesa-libGL-25.1.9-1.fc42.x86_64 \
@@ -48,7 +48,7 @@ sudo dnf -y install \
 sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing
 
 echo "-=> 正在安装字体和鼠标主题 <=-"
-sudo dnf -y install \
+sudo dnf install \
     adwaita-sans-fonts.noarch \
     google-noto-sans-cjk-fonts \
     google-noto-color-emoji-fonts \
@@ -58,7 +58,7 @@ sudo dnf -y install \
 # -----------------------
 
 echo "-=> 正在安装基础软件包 <=-"
-sudo dnf -y install \
+sudo dnf install \
     zsh \
     git \
     neovim \
@@ -87,7 +87,7 @@ sudo dnf -y install \
     adb
 
 echo "-=> 正在安装 Hyprland 及相关软件包 <=-"
-sudo dnf -y install \
+sudo dnf install \
     hyprland \
     hyprpaper \
     hyprlock \
