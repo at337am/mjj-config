@@ -99,6 +99,7 @@ sudo dnf install \
     ripgrep \
     rust \
     tealdeer \
+    tmux \
     uv \
     zsh
 
