@@ -44,3 +44,6 @@ sudo systemctl enable --now acpid.service
 # pipewire
 # xdg-utils
 # xdg-user-dirs
+
+
+# 尝试不显式安装 xdg-desktop-portal-hyprland, 这个会不会存在

@@ -41,6 +41,9 @@ sudo dnf makecache
 # 删除系统中不再需要的依赖包
 sudo dnf autoremove
 
+# 显示某个包声明的依赖
+sudo dnf repoquery --requires <packagename>
+
 
 
 % pkg, dnf, group
