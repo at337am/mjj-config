@@ -110,7 +110,7 @@ sudo dnf install \
     fcitx5-configtool \
     fcitx5-gtk \
     fcitx5-qt \
-    fcitx5-rime
+    fcitx5-rime \
     grim \
     hypridle \
     hyprland \
