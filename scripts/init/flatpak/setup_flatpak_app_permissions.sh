@@ -7,8 +7,9 @@
 
 flatpak override --user --reset md.obsidian.Obsidian
 flatpak override --user --reset org.localsend.localsend_app
-flatpak override --user --reset org.telegram.desktop
 flatpak override --user --reset io.github.ungoogled_software.ungoogled_chromium
+flatpak override --user --reset org.telegram.desktop
+flatpak override --user --reset io.mgba.mGBA
 
 # 2. 设置权限
 flatpak override --user md.obsidian.Obsidian --env=GTK_IM_MODULE=fcitx
