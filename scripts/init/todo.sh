@@ -35,6 +35,3 @@ sudo dnf install \
 sudo systemctl enable --now power-profiles-daemon.service
 sudo systemctl enable --now acpid.service
 
-
-
-# todo: 一个 shell 脚本出错直接退出
