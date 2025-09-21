@@ -98,7 +98,6 @@ sudo dnf install \
     navi \
     adb \
     ImageMagick \
-    htop \
     p7zip \
     flatpak
 
