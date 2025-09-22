@@ -20,7 +20,7 @@ mv -n ~/桌面/* ~/Desktop/
 command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~/桌面
 
 
-
+# 不需要: ~/Desktop, ~/Public, ~/Templates
 
 
 
