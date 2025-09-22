@@ -23,28 +23,6 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 
 
-# ------------- todo -------------
-
-# 安装后的 dnf 代理设置 脚本
-
-# 脚本 执行前 可以先  sudo dnf autoremove
-
-# 改一下 fonts_for_linux .,  要求 解压后必须是 fonts 目录
-
-# 脚本 前面 增加 rpm fussion 检查  存在 仓库就不执行
-# setup_basic 也增加 检查  存在不执行
-# 还有其他脚本  文件都加上检查
-
-# todo 核心电源管理和 ACPI 服务:
-
-sudo dnf install \
-    acpid \
-    power-profiles-daemon
-
-sudo systemctl enable --now power-profiles-daemon.service
-sudo systemctl enable --now acpid.service
-
-
 
 # ----------------------------------------------------------- #
 
@@ -71,4 +49,24 @@ sudo systemctl enable --now acpid.service
 
 
 # 注意事项: 安装完后检查是否误装 ffmpeg-free
+
+
+
+
+
+
+# ------------- todo -------------
+
+# 安装后的 dnf 代理设置 脚本
+
+# 脚本 执行前 可以先  sudo dnf autoremove
+
+# 改一下 fonts_for_linux .,  要求 解压后必须是 fonts 目录
+
+# 脚本 前面 增加 rpm fussion 检查  存在 仓库就不执行
+# setup_basic 也增加 检查  存在不执行
+# 还有其他脚本  文件都加上检查
+
+# todo 核心电源管理和 ACPI 服务:
+
 

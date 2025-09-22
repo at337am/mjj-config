@@ -185,3 +185,34 @@ sudo dnf -y install \
 log "Hyprland 及相关软件包已安装完毕"
 # -------------------------------- #
 
+
+
+# -------------------------------- #
+log "开始安装 ACPI 事件守护进程和电源配置服务..."
+
+sudo dnf install \
+    acpid \
+    power-profiles-daemon
+
+log "ACPI 事件守护进程和电源配置服务已安装完毕"
+# -------------------------------- #
+
+
+
+# -------------------------------- #
+log “开始启用 ACPI 事件守护进程和电源配置服务”
+
+if systemctl is-enabled --quiet power-profiles-daemon.service; then
+    echo "power-profiles-daemon.service 已启用, 跳过"
+else
+    sudo systemctl enable --now power-profiles-daemon.service
+    echo "power-profiles-daemon.service 已启用"
+fi
+
+if systemctl is-enabled --quiet acpid.service; then
+    echo "acpid.service 已启用, 跳过"
+else
+    sudo systemctl enable --now acpid.service
+    echo "acpid.service 已启用"
+fi
+# -------------------------------- #
