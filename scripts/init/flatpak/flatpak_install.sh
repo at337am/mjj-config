@@ -7,7 +7,11 @@ log() {
     echo "-=> $1 <=-"
 }
 
+log "设置 flathub 仓库..."
+
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo
+
+log "安装常用 App..."
 
 flatpak install -y flathub md.obsidian.Obsidian
 
