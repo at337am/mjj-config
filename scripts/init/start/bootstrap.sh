@@ -19,6 +19,8 @@ SCRIPTS=(
     "02_rsync_zsh.sh"
     "03_rsync_config.sh"
     "04_symlink_config.sh"
+    "05_flatpak_install.sh"
+    "06_setup_flatpak_app_permissions.sh"
 )
 
 for script in "${SCRIPTS[@]}"; do
