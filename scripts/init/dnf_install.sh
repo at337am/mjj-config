@@ -49,7 +49,6 @@ sudo dnf -y install \
     libva \
     libva-intel-driver \
     libva-utils \
-    libva-utils-2.22.0-4.fc42.x86_64 \
     mesa-vdpau-drivers \
     vulkan-tools
 
