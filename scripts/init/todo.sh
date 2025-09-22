@@ -6,6 +6,8 @@ exit 0
 
 LANG=en_US.UTF-8 xdg-user-dirs-update --force
 
+cat ~/.config/user-dirs.dirs
+
 mv -n ~/下载/* ~/Downloads/
 mv -n ~/文档/* ~/Documents/
 mv -n ~/图片/* ~/Pictures/
