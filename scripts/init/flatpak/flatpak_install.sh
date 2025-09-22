@@ -4,7 +4,7 @@
 set -euo pipefail
 
 log() {
-    printf '\n\n-=> %s <=-\n\n' "$1"
+    printf '\n-=> %s <=-\n' "$1"
 }
 
 log "设置 flathub 仓库..."
