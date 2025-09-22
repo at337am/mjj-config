@@ -91,3 +91,6 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 # 验证 install_code.sh 可行就直接放到 scripts 中
 
 # 测试能否直接用 nekoray
+
+# 脚本执行后 看看 xdg-user-dirs-update 配置
+cat ~/.config/user-dirs.dirs
