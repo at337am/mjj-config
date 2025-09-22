@@ -57,4 +57,8 @@ sudo systemctl enable --now acpid.service
 
 # 看看 power-profiles-daemon upower acpid
 
+
+
+
 ./install.sh 2>&1 | tee output.log
+
