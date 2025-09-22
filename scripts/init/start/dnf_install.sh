@@ -190,7 +190,7 @@ log "Hyprland 及相关软件包已安装完毕"
 # -------------------------------- #
 log "开始安装 ACPI 事件守护进程和电源配置服务..."
 
-sudo dnf install \
+sudo dnf -y install \
     acpid \
     power-profiles-daemon
 
@@ -215,4 +215,14 @@ else
     sudo systemctl enable --now acpid.service
     echo "acpid.service 已启用"
 fi
+# -------------------------------- #
+
+
+
+# -------------------------------- #
+log “开始清理无用软件包”
+
+sudo dnf -y autoremove
+
+log “无用软件包已清理完毕”
 # -------------------------------- #
