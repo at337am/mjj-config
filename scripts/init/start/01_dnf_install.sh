@@ -46,7 +46,7 @@ log “无用软件包清理完毕”
 #     "https://mirrors.ustc.edu.cn/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
 #     "https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-if ! dnf repolist | grep -q "$repo_pattern"; then
+if dnf repolist | grep -q "rpmfusion-free" && dnf repolist | grep -q "rpmfusion-nonfree"; then
     log "RPM Fusion 仓库已启用，跳过安装"
 else
     log "开始安装 RPM Fusion 仓库..."
