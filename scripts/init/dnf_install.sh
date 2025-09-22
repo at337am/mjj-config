@@ -91,7 +91,6 @@ sudo dnf -y install \
     figlet \
     flatpak \
     fzf \
-    git \
     go \
     htop \
     ImageMagick \
