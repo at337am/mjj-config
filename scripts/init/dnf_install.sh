@@ -30,14 +30,14 @@ sudo dnf -y copr enable alternateved/eza
 
 # ------------ INSTALL ------------
 
-log "开始安装基础组..."
+log "开始安装基础软件组..."
 
 sudo dnf -y group install \
     "c-development" \
     "development-tools" \
     "multimedia"
 
-log "基础组已安装完毕"
+log "基础软件组已安装完毕"
 
 log "开始卸载不需要的 libva-intel-media-driver..."
 
@@ -48,7 +48,7 @@ sudo dnf -y remove libva-intel-media-driver
 
 log "已卸载完毕: libva-intel-media-driver"
 
-log "开始安装显卡驱动..."
+log "开始安装图形与硬件加速相关的软件包..."
 
 sudo dnf -y install \
     glx-utils \
@@ -58,13 +58,13 @@ sudo dnf -y install \
     mesa-vdpau-drivers \
     vulkan-tools
 
-log "显卡驱动已安装完毕"
+log "图形与硬件加速相关的软件包已安装完毕"
 
 
 # -----------------------
 
 
-log "开始安装字体和鼠标主题..."
+log "开始安装字体和鼠标指针主题..."
 
 sudo dnf -y install \
     adwaita-sans-fonts.noarch \
@@ -72,9 +72,9 @@ sudo dnf -y install \
     google-noto-color-emoji-fonts \
     google-noto-sans-cjk-fonts
 
-log "字体和鼠标主题已安装完毕"
+log "字体和鼠标指针主题已安装完毕"
 
-log "开始安装基础软件包..."
+log "开始安装常用软件包..."
 
 sudo dnf -y install \
     adb \
@@ -115,7 +115,7 @@ sudo dnf -y install \
     yt-dlp \
     zsh
 
-log "基础软件包已安装完毕"
+log "常用软件包已安装完毕"
 
 log "开始安装 Hyprland 及相关软件包..."
 
