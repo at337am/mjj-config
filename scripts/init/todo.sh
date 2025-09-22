@@ -33,26 +33,36 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # ---------------- 流程 ----------------
 
-# 安装完 fedroa 系统时 (插网线或者连接 wifi ), 先设置代理环境
+# ## 注意事项: 安装完后检查是否误装 ffmpeg-free
 
-# 再执行 sudo dnf -y upgrade
+
+# ## 准备工作:
+# fonts_for_linux.tar.gz
+# ssh
+# nekoray.tar.gz
+# mjj-config.tar.gz
+# config_baks_for_linux.tar
+
+
+# ## 开始安装:
+
+# 安装完 fedroa 系统后 (插网线或者连接 wifi )
+
+# 先设置代理环境
+
+# 更新全部软件包 sudo dnf -y upgrade
 
 # 重启电脑
 
 # 再次设置代理环境
 
-# 上传 mjj-config, fonts_fot_linux, ssh, nekoray 等
+# 使用 scp -r 上传 mjj-config, fonts_fot_linux, ssh, nekoray 等
 
-# 解压 mjj-config 运行 setup_basic 脚本
+# 解压 mjj-config 运行 setup_basic.sh 脚本
 
 # 解压 fonts_for_linux, ssh, nekoray, mjj-config 到各自的位置
 
-# 再启动 install 脚本.   脚本执行前   fonts 和 mjj-config 是否已经到位
-
-
-# 注意事项: 安装完后检查是否误装 ffmpeg-free
-
-
+# 再启动 bootstrap.sh 脚本
 
 
 
@@ -67,3 +77,6 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 # 脚本 前面 增加 rpm fussion 检查  存在 仓库就不执行
 # setup_basic 也增加 检查  存在不执行
 # 还有其他脚本  文件都加上检查
+
+
+# 脚本执行前   fonts 和 mjj-config 是否已经到位
