@@ -10,7 +10,7 @@ log "设置 flathub 仓库..."
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo
 
-log "安装常用 Flatpak App ..."
+log "安装常用 Flatpak App..."
 
 flatpak install -y flathub md.obsidian.Obsidian
 

@@ -29,7 +29,7 @@ for script in "${SCRIPTS[@]}"; do
         exit 1
     fi
 
-    log "开始执行 $script ..."
+    log "开始执行 $script..."
 
     ./"$script"
 
