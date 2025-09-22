@@ -59,11 +59,15 @@ sudo chown -R $(whoami):$(id -gn) /opt/soft /opt/venvs
 
 log "解压准备文件到指定目录"
 
+command rm -rf ~/.ssh
 command rm -rf ~/.local/share/fonts
-tar -zxf "$files_dir/fonts.tar.gz" -C ~/.local/share
-
 command rm -rf ~/workspace/dev/mjj-config
-tar -zxf "$files_dir/mjj-config.tar.gz" -C ~/workspace/dev
+command rm -rf /opt/soft/nekoray
 
-command rm -rf ~/workspace/dev/mjj-config
-tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft
+tar -zxf "$files_dir/fonts.tar.gz" -C ~/.local/share/
+
+tar -zxf "$files_dir/mjj-config.tar.gz" -C ~/workspace/dev/
+
+tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft/
+
+tar -zxf "$files_dir/ssh.tar" -C ~/
