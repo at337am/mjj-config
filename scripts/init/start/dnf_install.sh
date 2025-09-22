@@ -180,8 +180,7 @@ sudo dnf -y install \
     slurp \
     waybar \
     wev \
-    wl-clipboard \
-    xdg-desktop-portal-hyprland
+    wl-clipboard
 
 log "Hyprland 及相关软件包已安装完毕"
 # -------------------------------- #
