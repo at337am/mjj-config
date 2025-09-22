@@ -71,3 +71,5 @@ tar -zxf "$files_dir/mjj-config.tar.gz" -C ~/workspace/dev/
 tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft/
 
 tar -zxf "$files_dir/ssh.tar" -C ~/
+
+log "解压完毕, 各准备文件已就绪"
