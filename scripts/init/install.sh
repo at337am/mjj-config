@@ -3,14 +3,32 @@
 # 设置严格模式，任何错误都会导致脚本退出
 set -euo pipefail
 
-log "检查源配置目录是否存在..."
-
+echo "检查源配置目录是否存在..."
 if [ ! -d "$HOME/workspace/dev/mjj-config" ]; then
-    log "错误：源配置目录不存在！"
-    echo "期望的路径：$SOURCE_DIR"
-    echo "请先将您的 mjj-config 项目克隆或放置到正确位置后再运行此脚本。"
+    echo "错误: mjj-config 目录不存在!"
     exit 1
 fi
+echo "源配置目录检查通过, 开始执行..."
 
-log "源配置目录检查通过，开始执行..."
+log() {
+    echo "========================================="
+    echo "=> $1"
+    echo "========================================="
+}
 
+log "第一步: 执行基础设置"
+./start/setup_basic.sh
+
+log "第二步: 安装 DNF 软件包"
+./start/dnf_install.sh
+
+log "第三步: 同步 Zsh 配置"
+./start/rsync_zsh.sh
+
+log "第四步: 同步通用配置"
+./start/rsync_config.sh
+
+log "第五步: 创建符号链接"
+./start/symlink_config.sh
+
+log "所有脚本执行完毕!"
