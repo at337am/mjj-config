@@ -23,7 +23,7 @@ scripts=(
 
 for script in "${scripts[@]}"; do
     if [[ ! -f "$script" ]]; then
-        echo "Error: 脚本 '$script' 不存在, 退出执行"
+        log "Error: 脚本 '$script' 不存在, 退出执行"
         exit 1
     fi
 
