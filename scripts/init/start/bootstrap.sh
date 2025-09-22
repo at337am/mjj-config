@@ -7,7 +7,7 @@ log() {
     printf '\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n-=> %s\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n' "$1"
 }
 
-if [ ! -d "$HOME/workspace/dev/mjj-config" ]; then
+if [[ ! -d "$HOME/workspace/dev/mjj-config" ]]; then
     log "Error: mjj-config 目录不存在!"
     exit 1
 fi

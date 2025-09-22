@@ -18,7 +18,7 @@ files=(
 files_dir="$HOME/pkgs"
 
 for file in "${files[@]}"; do
-    if [ ! -f "$data_dir/$file" ]; then
+    if [[ ! -f "$data_dir/$file" ]]; then
         log "Error: 准备文件不存在: $data_dir/$file"
         exit 1
     fi
