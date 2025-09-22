@@ -33,6 +33,11 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # ---------------- 流程 ----------------
 
+# 解压 nekoray 到 /opt/soft/, 并运行 run_nekoray.sh
+# 解压 mjj-config 到 ~/workspace/dev/
+# 解压 ssh 密钥 到 ~/
+# 解压 fonts_for_linux 到 ~/.local/share/fonts/
+
 # 安装完 fedroa 系统时 (插网线或者连接 wifi ), 先设置代理环境
 
 # 再执行 sudo dnf -y upgrade
@@ -41,7 +46,7 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # 再次设置代理环境
 
-# 上传 mjj-config, fonts_fot_linux, ssh 等
+# 上传 mjj-config, fonts_fot_linux, ssh, nekoray 等
 
 # 解压 mjj-config 运行 setup_basic 脚本
 
