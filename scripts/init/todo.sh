@@ -35,6 +35,14 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 # setup_basic 也增加 检查  存在不执行
 # 还有其他脚本  文件都加上检查
 
+# todo 核心电源管理和 ACPI 服务:
+
+sudo dnf install \
+    acpid \
+    power-profiles-daemon
+
+sudo systemctl enable --now power-profiles-daemon.service
+sudo systemctl enable --now acpid.service
 
 
 

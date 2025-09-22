@@ -185,15 +185,3 @@ sudo dnf -y install \
 log "Hyprland 及相关软件包已安装完毕"
 # -------------------------------- #
 
-
-
-# ------------- 核心电源管理和 ACPI 服务 -------------
-
-# todo
-
-sudo dnf install \
-    acpid \
-    power-profiles-daemon
-
-sudo systemctl enable --now power-profiles-daemon.service
-sudo systemctl enable --now acpid.service
