@@ -94,13 +94,6 @@ log "解压完毕, 各文件已到位"
 
 
 # ------------- 执行脚本 START -------------- #
-for file in "${scripts[@]}"; do
-    if [[ ! -f "$file" ]]; then
-        log "Error: 脚本 '$file' 不存在"
-        exit 1
-    fi
-done
-
 scripts=(
     "scripts/01_dnf_install.sh"
     "scripts/02_rsync_zsh.sh"
@@ -111,6 +104,11 @@ scripts=(
 )
 
 for script in "${scripts[@]}"; do
+    if [[ ! -f "$file" ]]; then
+        log "Error: 脚本 '$file' 不存在"
+        exit 1
+    fi
+
     log "开始执行脚本 $script..."
 
     ./"$script"
