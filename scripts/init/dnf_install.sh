@@ -46,7 +46,7 @@ log "开始卸载不需要的 libva-intel-media-driver..."
 # 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
 sudo dnf -y remove libva-intel-media-driver
 
-log "已卸载: libva-intel-media-driver"
+log "已卸载完毕: libva-intel-media-driver"
 
 log "开始安装显卡驱动..."
 
