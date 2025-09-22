@@ -12,16 +12,16 @@ enable_copr_repo() {
     local repo_project="$2"
     local repo_pattern="${repo_owner}:${repo_project}" # 例如 "solopasha:hyprland"
 
-    if ! dnf repolist | grep -q "$repo_pattern"; then
+    if dnf repolist | grep -q "$repo_pattern"; then
+        log "${repo_pattern} 的 copr 仓库已启用, 跳过"
+    else
         log "正在启用 ${repo_pattern} 的 copr 仓库..."
         if sudo dnf -y copr enable "${repo_owner}/${repo_project}"; then
             log "${repo_pattern} 的 copr 仓库已启用成功"
         else
             log "错误: 启用 ${repo_pattern} 的 copr 仓库失败!"
             return 1
-        fi
-    else
-        log "${repo_pattern} 的 copr 仓库已启用, 跳过"
+        fi        
     fi
 }
 
