@@ -24,5 +24,6 @@ rsync -a ~/workspace/dev/mjj-config/ssh/config ~/.ssh/
 log "设置 ssh 文件权限..."
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/config
-chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub
+# todo, 这里只是为了测试暂时不需要 ssh
+chmod 600 ~/.ssh/id_rsa || true
+chmod 644 ~/.ssh/id_rsa.pub || true
