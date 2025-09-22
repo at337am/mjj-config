@@ -8,7 +8,7 @@ log() {
 }
 
 log "安装 RPM Fusion 仓库..."
-sudo dnf install \
+sudo dnf -y install \
     "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
     "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 
@@ -20,10 +20,10 @@ sudo dnf install \
 #     "https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
 log "启用 Hyprland 的 copr 仓库..."
-sudo dnf copr enable solopasha/hyprland
+sudo dnf -y copr enable solopasha/hyprland
 
 log "启用 eza 的 copr 仓库..."
-sudo dnf copr enable alternateved/eza
+sudo dnf -y copr enable alternateved/eza
 
 
 
@@ -31,15 +31,20 @@ sudo dnf copr enable alternateved/eza
 # ------------ INSTALL ------------
 
 log "安装基础组..."
-sudo dnf group install \
+sudo dnf -y group install \
     "c-development" \
     "development-tools" \
     "multimedia"
 
+# 因为上面 multimedia 安装了旧的 libva-intel-media-driver
+# 需要先删除, 下面会安装新的 intel-media-driver 以适应 Intel 5 代以上的机型
+# 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
+log "卸载不需要的 libva-intel-media-driver..."
+sudo dnf -y remove libva-intel-media-driver
+
 log "安装显卡驱动..."
-sudo dnf install \
+sudo dnf -y install \
     glx-utils \
-    gstreamer1-plugin-openh264 \
     intel-media-driver \
     libva \
     libva-intel-driver \
@@ -54,23 +59,19 @@ sudo dnf install \
     openh264 \
     vulkan-tools
 
-# 因为上面 multimedia 安装了旧的, 需要替换为新的, 来适应 intel 5 代以上的机型
-# 参考: https://github.com/devangshekhawat/Fedora-42-Post-Install-Guide?tab=readme-ov-file#hw-video-decoding-with-va-api
-sudo dnf swap libva-intel-media-driver intel-media-driver --allowerasing
-
 
 # -----------------------
 
 
 log "安装字体和鼠标主题..."
-sudo dnf install \
+sudo dnf -y install \
     adwaita-sans-fonts.noarch \
     breeze-cursor-theme \
     google-noto-color-emoji-fonts \
     google-noto-sans-cjk-fonts
 
 log "安装基础软件包..."
-sudo dnf install \
+sudo dnf -y install \
     adb \
     bat \
     cargo \
@@ -110,7 +111,7 @@ sudo dnf install \
     zsh
 
 log "安装 Hyprland 及相关软件包..."
-sudo dnf install \
+sudo dnf -y install \
     cliphist \
     grim \
     hypridle \
