@@ -25,6 +25,10 @@ enable_copr_repo() {
     fi
 }
 
+
+# ------------------------------- COPR -------------------------------
+
+
 log "开始安装 RPM Fusion 仓库..."
 
 # 更多镜像地址: https://mirrors.rpmfusion.org/mm/publiclist
@@ -42,6 +46,12 @@ log "RPM Fusion 仓库已安装"
 
 enable_copr_repo "solopasha" "hyprland"
 enable_copr_repo "alternateved" "eza"
+
+log "正在更新 DNF 缓存..."
+
+sudo dnf makecache
+
+log "所有仓库已准备就绪"
 
 
 # ------------------------------- INSTALL -------------------------------

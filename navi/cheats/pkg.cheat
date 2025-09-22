@@ -1,7 +1,7 @@
-% pkg, dnf, rpm
+% pkg, dnf, rpm, search
 
 # 查询软件包版本信息 (检查是否已安装)
-rpm -q <appname>
+rpm -q <packagename>
 
 # 列出所有已安装的 RPM 软件包
 rpm -qa
@@ -14,6 +14,19 @@ rpm -ql <packagename>
 
 
 
+% pkg, dnf
+
+# 列出已启用的仓库
+dnf repolist
+
+# 列出所有仓库 (包括未启用)
+dnf repolist --all
+
+# 更新本地的软件包缓存
+sudo dnf makecache
+
+
+
 % pkg, dnf, history
 
 # 显示 DNF 的命令历史记录 (最近 30 条)
@@ -21,28 +34,23 @@ dnf history list | head -n 30
 
 
 
-% pkg, dnf
-
-# 列出已启用的仓库
-dnf repolist
-
-# 列出所有仓库
-dnf repolist --all
+% pkg, dnf, search
 
 # 查看命令由哪个软件包提供
 dnf provides <cliname>
 
+# 显示某个包声明的依赖
+sudo dnf repoquery --requires <packagename>
+
+
+
+% pkg, dnf, clean
+
 # 清理缓存
 sudo dnf clean all
 
-# 强制 DNF 从远程仓库中下载并刷新本地的元数据缓存
-sudo dnf makecache
-
 # 删除系统中不再需要的依赖包
 sudo dnf autoremove
-
-# 显示某个包声明的依赖
-sudo dnf repoquery --requires <packagename>
 
 
 
