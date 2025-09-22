@@ -41,6 +41,10 @@ sudo systemctl enable --now acpid.service
 
 # ------------- todo -------------
 
+# 安装后的 dnf 代理设置
+
+# 看看要不要先删除一些软件再进行 install, 看 obsidian 中的 KDE_install_doc: dnf basic
+
 # todo: 不知道要不要安装
 # xdg-utils
 # 如果您使用 Wayland + Flatpak/沙箱应用，很多应用会调用 xdg-utils 来打开文件、浏览器或邮件客户端。
