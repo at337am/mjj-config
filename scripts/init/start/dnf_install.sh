@@ -101,6 +101,20 @@ log "图形与硬件加速相关的软件包已安装完毕"
 
 
 # -------------------------------- #
+log "开始安装字体和鼠标指针主题..."
+
+sudo dnf -y install \
+    adwaita-sans-fonts.noarch \
+    breeze-cursor-theme \
+    google-noto-color-emoji-fonts \
+    google-noto-sans-cjk-vf-fonts
+
+log "字体和鼠标指针主题已安装完毕"
+# -------------------------------- #
+
+
+
+# -------------------------------- #
 log "开始安装常用软件包..."
 
 sudo dnf -y install \
@@ -143,20 +157,6 @@ sudo dnf -y install \
     zsh
 
 log "常用软件包已安装完毕"
-# -------------------------------- #
-
-
-
-# -------------------------------- #
-log "开始安装字体和鼠标指针主题..."
-
-sudo dnf -y install \
-    adwaita-sans-fonts.noarch \
-    breeze-cursor-theme \
-    google-noto-color-emoji-fonts \
-    google-noto-sans-cjk-vf-fonts
-
-log "字体和鼠标指针主题已安装完毕"
 # -------------------------------- #
 
 
