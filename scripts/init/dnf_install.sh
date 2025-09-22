@@ -44,9 +44,11 @@ enable_copr_repo "solopasha" "hyprland"
 enable_copr_repo "alternateved" "eza"
 
 
-# ------------ INSTALL ------------
+# ------------------------------- INSTALL -------------------------------
 
 
+
+# -------------------------------- #
 log "开始安装基础软件组..."
 
 sudo dnf -y group install \
@@ -55,7 +57,11 @@ sudo dnf -y group install \
     "multimedia"
 
 log "基础软件组已安装完毕"
+# -------------------------------- #
 
+
+
+# -------------------------------- #
 log "开始卸载不需要的 libva-intel-media-driver..."
 
 # 因为上面 multimedia 安装了旧的 libva-intel-media-driver
@@ -64,7 +70,11 @@ log "开始卸载不需要的 libva-intel-media-driver..."
 sudo dnf -y remove libva-intel-media-driver
 
 log "已卸载完毕: libva-intel-media-driver"
+# -------------------------------- #
 
+
+
+# -------------------------------- #
 log "开始安装图形与硬件加速相关的软件包..."
 
 sudo dnf -y install \
@@ -76,11 +86,11 @@ sudo dnf -y install \
     vulkan-tools
 
 log "图形与硬件加速相关的软件包已安装完毕"
+# -------------------------------- #
 
 
-# -----------------------
 
-
+# -------------------------------- #
 log "开始安装常用软件包..."
 
 sudo dnf -y install \
@@ -123,7 +133,11 @@ sudo dnf -y install \
     zsh
 
 log "常用软件包已安装完毕"
+# -------------------------------- #
 
+
+
+# -------------------------------- #
 log "开始安装字体和鼠标指针主题..."
 
 sudo dnf -y install \
@@ -133,7 +147,11 @@ sudo dnf -y install \
     google-noto-sans-cjk-fonts
 
 log "字体和鼠标指针主题已安装完毕"
+# -------------------------------- #
 
+
+
+# -------------------------------- #
 log "开始安装 Hyprland 及相关软件包..."
 
 sudo dnf -y install \
@@ -156,3 +174,4 @@ sudo dnf -y install \
     xdg-desktop-portal-hyprland
 
 log "Hyprland 及相关软件包已安装完毕"
+# -------------------------------- #
