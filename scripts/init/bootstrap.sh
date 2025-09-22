@@ -14,7 +14,8 @@ files=(
     "fonts.tar.gz"
     "mjj-config.tar.gz"
     "nekoay.tar.gz"
-    "ssh.tar"
+    # todo, 这里只是为了测试暂时不需要 ssh
+    # "ssh.tar"
 )
 
 files_dir="$HOME/pkgs"
@@ -71,7 +72,8 @@ log "基础设置完成"
 # ------------- 解压文件 START -------------- #
 log "解压所需文件到指定位置"
 
-command rm -rf ~/.ssh
+# todo, 这里只是为了测试暂时不需要 ssh
+# command rm -rf ~/.ssh
 command rm -rf ~/.local/share/fonts
 command rm -rf ~/workspace/dev/mjj-config
 command rm -rf /opt/soft/nekoray
@@ -85,8 +87,9 @@ log "mjj-config 已到位"
 tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft/
 log "nekoray 已到位"
 
-tar -zxf "$files_dir/ssh.tar" -C ~/
-log "ssh 已到位"
+# todo, 这里只是为了测试暂时不需要 ssh
+# tar -zxf "$files_dir/ssh.tar" -C ~/
+# log "ssh 已到位"
 
 log "解压完毕, 各文件已到位"
 # ------------- 解压文件 END -------------- #
