@@ -48,3 +48,5 @@ sudo systemctl enable --now acpid.service
 # 看看有没有误装 ffmpeg-free 
 
 # 看看自带了哪些 字体
+
+# 看看 power-profiles-daemon upower acpid
