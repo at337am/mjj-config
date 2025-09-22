@@ -87,6 +87,7 @@ sudo dnf install \
     fcitx5-qt \
     fcitx5-rime \
     fd-find \
+    ffmpeg \
     figlet \
     flatpak \
     fzf \
