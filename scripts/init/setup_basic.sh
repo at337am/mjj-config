@@ -19,7 +19,7 @@ files_dir="$HOME/pkgs"
 
 for file in "${files[@]}"; do
     if [ ! -f "$data_dir/$file" ]; then
-        log "文件不存在: $data_dir/$file"
+        log "准备文件不存在: $data_dir/$file"
         exit 1
     fi
 done
