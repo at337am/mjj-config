@@ -89,3 +89,5 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 ./install.sh 2>&1 | tee ~/install_output.log
 
 # 验证 install_code.sh 可行就直接放到 scripts 中
+
+# 测试能否用 nekoray
