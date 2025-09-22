@@ -60,4 +60,5 @@ sudo systemctl enable --now acpid.service
 
 
 
+# 执行脚本
 ./install.sh 2>&1 | tee ~/install_output.log
