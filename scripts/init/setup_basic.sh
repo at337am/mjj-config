@@ -6,6 +6,8 @@ log() {
     printf '\n-=> %s <=-\n' "$1"
 }
 
+# -------------------------------- #
+
 files=(
     "fonts.tar.gz"
     "mjj-config.tar.gz"
@@ -19,6 +21,8 @@ for file in "${files[@]}"; do
         exit 1
     fi
 done
+
+# -------------------------------- #
 
 log "关闭防火墙..."
 sudo systemctl stop firewalld
@@ -48,3 +52,5 @@ sudo chown -R $(whoami):$(id -gn) /data
 
 sudo mkdir -p /opt/soft /opt/venvs
 sudo chown -R $(whoami):$(id -gn) /opt/soft /opt/venvs
+
+# -------------------------------- #
