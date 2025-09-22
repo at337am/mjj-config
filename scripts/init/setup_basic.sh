@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+# 设置严格模式，任何错误都会导致脚本退出
 set -euo pipefail
 
 log() {
-    printf '\n-=> %s <=-\n' "$1"
+    printf '\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n-=> %s\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n' "$1"
 }
 
-# -------------------------------- #
+# ------------- 检查所需文件 START -------------- #
+log "开始校验所需文件..."
 
 files=(
     "fonts.tar.gz"
@@ -19,12 +21,18 @@ files_dir="$HOME/pkgs"
 
 for file in "${files[@]}"; do
     if [[ ! -f "$data_dir/$file" ]]; then
-        log "Error: 准备文件不存在: $data_dir/$file"
+        log "Error: 所需文件不存在: $data_dir/$file"
         exit 1
     fi
 done
 
-# -------------------------------- #
+log "所需文件校验完成"
+# ------------- 检查所需文件 END -------------- #
+
+
+
+# ------------- 基础设置 START -------------- #
+log "开始基础设置..."
 
 log "关闭防火墙..."
 sudo systemctl stop firewalld
@@ -55,9 +63,13 @@ sudo chown -R $(whoami):$(id -gn) /data
 sudo mkdir -p /opt/soft /opt/venvs
 sudo chown -R $(whoami):$(id -gn) /opt/soft /opt/venvs
 
-# -------------------------------- #
+log "基础设置完成"
+# ------------- 基础设置 END -------------- #
 
-log "解压准备文件到指定目录"
+
+
+# ------------- 解压文件 START -------------- #
+log "解压所需文件到指定位置"
 
 command rm -rf ~/.ssh
 command rm -rf ~/.local/share/fonts
@@ -65,11 +77,44 @@ command rm -rf ~/workspace/dev/mjj-config
 command rm -rf /opt/soft/nekoray
 
 tar -zxf "$files_dir/fonts.tar.gz" -C ~/.local/share/
+log "fonts 已到位"
 
 tar -zxf "$files_dir/mjj-config.tar.gz" -C ~/workspace/dev/
+log "mjj-config 已到位"
 
 tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft/
+log "nekoray 已到位"
 
 tar -zxf "$files_dir/ssh.tar" -C ~/
+log "ssh 已到位"
 
-log "解压完毕, 各准备文件已就绪"
+log "解压完毕, 各文件已到位"
+# ------------- 解压文件 END -------------- #
+
+
+
+# ------------- 执行脚本 START -------------- #
+for file in "${scripts[@]}"; do
+    if [[ ! -f "$file" ]]; then
+        log "Error: 脚本 '$file' 不存在"
+        exit 1
+    fi
+done
+
+scripts=(
+    "scripts/01_dnf_install.sh"
+    "scripts/02_rsync_zsh.sh"
+    "scripts/03_rsync_config.sh"
+    "scripts/04_symlink_config.sh"
+    "scripts/05_flatpak_install.sh"
+    "scripts/06_setup_flatpak_perm.sh"
+)
+
+for script in "${scripts[@]}"; do
+    log "开始执行脚本 $script..."
+
+    ./"$script"
+
+    log "执行完毕 $script"
+done
+# ------------- 执行脚本 END -------------- #
