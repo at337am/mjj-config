@@ -6,6 +6,20 @@ log() {
     printf '\n-=> %s <=-\n' "$1"
 }
 
+files=(
+    "fonts.tar.gz"
+    "mjj-config.tar.gz"
+    "nekoay.tar.gz"
+    "ssh.tar"
+)
+
+for file in "${files[@]}"; do
+    if [ ! -f "$file" ]; then
+        log "文件不存在: $file"
+        exit 1
+    fi
+done
+
 log "关闭防火墙..."
 sudo systemctl stop firewalld
 sudo systemctl disable firewalld
