@@ -22,3 +22,5 @@ flatpak install -y flathub io.github.ungoogled_software.ungoogled_chromium
 flatpak install -y flathub org.telegram.desktop
 
 flatpak install -y flathub io.mgba.mGBA
+
+log "安装常用 App 已安装完毕..."
