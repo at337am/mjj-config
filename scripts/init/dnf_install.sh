@@ -50,13 +50,7 @@ sudo dnf -y install \
     libva-intel-driver \
     libva-utils \
     libva-utils-2.22.0-4.fc42.x86_64 \
-    mesa-dri-drivers-25.1.9-1.fc42.x86_64 \
-    mesa-libEGL-25.1.9-1.fc42.x86_64 \
-    mesa-libGL-25.1.9-1.fc42.x86_64 \
-    mesa-va-drivers-25.1.9-1.fc42.x86_64 \
     mesa-vdpau-drivers \
-    mesa-vulkan-drivers-25.1.9-1.fc42.x86_64 \
-    openh264 \
     vulkan-tools
 
 
