@@ -21,13 +21,15 @@ scripts=(
     "06_setup_flatpak_app_permissions.sh"
 )
 
-for script in "${scripts[@]}"; do
-    if [[ ! -f "$script" ]]; then
-        log "Error: 脚本 '$script' 不存在, 退出执行"
+for file in "${scripts[@]}"; do
+    if [[ ! -f "$file" ]]; then
+        log "Error: 脚本 '$file' 不存在"
         exit 1
     fi
+done
 
-    log "开始执行 $script..."
+for script in "${scripts[@]}"; do
+    log "开始执行脚本 $script..."
 
     ./"$script"
 
