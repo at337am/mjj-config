@@ -7,10 +7,7 @@ log() {
     echo "-=> $1 <=-"
 }
 
-log "安装 RPM Fusion 仓库..."
-sudo dnf -y install \
-    "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
-    "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+log "开始安装 RPM Fusion 仓库..."
 
 # 更多镜像地址: https://mirrors.rpmfusion.org/mm/publiclist
 
@@ -19,16 +16,31 @@ sudo dnf -y install \
 #     "https://mirrors.ustc.edu.cn/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
 #     "https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-log "启用 Hyprland 的 copr 仓库..."
-sudo dnf -y copr enable solopasha/hyprland
+sudo dnf -y install \
+    "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
+    "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
 
-log "启用 eza 的 copr 仓库..."
-sudo dnf -y copr enable alternateved/eza
+log "RPM Fusion 仓库已安装"
 
+if ! dnf repolist | grep -q 'solopasha:hyprland'; then
+    log "正在启用 Hyprland 的 copr 仓库..."
+    sudo dnf -y copr enable solopasha/hyprland
+    log "Hyprland 的 copr 仓库已启用成功"
+else
+    log "Hyprland 的 copr 仓库已启用, 跳过"
+fi
 
+if ! dnf repolist | grep -q 'alternateved:eza'; then
+    log "正在启用 eza 的 copr 仓库..."
+    sudo dnf -y copr enable alternateved/eza
+    log "eza 的 copr 仓库已启用成功"
+else
+    log "eza 的 copr 仓库已启用, 跳过"
+fi
 
 
 # ------------ INSTALL ------------
+
 
 log "开始安装基础软件组..."
 
