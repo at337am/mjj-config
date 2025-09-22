@@ -73,8 +73,8 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # 改一下 fonts_for_linux .,  要求 解压后必须是 fonts 目录
 
-# 脚本 前面 增加 rpm fussion 检查  存在 仓库就不执行
 # setup_basic 也增加 检查  存在不执行
+
 # 还有其他脚本  文件都加上检查
 
 
