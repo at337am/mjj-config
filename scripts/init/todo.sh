@@ -51,7 +51,7 @@ sudo systemctl enable --now acpid.service
 
 # 尝试不显式安装 xdg-desktop-portal-hyprland, 这个会不会存在
 
-# 看看有没有误装 ffmpeg-free 
+# 看看有没有误装 ffmpeg-free
 
 # 看看自带了哪些 字体
 
