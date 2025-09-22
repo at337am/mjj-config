@@ -99,6 +99,7 @@ sudo dnf -y install \
     tealdeer \
     tmux \
     uv \
+    yt-dlp \
     zsh
 
 log "安装 Hyprland 及相关软件包..."
