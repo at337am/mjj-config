@@ -14,6 +14,15 @@ if [ ! -d "$HOME/workspace/dev/mjj-config" ]; then
 fi
 log "源配置目录检查通过, 开始执行..."
 
+
+# 子脚本列表
+SCRIPTS=(
+    "01_dnf_install.sh"
+    "02_rsync_zsh.sh"
+    "03_rsync_config.sh"
+    "04_symlink_config.sh"
+)
+
 log "第一步: 执行基础设置"
 ./start/setup_basic.sh
 
