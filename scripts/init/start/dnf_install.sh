@@ -154,7 +154,7 @@ sudo dnf -y install \
     adwaita-sans-fonts.noarch \
     breeze-cursor-theme \
     google-noto-color-emoji-fonts \
-    google-noto-sans-cjk-fonts
+    google-noto-sans-cjk-vf-fonts
 
 log "字体和鼠标指针主题已安装完毕"
 # -------------------------------- #
