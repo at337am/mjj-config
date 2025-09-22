@@ -19,8 +19,11 @@ rpm -ql <packagename>
 # 列出已启用的仓库
 dnf repolist
 
-# 列出所有仓库 (包括未启用)
+# 列出所有仓库 (方式一)
 dnf repolist --all
+
+# 列出所有仓库 (方式二)
+ls /etc/yum.repos.d/
 
 # 更新本地的软件包缓存
 sudo dnf makecache
