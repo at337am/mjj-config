@@ -46,7 +46,6 @@ log "安装显卡驱动..."
 sudo dnf -y install \
     glx-utils \
     intel-media-driver \
-    libva \
     libva-intel-driver \
     libva-utils \
     mesa-vdpau-drivers \
