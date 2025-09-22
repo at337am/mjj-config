@@ -14,8 +14,6 @@ if [ ! -d "$HOME/workspace/dev/mjj-config" ]; then
 fi
 log "源配置目录检查通过, 开始执行..."
 
-
-# 子脚本列表
 SCRIPTS=(
     "01_dnf_install.sh"
     "02_rsync_zsh.sh"
@@ -23,19 +21,12 @@ SCRIPTS=(
     "04_symlink_config.sh"
 )
 
-log "第一步: 执行基础设置"
-./start/setup_basic.sh
+for script in "${SCRIPTS[@]}"; do
+    if [[ ! -f "$script" ]]; then
+        echo "错误: 脚本 '$script' 不存在, 退出执行"
+        exit 1
+    fi
 
-log "第二步: 安装 DNF 软件包"
-./start/dnf_install.sh
-
-log "第三步: 同步 Zsh 配置"
-./start/rsync_zsh.sh
-
-log "第四步: 同步通用配置"
-./start/rsync_config.sh
-
-log "第五步: 创建符号链接"
-./start/symlink_config.sh
-
-log "所有脚本执行完毕!"
+    log "开始执行 $script ..."
+    ./"$script"
+done
