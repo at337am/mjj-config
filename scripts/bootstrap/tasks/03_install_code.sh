@@ -18,3 +18,5 @@ sudo dnf check-update
 
 log "开始安装 Visual Studio Code..."
 sudo dnf -y install code
+
+log "Visual Studio Code 安装完成"

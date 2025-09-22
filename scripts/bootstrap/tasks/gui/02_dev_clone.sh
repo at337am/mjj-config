@@ -8,9 +8,7 @@ log() {
 
 log "开始克隆所有项目到 dev"
 
-command rm -rf ~/workspace/dev/mjj-config
-
-git clone git@github.com:at337am/mjj-config.git ~/workspace/dev/mjj-config
+git clone git@github.com:at337am/dots.git ~/workspace/dev/dots
 
 git clone git@github.com:at337am/notes.git ~/workspace/dev/notes
 

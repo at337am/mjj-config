@@ -12,7 +12,6 @@ log "开始校验所需文件..."
 
 files=(
     "fonts.tar.gz"
-    "mjj-config.tar.gz"
     "nekoay.tar.gz"
     # todo, 这里只是为了测试暂时不需要 ssh
     # "ssh.tar"
@@ -72,22 +71,14 @@ log "基础设置完成"
 # ------------- 解压文件 START -------------- #
 log "解压所需文件到指定位置"
 
-# todo, 这里只是为了测试暂时不需要 ssh
-# command rm -rf ~/.ssh
-command rm -rf ~/.local/share/fonts
-command rm -rf ~/workspace/dev/mjj-config
-command rm -rf /opt/soft/nekoray
-
 tar -zxf "$files_dir/fonts.tar.gz" -C ~/.local/share/
 log "fonts 已到位"
-
-tar -zxf "$files_dir/mjj-config.tar.gz" -C ~/workspace/dev/
-log "mjj-config 已到位"
 
 tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft/
 log "nekoray 已到位"
 
 # todo, 这里只是为了测试暂时不需要 ssh
+# command rm -rf ~/.ssh
 # tar -zxf "$files_dir/ssh.tar" -C ~/
 # log "ssh 已到位"
 
@@ -97,7 +88,7 @@ log "解压完毕, 各文件已到位"
 
 
 # ------------- 执行脚本 START -------------- #
-SCRIPT_DIR="scripts"
+SCRIPT_DIR="tasks"
 
 if [[ ! -d "$SCRIPT_DIR" ]]; then
     log "Error: 目录 '$SCRIPT_DIR' 不存在"
@@ -111,7 +102,7 @@ find "$SCRIPT_DIR" -maxdepth 1 -name "*.sh" | sort -V | while read -r script; do
     fi
 
     log "开始执行脚本: $script"
-    
+
     "$script"
 
     # 检查上一个命令（也就是执行的脚本）的退出码
@@ -125,3 +116,9 @@ find "$SCRIPT_DIR" -maxdepth 1 -name "*.sh" | sort -V | while read -r script; do
     log "脚本执行完毕: $script"
 done
 # ------------- 执行脚本 END -------------- #
+
+
+
+# 最后:
+log "设置 zsh 为默认 shell..."
+chsh -s /usr/bin/zsh
