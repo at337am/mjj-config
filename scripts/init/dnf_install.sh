@@ -126,7 +126,6 @@ sudo dnf -y install \
     hyprland \
     hyprlock \
     hyprpaper \
-    libnotify \
     lxqt-policykit \
     mako \
     network-manager-applet \
