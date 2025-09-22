@@ -30,9 +30,9 @@ chmod 600 ~/.zshrc
 chmod 600 ~/.zprofile
 chmod 600 ~/.p10k.zsh
 
-log "创建符号链接 aliases.zsh..."
+log "创建符号链接 aliases.zsh ..."
 command rm -rf ~/.lain/lib/aliases.zsh
 ln -s ~/workspace/dev/mjj-config/zsh/.lain/lib/aliases.zsh ~/.lain/lib/aliases.zsh
 
-log "设置 zsh 为默认 shell..."
+log "设置 zsh 为默认 shell ..."
 chsh -s /usr/bin/zsh

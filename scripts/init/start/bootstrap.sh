@@ -30,5 +30,8 @@ for script in "${SCRIPTS[@]}"; do
     fi
 
     log "开始执行 $script ..."
+
     ./"$script"
+
+    log "执行完毕 $script"
 done
