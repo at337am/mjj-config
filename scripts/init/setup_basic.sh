@@ -19,7 +19,7 @@ files_dir="$HOME/pkgs"
 
 for file in "${files[@]}"; do
     if [ ! -f "$data_dir/$file" ]; then
-        log "准备文件不存在: $data_dir/$file"
+        log "Error: 准备文件不存在: $data_dir/$file"
         exit 1
     fi
 done
@@ -56,3 +56,6 @@ sudo mkdir -p /opt/soft /opt/venvs
 sudo chown -R $(whoami):$(id -gn) /opt/soft /opt/venvs
 
 # -------------------------------- #
+
+log "解压准备文件到指定目录"
+
