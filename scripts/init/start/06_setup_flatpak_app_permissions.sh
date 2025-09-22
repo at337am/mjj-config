@@ -11,16 +11,16 @@ log() {
 # 或者直接去这里删除:
 # command rm -rfv ~/.local/share/flatpak/overrides
 
-flatpak override --user --reset md.obsidian.Obsidian
-flatpak override --user --reset org.localsend.localsend_app
-flatpak override --user --reset io.github.ungoogled_software.ungoogled_chromium
-flatpak override --user --reset org.telegram.desktop
-flatpak override --user --reset io.mgba.mGBA
+command flatpak override --user --reset md.obsidian.Obsidian
+command flatpak override --user --reset org.localsend.localsend_app
+command flatpak override --user --reset io.github.ungoogled_software.ungoogled_chromium
+command flatpak override --user --reset org.telegram.desktop
+command flatpak override --user --reset io.mgba.mGBA
 
 # 2. 设置权限
-flatpak override --user md.obsidian.Obsidian --env=GTK_IM_MODULE=fcitx
+command flatpak override --user md.obsidian.Obsidian --env=GTK_IM_MODULE=fcitx
 
-flatpak override --user org.localsend.localsend_app \
+command flatpak override --user org.localsend.localsend_app \
     --filesystem=xdg-videos \
     --filesystem=xdg-pictures \
     --filesystem=xdg-documents \
@@ -28,7 +28,7 @@ flatpak override --user org.localsend.localsend_app \
     --filesystem=/workspace \
     --filesystem=/data
 
-flatpak override --user io.github.ungoogled_software.ungoogled_chromium \
+command flatpak override --user io.github.ungoogled_software.ungoogled_chromium \
     --filesystem=xdg-videos \
     --filesystem=xdg-pictures \
     --filesystem=xdg-documents \
@@ -36,8 +36,8 @@ flatpak override --user io.github.ungoogled_software.ungoogled_chromium \
     --filesystem=/workspace \
     --filesystem=/data
 
-flatpak override --user org.telegram.desktop \
+command flatpak override --user org.telegram.desktop \
     --filesystem=/data
 
-flatpak override --user io.mgba.mGBA \
+command flatpak override --user io.mgba.mGBA \
     --filesystem=/data
