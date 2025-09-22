@@ -69,12 +69,7 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # 安装后的 xdg-user-dirs-update 语言
 
-# 改一下 fonts_for_linux .,  要求 解压后必须是 fonts 目录
-
-# setup_basic 也增加 检查  存在不执行
-
-# 还有其他脚本  文件都加上检查
-
+# start/ 中的所有脚本都需要 无痛执行, 就是可以重复执行的
 
 # 脚本执行前   fonts 和 mjj-config 是否已经到位
 
