@@ -38,7 +38,6 @@ sudo dnf group install \
 
 log "安装显卡驱动..."
 sudo dnf install \
-    ffmpeg-libs \
     glx-utils \
     gstreamer1-plugin-openh264 \
     intel-media-driver \
