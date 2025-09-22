@@ -3,18 +3,18 @@
 # 设置严格模式，任何错误都会导致脚本退出
 set -euo pipefail
 
-echo "检查源配置目录是否存在..."
-if [ ! -d "$HOME/workspace/dev/mjj-config" ]; then
-    echo "错误: mjj-config 目录不存在!"
-    exit 1
-fi
-echo "源配置目录检查通过, 开始执行..."
-
 log() {
     echo "========================================="
     echo "=> $1"
     echo "========================================="
 }
+
+log "检查源配置目录是否存在..."
+if [ ! -d "$HOME/workspace/dev/mjj-config" ]; then
+    log "错误: mjj-config 目录不存在!"
+    exit 1
+fi
+log "源配置目录检查通过, 开始执行..."
 
 log "第一步: 执行基础设置"
 ./start/setup_basic.sh
