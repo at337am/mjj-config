@@ -69,7 +69,6 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # ------------- todo -------------
 
-# 安装后的 dnf 代理设置 脚本
 # 安装后的 xdg-user-dirs-update 语言
 
 # 改一下 fonts_for_linux .,  要求 解压后必须是 fonts 目录
