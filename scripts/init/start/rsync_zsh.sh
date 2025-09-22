@@ -4,7 +4,7 @@
 set -euo pipefail
 
 log() {
-    echo "-=> $1 <=-"
+    printf '\n\n-=> %s <=-\n\n' "$1"
 }
 
 log "清理 zsh 旧配置..."

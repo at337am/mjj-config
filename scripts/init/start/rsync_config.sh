@@ -4,7 +4,7 @@
 set -euo pipefail
 
 log() {
-    echo "-=> $1 <=-"
+    printf '\n\n-=> %s <=-\n\n' "$1"
 }
 
 log "同步 fontconfig 配置..."
