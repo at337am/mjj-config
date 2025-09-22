@@ -25,24 +25,43 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # ------------- todo -------------
 
-# 安装后的 dnf 代理设置
+# 安装后的 dnf 代理设置 脚本
 
-# 看看要不要先删除一些软件再进行 install, 看 obsidian 中的 KDE_install_doc: dnf basic
+# 脚本 执行前 可以先  sudo dnf autoremove
 
-# todo: 不知道要不要安装
-# xdg-utils
-# 如果您使用 Wayland + Flatpak/沙箱应用，很多应用会调用 xdg-utils 来打开文件、浏览器或邮件客户端。
+# 改一下 fonts_for_linux .,  要求 解压后必须是 fonts 目录
 
-# 尝试不显式安装 xdg-desktop-portal-hyprland, 这个会不会存在
+# 脚本 前面 增加 rpm fussion 检查  存在 仓库就不执行
+# setup_basic 也增加 检查  存在不执行
+# 还有其他脚本  文件都加上检查
 
-# 看看有没有误装 ffmpeg-free
-
-# 看看自带了哪些 字体
-
-# 看看 power-profiles-daemon upower acpid
+# 脚本  改为 先安装 主题字体再安装 常用软件包
 
 
+
+# ----------------------------------------------------------- #
 
 
 # 执行脚本
 ./install.sh 2>&1 | tee ~/install_output.log
+
+
+# ---------------- 流程 ----------------
+
+# 安装完 fedroa 系统时 (插网线或者连接 wifi ), 先设置代理环境, 先进行 dnf upgrade , 
+
+# 重启电脑
+
+# 再次设置代理环境
+
+# 上传 mjj-config, fonts_fot_linux, ssh 等
+
+# 解压 mjj-config 运行 setup_basic 脚本
+
+# 解压 fonts_for_linux, 解压 ssh, 重新解压 mjj-config 到各自的位置
+
+# 再启动 install 脚本.   脚本执行前   fonts 和 mjj-config 是否已经到位
+
+
+# 注意事项: 安装完后检查是否误装 ffmpeg-free
+
