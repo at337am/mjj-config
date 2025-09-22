@@ -7,6 +7,24 @@ log() {
     echo "-=> $1 <=-"
 }
 
+enable_copr_repo() {
+    local repo_owner="$1"
+    local repo_project="$2"
+    local repo_pattern="${repo_owner}:${repo_project}" # 例如 "solopasha:hyprland"
+
+    if ! dnf repolist | grep -q "$repo_pattern"; then
+        log "正在启用 ${repo_pattern} 的 copr 仓库..."
+        if sudo dnf -y copr enable "${repo_owner}/${repo_project}"; then
+            log "${repo_pattern} 的 copr 仓库已启用成功"
+        else
+            log "错误: 启用 ${repo_pattern} 的 copr 仓库失败!"
+            return 1
+        fi
+    else
+        log "${repo_pattern} 的 copr 仓库已启用, 跳过"
+    fi
+}
+
 log "开始安装 RPM Fusion 仓库..."
 
 # 更多镜像地址: https://mirrors.rpmfusion.org/mm/publiclist
@@ -22,21 +40,8 @@ sudo dnf -y install \
 
 log "RPM Fusion 仓库已安装"
 
-if ! dnf repolist | grep -q 'solopasha:hyprland'; then
-    log "正在启用 Hyprland 的 copr 仓库..."
-    sudo dnf -y copr enable solopasha/hyprland
-    log "Hyprland 的 copr 仓库已启用成功"
-else
-    log "Hyprland 的 copr 仓库已启用, 跳过"
-fi
-
-if ! dnf repolist | grep -q 'alternateved:eza'; then
-    log "正在启用 eza 的 copr 仓库..."
-    sudo dnf -y copr enable alternateved/eza
-    log "eza 的 copr 仓库已启用成功"
-else
-    log "eza 的 copr 仓库已启用, 跳过"
-fi
+enable_copr_repo "solopasha" "hyprland"
+enable_copr_repo "alternateved" "eza"
 
 
 # ------------ INSTALL ------------
