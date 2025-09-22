@@ -56,11 +56,9 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # 再次设置代理环境
 
-# 使用 scp -r 上传 mjj-config, fonts_fot_linux, ssh, nekoray 等
+# 使用 scp -r 上传 mjj-config, fonts_fot_linux, ssh, nekoray 等, 放在 ~/pkgs 目录中
 
 # 解压 mjj-config 运行 setup_basic.sh 脚本
-
-# 解压 fonts_for_linux, ssh, nekoray, mjj-config 到各自的位置
 
 # 再启动 bootstrap.sh 脚本
 
