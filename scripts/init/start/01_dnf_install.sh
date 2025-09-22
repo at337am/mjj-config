@@ -37,10 +37,7 @@ log “无用软件包清理完毕”
 
 
 
-# ------------------------------- COPR -------------------------------
-
-
-log "开始安装 RPM Fusion 仓库..."
+# ------------------------------- REPO START -------------------------------
 
 # 更多镜像地址: https://mirrors.rpmfusion.org/mm/publiclist
 
@@ -49,14 +46,24 @@ log "开始安装 RPM Fusion 仓库..."
 #     "https://mirrors.ustc.edu.cn/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
 #     "https://mirrors.ustc.edu.cn/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
 
-sudo dnf -y install \
-    "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
-    "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+if ! dnf repolist | grep -q "$repo_pattern"; then
+    log "RPM Fusion 仓库已启用，跳过安装"
+else
+    log "开始安装 RPM Fusion 仓库..."
 
-log "RPM Fusion 仓库已安装"
+    sudo dnf -y install \
+        "https://mirror.math.princeton.edu/pub/rpmfusion/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" \
+        "https://mirror.math.princeton.edu/pub/rpmfusion/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+
+    log "RPM Fusion 仓库已安装"
+fi
 
 enable_copr_repo "solopasha" "hyprland"
 enable_copr_repo "alternateved" "eza"
+
+# ------------------------------- REPO END -------------------------------
+
+
 
 log "正在更新 DNF 缓存..."
 
@@ -65,10 +72,8 @@ sudo dnf makecache
 log "所有仓库已准备就绪"
 
 
-# ------------------------------- INSTALL -------------------------------
 
-
-
+# ------------------------------- INSTALL START -------------------------------
 # -------------------------------- #
 log "开始安装基础软件组..."
 
@@ -227,6 +232,7 @@ else
     echo "acpid.service 已启用"
 fi
 # -------------------------------- #
+# ------------------------------- INSTALL END -------------------------------
 
 
 
