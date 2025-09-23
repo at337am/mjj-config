@@ -7,6 +7,7 @@ exit 0
 # 测试 执行脚本
 ./install.sh 2>&1 | tee ~/install_output.log
 
+http_proxy=http://127.0.0.1:2080 https_proxy=http://127.0.0.1:2080
 
 
 # ------------ 修改 xdg-user-dirs-update 语言 START ------------
@@ -84,6 +85,13 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # 完成 xdg-user-dirs-update 脚本, 放到 tasks/gui 中
 
+# rsync -a ../../home/ ~/
+# 如果目录不存在则换成 ../home/
+
+# flatpak  代理  问题
+
+# rime 拉取词库的代理问题
+
 
 
 
@@ -94,5 +102,3 @@ command rm -rfv ~/下载 ~/文档 ~/图片 ~/视频 ~/音乐 ~/模板 ~/公共 ~
 
 # 脚本执行后 看看 xdg-user-dirs-update 配置
 cat ~/.config/user-dirs.dirs
-
-# 完成后检查 zsh 的 .lain 主题 是否正确设置

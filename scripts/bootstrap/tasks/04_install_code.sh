@@ -6,6 +6,12 @@ log() {
     printf '\n-=> %s <=-\n' "$1"
 }
 
+# 检查是否需要跳过
+if rpm -q code &>/dev/null; then
+    log "此脚本不再重复执行, 跳过"
+    exit 0
+fi
+
 log "导入 Microsoft GPG 公钥..."
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
@@ -14,7 +20,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
     | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 
 log "检查软件更新..."
-sudo dnf check-update
+sudo dnf check-update || true
 
 log "开始安装 Visual Studio Code..."
 sudo dnf -y install code

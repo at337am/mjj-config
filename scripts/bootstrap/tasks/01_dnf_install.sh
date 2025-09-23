@@ -6,6 +6,12 @@ log() {
     printf '\n-=> %s <=-\n' "$1"
 }
 
+# 检查是否需要跳过
+if rpm -q hyprland &>/dev/null; then
+    log "此脚本不再重复执行, 跳过"
+    exit 0
+fi
+
 enable_copr_repo() {
     local repo_owner="$1"
     local repo_project="$2"
@@ -18,7 +24,7 @@ enable_copr_repo() {
         if sudo dnf -y copr enable "${repo_owner}/${repo_project}"; then
             log "${repo_pattern} 的 copr 仓库已启用成功"
         else
-            log "错误: 启用 ${repo_pattern} 的 copr 仓库失败!"
+            log "Error: 启用 ${repo_pattern} 的 copr 仓库失败!"
             return 1
         fi        
     fi
@@ -218,17 +224,17 @@ log "ACPI 事件守护进程和电源配置服务已安装完毕"
 log “开始启用 ACPI 事件守护进程和电源配置服务”
 
 if systemctl is-enabled --quiet power-profiles-daemon.service; then
-    echo "power-profiles-daemon.service 已启用, 跳过"
+    log "power-profiles-daemon.service 已启用, 跳过"
 else
     sudo systemctl enable --now power-profiles-daemon.service
-    echo "power-profiles-daemon.service 已启用"
+    log "power-profiles-daemon.service 已启用"
 fi
 
 if systemctl is-enabled --quiet acpid.service; then
-    echo "acpid.service 已启用, 跳过"
+    log "acpid.service 已启用, 跳过"
 else
     sudo systemctl enable --now acpid.service
-    echo "acpid.service 已启用"
+    log "acpid.service 已启用"
 fi
 # -------------------------------- #
 # ------------------------------- INSTALL END -------------------------------
@@ -237,6 +243,8 @@ fi
 
 # -------------------------------- #
 log “开始清理无用软件包”
+
+sudo dnf -y remove vim
 
 sudo dnf -y autoremove
 
