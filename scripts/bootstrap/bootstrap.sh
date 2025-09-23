@@ -12,7 +12,7 @@ log "开始校验所需文件..."
 
 files=(
     "fonts.tar.gz"
-    "nekoay.tar.gz"
+    "nekoray.tar.gz"
     # todo, 这里只是为了测试暂时不需要 ssh
     # "ssh.tar"
 )
@@ -20,8 +20,8 @@ files=(
 files_dir="$HOME/pkgs"
 
 for file in "${files[@]}"; do
-    if [[ ! -f "$data_dir/$file" ]]; then
-        log "Error: 所需文件不存在: $data_dir/$file"
+    if [[ ! -f "$files_dir/$file" ]]; then
+        log "Error: 所需文件不存在: $files_dir/$file"
         exit 1
     fi
 done
@@ -74,7 +74,7 @@ log "解压所需文件到指定位置"
 tar -zxf "$files_dir/fonts.tar.gz" -C ~/.local/share/
 log "fonts 已到位"
 
-tar -zxf "$files_dir/nekoay.tar.gz" -C /opt/soft/
+tar -zxf "$files_dir/nekoray.tar.gz" -C /opt/soft/
 log "nekoray 已到位"
 
 # todo, 这里只是为了测试暂时不需要 ssh
