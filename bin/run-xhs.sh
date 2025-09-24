@@ -7,7 +7,7 @@ TARGET_DIR="/opt/soft/XHS-Downloader"
 if [[ -d "$TARGET_DIR" ]]; then
   # 进入目录
   cd "$TARGET_DIR" || exit 1
-  
+
   # 激活虚拟环境
   source .venv/bin/activate
 
